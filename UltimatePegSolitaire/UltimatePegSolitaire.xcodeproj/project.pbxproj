@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		509CADF62287827D0095C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CADF52287827D0095C07F /* AppDelegate.swift */; };
+		509CADF82287827D0095C07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CADF72287827D0095C07F /* ViewController.swift */; };
+		509CADFB2287827D0095C07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CADF92287827D0095C07F /* Main.storyboard */; };
+		509CADFE2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */; };
+		509CAE002287827E0095C07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509CADFF2287827E0095C07F /* Assets.xcassets */; };
+		509CAE032287827E0095C07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CAE012287827E0095C07F /* LaunchScreen.storyboard */; };
+		509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */; };
+		509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		509CAE0A2287827E0095C07F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 509CADEA2287827D0095C07F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 509CADF12287827D0095C07F;
+			remoteInfo = UltimatePegSolitaire;
+		};
+		509CAE152287827E0095C07F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 509CADEA2287827D0095C07F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 509CADF12287827D0095C07F;
+			remoteInfo = UltimatePegSolitaire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		509CADF22287827D0095C07F /* UltimatePegSolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePegSolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		509CADF52287827D0095C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		509CADF72287827D0095C07F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		509CADFA2287827D0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		509CADFD2287827D0095C07F /* UltimatePegSolitaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UltimatePegSolitaire.xcdatamodel; sourceTree = "<group>"; };
+		509CADFF2287827E0095C07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		509CAE022287827E0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		509CAE042287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509CAE092287827E0095C07F /* UltimatePegSolitaireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePegSolitaireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePegSolitaireTests.swift; sourceTree = "<group>"; };
+		509CAE0F2287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509CAE142287827E0095C07F /* UltimatePegSolitaireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePegSolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePegSolitaireUITests.swift; sourceTree = "<group>"; };
+		509CAE1A2287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		509CADEF2287827D0095C07F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509CAE062287827E0095C07F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509CAE112287827E0095C07F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		509CADE92287827D0095C07F = {
+			isa = PBXGroup;
+			children = (
+				509CADF42287827D0095C07F /* UltimatePegSolitaire */,
+				509CAE0C2287827E0095C07F /* UltimatePegSolitaireTests */,
+				509CAE172287827E0095C07F /* UltimatePegSolitaireUITests */,
+				509CADF32287827D0095C07F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		509CADF32287827D0095C07F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				509CADF22287827D0095C07F /* UltimatePegSolitaire.app */,
+				509CAE092287827E0095C07F /* UltimatePegSolitaireTests.xctest */,
+				509CAE142287827E0095C07F /* UltimatePegSolitaireUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		509CADF42287827D0095C07F /* UltimatePegSolitaire */ = {
+			isa = PBXGroup;
+			children = (
+				509CADF52287827D0095C07F /* AppDelegate.swift */,
+				509CADF72287827D0095C07F /* ViewController.swift */,
+				509CADF92287827D0095C07F /* Main.storyboard */,
+				509CADFF2287827E0095C07F /* Assets.xcassets */,
+				509CAE012287827E0095C07F /* LaunchScreen.storyboard */,
+				509CAE042287827E0095C07F /* Info.plist */,
+				509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */,
+			);
+			path = UltimatePegSolitaire;
+			sourceTree = "<group>";
+		};
+		509CAE0C2287827E0095C07F /* UltimatePegSolitaireTests */ = {
+			isa = PBXGroup;
+			children = (
+				509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */,
+				509CAE0F2287827E0095C07F /* Info.plist */,
+			);
+			path = UltimatePegSolitaireTests;
+			sourceTree = "<group>";
+		};
+		509CAE172287827E0095C07F /* UltimatePegSolitaireUITests */ = {
+			isa = PBXGroup;
+			children = (
+				509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */,
+				509CAE1A2287827E0095C07F /* Info.plist */,
+			);
+			path = UltimatePegSolitaireUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		509CADF12287827D0095C07F /* UltimatePegSolitaire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 509CAE1D2287827E0095C07F /* Build configuration list for PBXNativeTarget "UltimatePegSolitaire" */;
+			buildPhases = (
+				509CADEE2287827D0095C07F /* Sources */,
+				509CADEF2287827D0095C07F /* Frameworks */,
+				509CADF02287827D0095C07F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UltimatePegSolitaire;
+			productName = UltimatePegSolitaire;
+			productReference = 509CADF22287827D0095C07F /* UltimatePegSolitaire.app */;
+			productType = "com.apple.product-type.application";
+		};
+		509CAE082287827E0095C07F /* UltimatePegSolitaireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 509CAE202287827E0095C07F /* Build configuration list for PBXNativeTarget "UltimatePegSolitaireTests" */;
+			buildPhases = (
+				509CAE052287827E0095C07F /* Sources */,
+				509CAE062287827E0095C07F /* Frameworks */,
+				509CAE072287827E0095C07F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				509CAE0B2287827E0095C07F /* PBXTargetDependency */,
+			);
+			name = UltimatePegSolitaireTests;
+			productName = UltimatePegSolitaireTests;
+			productReference = 509CAE092287827E0095C07F /* UltimatePegSolitaireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		509CAE132287827E0095C07F /* UltimatePegSolitaireUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 509CAE232287827E0095C07F /* Build configuration list for PBXNativeTarget "UltimatePegSolitaireUITests" */;
+			buildPhases = (
+				509CAE102287827E0095C07F /* Sources */,
+				509CAE112287827E0095C07F /* Frameworks */,
+				509CAE122287827E0095C07F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				509CAE162287827E0095C07F /* PBXTargetDependency */,
+			);
+			name = UltimatePegSolitaireUITests;
+			productName = UltimatePegSolitaireUITests;
+			productReference = 509CAE142287827E0095C07F /* UltimatePegSolitaireUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		509CADEA2287827D0095C07F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Maksim Khrapov";
+				TargetAttributes = {
+					509CADF12287827D0095C07F = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					509CAE082287827E0095C07F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 509CADF12287827D0095C07F;
+					};
+					509CAE132287827E0095C07F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 509CADF12287827D0095C07F;
+					};
+				};
+			};
+			buildConfigurationList = 509CADED2287827D0095C07F /* Build configuration list for PBXProject "UltimatePegSolitaire" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 509CADE92287827D0095C07F;
+			productRefGroup = 509CADF32287827D0095C07F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				509CADF12287827D0095C07F /* UltimatePegSolitaire */,
+				509CAE082287827E0095C07F /* UltimatePegSolitaireTests */,
+				509CAE132287827E0095C07F /* UltimatePegSolitaireUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		509CADF02287827D0095C07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509CAE032287827E0095C07F /* LaunchScreen.storyboard in Resources */,
+				509CAE002287827E0095C07F /* Assets.xcassets in Resources */,
+				509CADFB2287827D0095C07F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509CAE072287827E0095C07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509CAE122287827E0095C07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		509CADEE2287827D0095C07F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509CADF82287827D0095C07F /* ViewController.swift in Sources */,
+				509CADFE2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld in Sources */,
+				509CADF62287827D0095C07F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509CAE052287827E0095C07F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509CAE102287827E0095C07F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		509CAE0B2287827E0095C07F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 509CADF12287827D0095C07F /* UltimatePegSolitaire */;
+			targetProxy = 509CAE0A2287827E0095C07F /* PBXContainerItemProxy */;
+		};
+		509CAE162287827E0095C07F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 509CADF12287827D0095C07F /* UltimatePegSolitaire */;
+			targetProxy = 509CAE152287827E0095C07F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		509CADF92287827D0095C07F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				509CADFA2287827D0095C07F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		509CAE012287827E0095C07F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				509CAE022287827E0095C07F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		509CAE1B2287827E0095C07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		509CAE1C2287827E0095C07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		509CAE1E2287827E0095C07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83396K5CDA;
+				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		509CAE1F2287827E0095C07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83396K5CDA;
+				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		509CAE212287827E0095C07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83396K5CDA;
+				INFOPLIST_FILE = UltimatePegSolitaireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltimatePegSolitaire.app/UltimatePegSolitaire";
+			};
+			name = Debug;
+		};
+		509CAE222287827E0095C07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83396K5CDA;
+				INFOPLIST_FILE = UltimatePegSolitaireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltimatePegSolitaire.app/UltimatePegSolitaire";
+			};
+			name = Release;
+		};
+		509CAE242287827E0095C07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83396K5CDA;
+				INFOPLIST_FILE = UltimatePegSolitaireUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaireUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UltimatePegSolitaire;
+			};
+			name = Debug;
+		};
+		509CAE252287827E0095C07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83396K5CDA;
+				INFOPLIST_FILE = UltimatePegSolitaireUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaireUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UltimatePegSolitaire;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		509CADED2287827D0095C07F /* Build configuration list for PBXProject "UltimatePegSolitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509CAE1B2287827E0095C07F /* Debug */,
+				509CAE1C2287827E0095C07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		509CAE1D2287827E0095C07F /* Build configuration list for PBXNativeTarget "UltimatePegSolitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509CAE1E2287827E0095C07F /* Debug */,
+				509CAE1F2287827E0095C07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		509CAE202287827E0095C07F /* Build configuration list for PBXNativeTarget "UltimatePegSolitaireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509CAE212287827E0095C07F /* Debug */,
+				509CAE222287827E0095C07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		509CAE232287827E0095C07F /* Build configuration list for PBXNativeTarget "UltimatePegSolitaireUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509CAE242287827E0095C07F /* Debug */,
+				509CAE252287827E0095C07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				509CADFD2287827D0095C07F /* UltimatePegSolitaire.xcdatamodel */,
+			);
+			currentVersion = 509CADFD2287827D0095C07F /* UltimatePegSolitaire.xcdatamodel */;
+			path = UltimatePegSolitaire.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 509CADEA2287827D0095C07F /* Project object */;
+}
