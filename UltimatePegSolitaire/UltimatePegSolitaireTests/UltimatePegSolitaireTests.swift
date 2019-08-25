@@ -356,27 +356,27 @@ class UltimatePegSolitaireTests: XCTestCase {
         XCTAssert(numSolutions > 0)
     }
         
-// This test is failing, because I don't know what initial position should be
-//    func testSiege67Board() {
-//
-//        let b = Board(9, 9, 2, 2, "Siege 67", [
-//            0, 1, 1, 1, 1, 1, 1, 1, 0,
-//            0, 0, 1, 1, 1, 1, 1, 0, 0,
-//            1, 1, 1, 1, 1, 1, 1, 1, 1,
-//            1, 1, 1, 1, 1, 1, 1, 1, 1,
-//            1, 1, 1, 1, 1, 1, 1, 1, 1,
-//            1, 1, 1, 1, 1, 1, 1, 1, 1,
-//            1, 1, 1, 1, 1, 1, 1, 1, 1,
-//            0, 0, 1, 1, 1, 1, 1, 0, 0,
-//            0, 0, 1, 1, 1, 1, 1, 0, 0
-//        ])
-//
-//        let p = b.initialPosition()
-//        let pruningSearch = PruningSearch(p)
-//        pruningSearch.prune(1000)
-//        let numSolutions = pruningSearch.search()
-//        XCTAssert(numSolutions > 0)
-//    }
+
+    func testSiege67Board() {
+
+        let b = Board(9, 9, 4, 0, "Siege 67", [
+            0, 1, 1, 1, 1, 1, 1, 1, 0,
+            0, 0, 1, 1, 1, 1, 1, 0, 0,
+            1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1,
+            0, 0, 1, 1, 1, 1, 1, 0, 0,
+            0, 0, 1, 1, 1, 1, 1, 0, 0
+        ])
+        
+        let p = b.initialPosition()
+        let pruningSearch = PruningSearch(p)
+        pruningSearch.prune(300)
+        let numSolutions = pruningSearch.search()
+        XCTAssert(numSolutions > 0)
+    }
     
     
     func testWieglebBoard() {
