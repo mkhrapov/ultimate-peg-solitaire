@@ -3,18 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		509CADF62287827D0095C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CADF52287827D0095C07F /* AppDelegate.swift */; };
-		509CADF82287827D0095C07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CADF72287827D0095C07F /* ViewController.swift */; };
 		509CADFB2287827D0095C07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CADF92287827D0095C07F /* Main.storyboard */; };
 		509CADFE2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */; };
 		509CAE002287827E0095C07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509CADFF2287827E0095C07F /* Assets.xcassets */; };
 		509CAE032287827E0095C07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CAE012287827E0095C07F /* LaunchScreen.storyboard */; };
 		509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */; };
 		509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */; };
+		50CD7BCB2311F80700654CA0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BC92311F80700654CA0 /* MainTableViewController.swift */; };
+		50CD7BCF23130B6A00654CA0 /* BoardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */; };
+		50CD7BD023130B6A00654CA0 /* BoardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */; };
+		50CD7BD323130CA000654CA0 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD223130CA000654CA0 /* Board.swift */; };
+		50CD7BD423130CA000654CA0 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD223130CA000654CA0 /* Board.swift */; };
+		50CD7BD6231311FD00654CA0 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD5231311FD00654CA0 /* Position.swift */; };
+		50CD7BD7231311FD00654CA0 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD5231311FD00654CA0 /* Position.swift */; };
+		50CD7BD92313126000654CA0 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD82313126000654CA0 /* Move.swift */; };
+		50CD7BDA2313126000654CA0 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD82313126000654CA0 /* Move.swift */; };
+		50CD7BDC2313158500654CA0 /* PruningSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BDB2313158500654CA0 /* PruningSearch.swift */; };
+		50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BDB2313158500654CA0 /* PruningSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +47,6 @@
 /* Begin PBXFileReference section */
 		509CADF22287827D0095C07F /* UltimatePegSolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePegSolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CADF52287827D0095C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		509CADF72287827D0095C07F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		509CADFA2287827D0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		509CADFD2287827D0095C07F /* UltimatePegSolitaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UltimatePegSolitaire.xcdatamodel; sourceTree = "<group>"; };
 		509CADFF2287827E0095C07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +58,12 @@
 		509CAE142287827E0095C07F /* UltimatePegSolitaireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePegSolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePegSolitaireUITests.swift; sourceTree = "<group>"; };
 		509CAE1A2287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50CD7BC92311F80700654CA0 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardFactory.swift; sourceTree = "<group>"; };
+		50CD7BD223130CA000654CA0 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		50CD7BD5231311FD00654CA0 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		50CD7BD82313126000654CA0 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		50CD7BDB2313158500654CA0 /* PruningSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruningSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +114,15 @@
 		509CADF42287827D0095C07F /* UltimatePegSolitaire */ = {
 			isa = PBXGroup;
 			children = (
+				50CD7BD123130C2000654CA0 /* CustomViews */,
+				50CD7BCD23130B4600654CA0 /* Models */,
 				509CADF52287827D0095C07F /* AppDelegate.swift */,
-				509CADF72287827D0095C07F /* ViewController.swift */,
 				509CADF92287827D0095C07F /* Main.storyboard */,
 				509CADFF2287827E0095C07F /* Assets.xcassets */,
 				509CAE012287827E0095C07F /* LaunchScreen.storyboard */,
 				509CAE042287827E0095C07F /* Info.plist */,
 				509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */,
+				50CD7BC92311F80700654CA0 /* MainTableViewController.swift */,
 			);
 			path = UltimatePegSolitaire;
 			sourceTree = "<group>";
@@ -126,6 +143,25 @@
 				509CAE1A2287827E0095C07F /* Info.plist */,
 			);
 			path = UltimatePegSolitaireUITests;
+			sourceTree = "<group>";
+		};
+		50CD7BCD23130B4600654CA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */,
+				50CD7BD223130CA000654CA0 /* Board.swift */,
+				50CD7BD5231311FD00654CA0 /* Position.swift */,
+				50CD7BD82313126000654CA0 /* Move.swift */,
+				50CD7BDB2313158500654CA0 /* PruningSearch.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50CD7BD123130C2000654CA0 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +244,7 @@
 				};
 			};
 			buildConfigurationList = 509CADED2287827D0095C07F /* Build configuration list for PBXProject "UltimatePegSolitaire" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -259,9 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509CADF82287827D0095C07F /* ViewController.swift in Sources */,
+				50CD7BD92313126000654CA0 /* Move.swift in Sources */,
+				50CD7BCB2311F80700654CA0 /* MainTableViewController.swift in Sources */,
+				50CD7BCF23130B6A00654CA0 /* BoardFactory.swift in Sources */,
+				50CD7BD6231311FD00654CA0 /* Position.swift in Sources */,
+				50CD7BD323130CA000654CA0 /* Board.swift in Sources */,
 				509CADFE2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld in Sources */,
 				509CADF62287827D0095C07F /* AppDelegate.swift in Sources */,
+				50CD7BDC2313158500654CA0 /* PruningSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CD7BDA2313126000654CA0 /* Move.swift in Sources */,
 				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
+				50CD7BD023130B6A00654CA0 /* BoardFactory.swift in Sources */,
+				50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */,
+				50CD7BD7231311FD00654CA0 /* Position.swift in Sources */,
+				50CD7BD423130CA000654CA0 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
