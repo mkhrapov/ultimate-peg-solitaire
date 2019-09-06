@@ -1,6 +1,8 @@
 # Ultimate Peg Solitaire
 An iOS app in Swift.
 
+## Work in progress; not available on the App Store.
+
 Main features:
 
 * Play a collection of most famous Peg Solitaire boards
