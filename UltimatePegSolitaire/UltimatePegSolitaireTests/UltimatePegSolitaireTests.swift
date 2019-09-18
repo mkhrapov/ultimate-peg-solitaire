@@ -399,9 +399,4 @@ class UltimatePegSolitaireTests: XCTestCase {
         let numSolutions = pruningSearch.search()
         XCTAssert(numSolutions > 0)
     }
-    
-    
-    func testTest() {
-        print("Hello, Git!");
-    }
 }
