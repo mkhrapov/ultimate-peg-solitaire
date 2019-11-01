@@ -25,16 +25,11 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
-    let boardFactory = BoardFactory()
+    let boardManager = BoardManager.shared
+    var selectedIndexPath = 0
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         navigationItem.title = "Boards"
         let backItem = UIBarButtonItem()
@@ -50,14 +45,14 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return boardFactory.count
+        return boardManager.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "boardTableViewCell", for: indexPath)
 
-        cell.textLabel?.text = boardFactory[indexPath.row].name
+        cell.textLabel?.text = boardManager[indexPath.row].name
         
         return cell
     }
@@ -98,14 +93,22 @@ class MainTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath.row
+        performSegue(withIdentifier: "SegueToPlayViewController", sender: self)
     }
-    */
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueToPlayViewController" {
+            if let playvc = segue.destination as? PlayViewController {
+                playvc.board = boardManager[selectedIndexPath]
+            }
+        }
+    }
+    
     
 }

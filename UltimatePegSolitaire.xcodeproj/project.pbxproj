@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5067C803236BCAB90022DF4D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C802236BCAB90022DF4D /* PlayViewController.swift */; };
 		509CADF62287827D0095C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CADF52287827D0095C07F /* AppDelegate.swift */; };
 		509CADFB2287827D0095C07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CADF92287827D0095C07F /* Main.storyboard */; };
-		509CADFE2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */; };
 		509CAE002287827E0095C07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509CADFF2287827E0095C07F /* Assets.xcassets */; };
 		509CAE032287827E0095C07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CAE012287827E0095C07F /* LaunchScreen.storyboard */; };
 		509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */; };
 		509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */; };
 		50CD7BCB2311F80700654CA0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BC92311F80700654CA0 /* MainTableViewController.swift */; };
-		50CD7BCF23130B6A00654CA0 /* BoardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */; };
-		50CD7BD023130B6A00654CA0 /* BoardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */; };
+		50CD7BCF23130B6A00654CA0 /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardManager.swift */; };
+		50CD7BD023130B6A00654CA0 /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardManager.swift */; };
 		50CD7BD323130CA000654CA0 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD223130CA000654CA0 /* Board.swift */; };
 		50CD7BD423130CA000654CA0 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD223130CA000654CA0 /* Board.swift */; };
 		50CD7BD6231311FD00654CA0 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD5231311FD00654CA0 /* Position.swift */; };
@@ -45,10 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		509CADF22287827D0095C07F /* UltimatePegSolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePegSolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5067C802236BCAB90022DF4D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		509CADF22287827D0095C07F /* Ultimate Peg Solitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ultimate Peg Solitaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CADF52287827D0095C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509CADFA2287827D0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		509CADFD2287827D0095C07F /* UltimatePegSolitaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UltimatePegSolitaire.xcdatamodel; sourceTree = "<group>"; };
 		509CADFF2287827E0095C07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		509CAE022287827E0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		509CAE042287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePegSolitaireUITests.swift; sourceTree = "<group>"; };
 		509CAE1A2287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CD7BC92311F80700654CA0 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
-		50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardFactory.swift; sourceTree = "<group>"; };
+		50CD7BCE23130B6A00654CA0 /* BoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardManager.swift; sourceTree = "<group>"; };
 		50CD7BD223130CA000654CA0 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		50CD7BD5231311FD00654CA0 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		50CD7BD82313126000654CA0 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		509CADF32287827D0095C07F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				509CADF22287827D0095C07F /* UltimatePegSolitaire.app */,
+				509CADF22287827D0095C07F /* Ultimate Peg Solitaire.app */,
 				509CAE092287827E0095C07F /* UltimatePegSolitaireTests.xctest */,
 				509CAE142287827E0095C07F /* UltimatePegSolitaireUITests.xctest */,
 			);
@@ -121,8 +121,8 @@
 				509CADFF2287827E0095C07F /* Assets.xcassets */,
 				509CAE012287827E0095C07F /* LaunchScreen.storyboard */,
 				509CAE042287827E0095C07F /* Info.plist */,
-				509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */,
 				50CD7BC92311F80700654CA0 /* MainTableViewController.swift */,
+				5067C802236BCAB90022DF4D /* PlayViewController.swift */,
 			);
 			path = UltimatePegSolitaire;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 		50CD7BCD23130B4600654CA0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				50CD7BCE23130B6A00654CA0 /* BoardFactory.swift */,
+				50CD7BCE23130B6A00654CA0 /* BoardManager.swift */,
 				50CD7BD223130CA000654CA0 /* Board.swift */,
 				50CD7BD5231311FD00654CA0 /* Position.swift */,
 				50CD7BD82313126000654CA0 /* Move.swift */,
@@ -181,7 +181,7 @@
 			);
 			name = UltimatePegSolitaire;
 			productName = UltimatePegSolitaire;
-			productReference = 509CADF22287827D0095C07F /* UltimatePegSolitaire.app */;
+			productReference = 509CADF22287827D0095C07F /* Ultimate Peg Solitaire.app */;
 			productType = "com.apple.product-type.application";
 		};
 		509CAE082287827E0095C07F /* UltimatePegSolitaireTests */ = {
@@ -295,12 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5067C803236BCAB90022DF4D /* PlayViewController.swift in Sources */,
 				50CD7BD92313126000654CA0 /* Move.swift in Sources */,
 				50CD7BCB2311F80700654CA0 /* MainTableViewController.swift in Sources */,
-				50CD7BCF23130B6A00654CA0 /* BoardFactory.swift in Sources */,
+				50CD7BCF23130B6A00654CA0 /* BoardManager.swift in Sources */,
 				50CD7BD6231311FD00654CA0 /* Position.swift in Sources */,
 				50CD7BD323130CA000654CA0 /* Board.swift in Sources */,
-				509CADFE2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld in Sources */,
 				509CADF62287827D0095C07F /* AppDelegate.swift in Sources */,
 				50CD7BDC2313158500654CA0 /* PruningSearch.swift in Sources */,
 			);
@@ -312,7 +312,7 @@
 			files = (
 				50CD7BDA2313126000654CA0 /* Move.swift in Sources */,
 				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
-				50CD7BD023130B6A00654CA0 /* BoardFactory.swift in Sources */,
+				50CD7BD023130B6A00654CA0 /* BoardManager.swift in Sources */,
 				50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */,
 				50CD7BD7231311FD00654CA0 /* Position.swift in Sources */,
 				50CD7BD423130CA000654CA0 /* Board.swift in Sources */,
@@ -485,13 +485,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ultimate Peg Solitaire";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -504,13 +505,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ultimate Peg Solitaire";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -638,19 +640,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		509CADFC2287827D0095C07F /* UltimatePegSolitaire.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				509CADFD2287827D0095C07F /* UltimatePegSolitaire.xcdatamodel */,
-			);
-			currentVersion = 509CADFD2287827D0095C07F /* UltimatePegSolitaire.xcdatamodel */;
-			path = UltimatePegSolitaire.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 509CADEA2287827D0095C07F /* Project object */;
 }
