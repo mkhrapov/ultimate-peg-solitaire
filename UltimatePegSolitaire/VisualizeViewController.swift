@@ -1,8 +1,8 @@
 //
-//  PlayViewController.swift
+//  VisualizeViewController.swift
 //  UltimatePegSolitaire
 //
-//  Created by Maksim Khrapov on 10/31/19.
+//  Created by Maksim Khrapov on 11/3/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -24,16 +24,14 @@
 
 import UIKit
 
-class PlayViewController: UIViewController {
-    
-    var board: Board?
+class VisualizeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Play"
+        navigationItem.title = "Visualize"
         let backItem = UIBarButtonItem()
-        backItem.title = "Play"
+        backItem.title = "Visualize"
         navigationItem.backBarButtonItem = backItem
     }
     
