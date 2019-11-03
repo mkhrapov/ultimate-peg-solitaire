@@ -24,7 +24,7 @@
 import Foundation
 
 
-class Position {
+final class Position {
     let board: Board
     var occupied: [Bool]
     var history: [Move]

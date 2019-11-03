@@ -24,7 +24,7 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+final class MainTableViewController: UITableViewController {
     
     let boardManager = BoardManager.shared
     var selectedIndexPath = 0

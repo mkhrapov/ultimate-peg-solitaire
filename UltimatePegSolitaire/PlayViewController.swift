@@ -24,9 +24,14 @@
 
 import UIKit
 
-class PlayViewController: UIViewController {
+final class PlayViewController: UIViewController {
     
     var board: Board?
+    
+    
+    @IBOutlet weak var newGameButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,14 @@ class PlayViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Play"
         navigationItem.backBarButtonItem = backItem
+        
+        newGameButton.layer.cornerRadius = 10
+        newGameButton.clipsToBounds = true
+        undoButton.layer.cornerRadius = 10
+        undoButton.clipsToBounds = true
+        
+        
+        
     }
     
 
@@ -47,5 +60,14 @@ class PlayViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    
+    @IBAction func newGameAction(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func undoAction(_ sender: UIButton) {
+    }
+    
 }

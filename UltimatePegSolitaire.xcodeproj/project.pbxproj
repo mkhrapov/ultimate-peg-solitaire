@@ -14,6 +14,8 @@
 		5067C80C236F35500022DF4D /* SetHolesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C80B236F35500022DF4D /* SetHolesViewController.swift */; };
 		5067C80E236F35770022DF4D /* SetInitialPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C80D236F35770022DF4D /* SetInitialPositionViewController.swift */; };
 		5067C810236F358F0022DF4D /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C80F236F358F0022DF4D /* SetNameViewController.swift */; };
+		5067C812236F81860022DF4D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C811236F81860022DF4D /* BoardView.swift */; };
+		5067C814236F8B570022DF4D /* GlobalStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C813236F8B570022DF4D /* GlobalStateManager.swift */; };
 		509CADF62287827D0095C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CADF52287827D0095C07F /* AppDelegate.swift */; };
 		509CADFB2287827D0095C07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CADF92287827D0095C07F /* Main.storyboard */; };
 		509CAE002287827E0095C07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509CADFF2287827E0095C07F /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		5067C80B236F35500022DF4D /* SetHolesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHolesViewController.swift; sourceTree = "<group>"; };
 		5067C80D236F35770022DF4D /* SetInitialPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInitialPositionViewController.swift; sourceTree = "<group>"; };
 		5067C80F236F358F0022DF4D /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
+		5067C811236F81860022DF4D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		5067C813236F8B570022DF4D /* GlobalStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStateManager.swift; sourceTree = "<group>"; };
 		509CADF22287827D0095C07F /* Ultimate Peg Solitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ultimate Peg Solitaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CADF52287827D0095C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509CADFA2287827D0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 				50CD7BD5231311FD00654CA0 /* Position.swift */,
 				50CD7BD82313126000654CA0 /* Move.swift */,
 				50CD7BDB2313158500654CA0 /* PruningSearch.swift */,
+				5067C813236F8B570022DF4D /* GlobalStateManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 		50CD7BD123130C2000654CA0 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				5067C811236F81860022DF4D /* BoardView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5067C814236F8B570022DF4D /* GlobalStateManager.swift in Sources */,
 				5067C803236BCAB90022DF4D /* PlayViewController.swift in Sources */,
 				50CD7BD92313126000654CA0 /* Move.swift in Sources */,
 				50CD7BCB2311F80700654CA0 /* MainTableViewController.swift in Sources */,
@@ -333,6 +340,7 @@
 				5067C805236F345F0022DF4D /* SolveViewController.swift in Sources */,
 				50CD7BD323130CA000654CA0 /* Board.swift in Sources */,
 				509CADF62287827D0095C07F /* AppDelegate.swift in Sources */,
+				5067C812236F81860022DF4D /* BoardView.swift in Sources */,
 				50CD7BDC2313158500654CA0 /* PruningSearch.swift in Sources */,
 				5067C80E236F35770022DF4D /* SetInitialPositionViewController.swift in Sources */,
 			);

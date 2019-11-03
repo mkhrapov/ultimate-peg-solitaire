@@ -1,5 +1,5 @@
 //
-//  VisualizeViewController.swift
+//  BoardView.swift
 //  UltimatePegSolitaire
 //
 //  Created by Maksim Khrapov on 11/3/19.
@@ -24,26 +24,12 @@
 
 import UIKit
 
-final class VisualizeViewController: UIViewController {
+final class BoardView: UIView {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        navigationItem.title = "Visualize"
-        let backItem = UIBarButtonItem()
-        backItem.title = "Visualize"
-        navigationItem.backBarButtonItem = backItem
+    
+    override func draw(_ rect: CGRect) {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

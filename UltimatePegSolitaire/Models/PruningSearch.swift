@@ -25,7 +25,7 @@
 import Foundation
 
 
-class PruningSearch {
+final class PruningSearch {
     let initialPosition: Position
     var pruningNumber = 200
     var solutions = [Position]()

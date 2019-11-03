@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="moz-kC-FJy">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,17 +11,17 @@
         <!--Main Table View Controller-->
         <scene sceneID="dC0-FD-jDR">
             <objects>
-                <tableViewController id="3ar-uW-hvh" customClass="MainTableViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3ar-uW-hvh" customClass="MainTableViewController" customModule="Ultimate_Peg_Solitaire" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SlS-h6-wAy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardTableViewCell" rowHeight="46" id="gPP-R0-V6m">
-                                <rect key="frame" x="0.0" y="28" width="600" height="46"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gPP-R0-V6m" id="0lo-kx-dwm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -47,10 +49,32 @@
         <!--Play View Controller-->
         <scene sceneID="J57-cT-cfO">
             <objects>
-                <viewController id="FwV-rD-nAO" customClass="PlayViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FwV-rD-nAO" customClass="PlayViewController" customModule="Ultimate_Peg_Solitaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r5u-bv-44q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woT-fW-8az">
+                                <rect key="frame" x="20" y="646" width="130" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGameAction:" destination="FwV-rD-nAO" eventType="touchUpInside" id="PGu-Dz-vAb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6Q-0s-ykg">
+                                <rect key="frame" x="264" y="646" width="130" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="&lt;&lt; Undo"/>
+                                <connections>
+                                    <action selector="undoAction:" destination="FwV-rD-nAO" eventType="touchUpInside" id="NBu-2c-ofi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="52b-x8-Brh"/>
                     </view>
@@ -61,17 +85,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newGameButton" destination="woT-fW-8az" id="hci-AD-RYd"/>
+                        <outlet property="undoButton" destination="k6Q-0s-ykg" id="EpY-OT-sda"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFa-QX-MPF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823" y="121"/>
+            <point key="canvasLocation" x="2821.739130434783" y="120.65217391304348"/>
         </scene>
         <!--Set Board Size View Controller-->
         <scene sceneID="XXG-Zp-Bso">
             <objects>
                 <viewController id="zHE-jz-hSe" customClass="SetBoardSizeViewController" customModule="Ultimate_Peg_Solitaire" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yZd-Zb-FC3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hww-cj-gJf"/>
@@ -93,7 +121,7 @@
             <objects>
                 <viewController id="0Ud-v7-HmW" customClass="SetHolesViewController" customModule="Ultimate_Peg_Solitaire" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fDz-vb-1Yi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OYc-9h-VVk"/>
@@ -115,7 +143,7 @@
             <objects>
                 <viewController id="WYK-bk-Oma" customClass="SetInitialPositionViewController" customModule="Ultimate_Peg_Solitaire" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KlH-pn-0ZA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="67I-mT-o8f"/>
@@ -137,7 +165,7 @@
             <objects>
                 <viewController id="Yte-ej-FBt" customClass="SetNameViewController" customModule="Ultimate_Peg_Solitaire" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZGZ-qd-3dc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Hl-fm-ree"/>
@@ -153,7 +181,7 @@
             <objects>
                 <viewController id="DwS-6A-BBb" customClass="SolveViewController" customModule="Ultimate_Peg_Solitaire" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cs6-kB-X00">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GR2-zd-ijy"/>
@@ -175,7 +203,7 @@
             <objects>
                 <viewController id="cWW-MQ-ecb" customClass="VisualizeViewController" customModule="Ultimate_Peg_Solitaire" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Hr-e0-cnE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4Xz-G6-R85"/>

@@ -24,7 +24,7 @@
 
 import UIKit
 
-class SolveViewController: UIViewController {
+final class SolveViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

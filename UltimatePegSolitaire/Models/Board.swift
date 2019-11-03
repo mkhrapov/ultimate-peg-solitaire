@@ -23,7 +23,7 @@
 
 import Foundation
 
-class Board {
+final class Board {
     let X: Int
     let Y: Int
     let initX: Int

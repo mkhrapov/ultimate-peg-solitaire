@@ -24,7 +24,7 @@
 
 import UIKit
 
-class SetHolesViewController: UIViewController {
+final class SetHolesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

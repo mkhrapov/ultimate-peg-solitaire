@@ -23,7 +23,7 @@
 
 import Foundation
 
-class BoardManager {
+final class BoardManager {
     static let shared = BoardManager()
 
     private var boards = [Board]()

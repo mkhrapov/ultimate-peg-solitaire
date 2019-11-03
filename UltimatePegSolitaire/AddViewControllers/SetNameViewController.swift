@@ -24,7 +24,7 @@
 
 import UIKit
 
-class SetNameViewController: UIViewController {
+final class SetNameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

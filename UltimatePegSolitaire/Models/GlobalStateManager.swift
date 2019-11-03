@@ -1,5 +1,5 @@
 //
-//  VisualizeViewController.swift
+//  GlobalStateManager.swift
 //  UltimatePegSolitaire
 //
 //  Created by Maksim Khrapov on 11/3/19.
@@ -22,28 +22,18 @@
 // limitations under the License.
 
 
-import UIKit
+import Foundation
 
-final class VisualizeViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        navigationItem.title = "Visualize"
-        let backItem = UIBarButtonItem()
-        backItem.title = "Visualize"
-        navigationItem.backBarButtonItem = backItem
+final class GlobalStateManager {
+    static var shared = GlobalStateManager()
+    
+    
+    
+    init() {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

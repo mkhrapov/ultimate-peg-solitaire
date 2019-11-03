@@ -24,7 +24,7 @@
 
 import UIKit
 
-class SetBoardSizeViewController: UIViewController {
+final class SetBoardSizeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

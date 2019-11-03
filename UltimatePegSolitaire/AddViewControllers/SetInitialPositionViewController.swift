@@ -24,7 +24,7 @@
 
 import UIKit
 
-class SetInitialPositionViewController: UIViewController {
+final class SetInitialPositionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
