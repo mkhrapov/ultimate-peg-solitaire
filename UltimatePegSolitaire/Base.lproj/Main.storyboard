@@ -54,7 +54,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woT-fW-8az">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="woT-fW-8az">
                                 <rect key="frame" x="20" y="646" width="130" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,7 +64,7 @@
                                     <action selector="newGameAction:" destination="FwV-rD-nAO" eventType="touchUpInside" id="PGu-Dz-vAb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6Q-0s-ykg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="k6Q-0s-ykg">
                                 <rect key="frame" x="264" y="646" width="130" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,8 +74,22 @@
                                     <action selector="undoAction:" destination="FwV-rD-nAO" eventType="touchUpInside" id="NBu-2c-ofi"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WW9-CC-SRI" customClass="BoardView" customModule="Ultimate_Peg_Solitaire" customModuleProvider="target">
+                                <rect key="frame" x="10" y="54" width="394" height="394"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="DIr-NM-flp"/>
+                                    <constraint firstAttribute="width" secondItem="WW9-CC-SRI" secondAttribute="height" multiplier="1:1" id="X3p-hL-1vm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WW9-CC-SRI" firstAttribute="top" secondItem="52b-x8-Brh" secondAttribute="top" constant="10" id="Gj3-Wa-Y5X"/>
+                            <constraint firstItem="52b-x8-Brh" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WW9-CC-SRI" secondAttribute="bottom" constant="10" id="Kvb-f0-N5c"/>
+                            <constraint firstItem="WW9-CC-SRI" firstAttribute="centerX" secondItem="52b-x8-Brh" secondAttribute="centerX" id="PW3-bK-FGx"/>
+                            <constraint firstItem="WW9-CC-SRI" firstAttribute="leading" secondItem="52b-x8-Brh" secondAttribute="leading" priority="750" constant="10" id="get-5p-pou"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="52b-x8-Brh"/>
                     </view>
                     <navigationItem key="navigationItem" id="PhH-sb-B7i">

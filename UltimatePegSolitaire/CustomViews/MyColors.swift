@@ -1,8 +1,8 @@
 //
-//  BoardView.swift
+//  MyColors.swift
 //  UltimatePegSolitaire
 //
-//  Created by Maksim Khrapov on 11/3/19.
+//  Created by Maksim Khrapov on 11/4/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -22,21 +22,28 @@
 // limitations under the License.
 
 
+import Foundation
 import UIKit
 
-final class BoardView: UIView {
 
+
+final class MyColors {
     
-    override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
+    lazy var holeColor = makeColor(0, 255, 0)
+    
+    init() {
         
-        let myColors = MyColors()
-        
-        context.setFillColor(myColors.holeColor)
-        context.fill(bounds)
     }
     
-
+    
+    func makeColor(_ red: Int, _ green: Int, _ blue: Int) -> CGColor {
+        let scale:CGFloat = 255.0
+        
+        return UIColor(
+            red: CGFloat(red)/scale,
+            green: CGFloat(green)/scale,
+            blue: CGFloat(blue)/scale,
+            alpha: 1.0
+            ).cgColor
+    }
 }
