@@ -105,8 +105,8 @@ final class MainTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueToPlayViewController" {
-            if let playvc = segue.destination as? PlayViewController {
-                playvc.board = boardManager[selectedIndexPath]
+            if segue.destination is PlayViewController {
+                GlobalStateManager.shared.currentPlayingBoardName = boardManager[selectedIndexPath].name
             }
         }
     }

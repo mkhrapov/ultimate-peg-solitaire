@@ -28,10 +28,24 @@ import Foundation
 final class GlobalStateManager {
     static var shared = GlobalStateManager()
     
+    var currentPlayingBoardName: String?
+    var games: [String:GameState]
     
     
     init() {
-        
+        games = [String:GameState]()
+    }
+    
+    
+    func getGameByName(_ name: String) -> GameState? {
+        if let gameState = games[name] {
+            return gameState
+        }
+        else {
+            let gameState = GameState(name)
+            games[name] = gameState
+            return gameState
+        }
     }
     
     

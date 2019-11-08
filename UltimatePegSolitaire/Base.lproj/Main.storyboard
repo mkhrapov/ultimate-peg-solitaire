@@ -100,6 +100,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="boardView" destination="WW9-CC-SRI" id="BTA-6S-qSS"/>
                         <outlet property="newGameButton" destination="woT-fW-8az" id="hci-AD-RYd"/>
                         <outlet property="undoButton" destination="k6Q-0s-ykg" id="EpY-OT-sda"/>
                     </connections>

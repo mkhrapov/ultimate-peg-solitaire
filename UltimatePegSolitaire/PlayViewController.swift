@@ -31,8 +31,8 @@ final class PlayViewController: UIViewController {
     
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var boardView: BoardView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,8 +46,10 @@ final class PlayViewController: UIViewController {
         undoButton.layer.cornerRadius = 10
         undoButton.clipsToBounds = true
         
-        
-        
+        if let name = GlobalStateManager.shared.currentPlayingBoardName {
+            let gameState = GlobalStateManager.shared.getGameByName(name)
+            boardView.gameState = gameState
+        }
     }
     
 

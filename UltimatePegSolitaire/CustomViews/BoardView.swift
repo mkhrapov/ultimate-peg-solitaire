@@ -25,18 +25,48 @@
 import UIKit
 
 final class BoardView: UIView {
-
+    var gameState: GameState?
     
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
         
-        let myColors = MyColors()
+        guard let gameState = gameState else {
+            return
+        }
         
-        context.setFillColor(myColors.holeColor)
-        context.fill(bounds)
+        let draw = Draw(context, bounds, gameState)
+        draw.draw()
     }
     
-
+    
+    final class Draw {
+        let context: CGContext
+        let rect: CGRect
+        let gameState: GameState
+        let myColors: MyColors
+        
+        
+        init(_ c: CGContext, _ r: CGRect, _ gs: GameState) {
+            context = c
+            rect = r
+            gameState = gs
+            myColors = MyColors()
+            
+        }
+        
+        
+        func draw() {
+            fillBackground()
+            
+        }
+        
+        
+        func fillBackground() {
+            context.setFillColor(myColors.background)
+            context.fill(rect)
+        }
+        
+    }
 }

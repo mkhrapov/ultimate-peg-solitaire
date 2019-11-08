@@ -1,8 +1,8 @@
 //
-//  MyColors.swift
+//  GameState.swift
 //  UltimatePegSolitaire
 //
-//  Created by Maksim Khrapov on 11/4/19.
+//  Created by Maksim Khrapov on 11/7/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -23,37 +23,23 @@
 
 
 import Foundation
-import UIKit
 
 
-
-final class MyColors {
+final class GameState {
+    var board: Board
+    var positions: [Position]
     
-    lazy var holeColor = makeColor(0, 255, 0)
     
-    var background: CGColor {
-        if #available(iOS 13.0, *) {
-            return UIColor.systemBackground.cgColor
+    
+    
+    init?(_ name: String) {
+        if let board = BoardManager.shared.getBoardByName(name) {
+            self.board = board
+            self.positions = [Position]()
+            self.positions.append(self.board.initialPosition())
         }
         else {
-            return UIColor.white.cgColor
+            return nil
         }
-    }
-    
-    
-    init() {
-        
-    }
-    
-    
-    func makeColor(_ red: Int, _ green: Int, _ blue: Int) -> CGColor {
-        let scale:CGFloat = 255.0
-        
-        return UIColor(
-            red: CGFloat(red)/scale,
-            green: CGFloat(green)/scale,
-            blue: CGFloat(blue)/scale,
-            alpha: 1.0
-            ).cgColor
     }
 }

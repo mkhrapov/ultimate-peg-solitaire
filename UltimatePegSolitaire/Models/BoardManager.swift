@@ -33,6 +33,16 @@ final class BoardManager {
     }
     
     
+    func getBoardByName(_ name: String) -> Board? {
+        for board in boards {
+            if board.name == name {
+                return board
+            }
+        }
+        return nil
+    }
+    
+    
     var count: Int {
         get {
             return boards.count
