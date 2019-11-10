@@ -26,8 +26,6 @@ import UIKit
 
 final class PlayViewController: UIViewController {
     
-    var board: Board?
-    
     
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
@@ -46,10 +44,7 @@ final class PlayViewController: UIViewController {
         undoButton.layer.cornerRadius = 10
         undoButton.clipsToBounds = true
         
-        if let name = GlobalStateManager.shared.currentPlayingBoardName {
-            let gameState = GlobalStateManager.shared.getGameByName(name)
-            boardView.gameState = gameState
-        }
+        boardView.gameState = GlobalStateManager.shared.getCurrentPlayingBoard()
     }
     
 
@@ -66,10 +61,32 @@ final class PlayViewController: UIViewController {
     
     
     @IBAction func newGameAction(_ sender: UIButton) {
+        boardView.gameState = GlobalStateManager.shared.replaceCurrentPlayingBoard()
+        boardView.setNeedsDisplay()
     }
     
     
     @IBAction func undoAction(_ sender: UIButton) {
+        boardView.gameState?.undo()
+        boardView.setNeedsDisplay()
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let loc = touch.location(in: boardView)
+        
+        if loc.x < 0 || loc.y < 0 || loc.x > boardView.bounds.width || loc.y > boardView.bounds.height {
+            return
+        }
+        
+        if let (x, y) = boardView.decipher(loc.x, loc.y) {
+            boardView.gameState?.touch(x, y)
+            boardView.setNeedsDisplay()
+        }
     }
     
 }

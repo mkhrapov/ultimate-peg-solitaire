@@ -41,6 +41,20 @@ final class BoardView: UIView {
     }
     
     
+    func decipher(_ px: CGFloat, _ py: CGFloat) -> (Int, Int)? {
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        
+        guard let gameState = gameState else {
+            return nil
+        }
+        
+        let draw = Draw(context, bounds, gameState)
+        return draw.decipher(px, py)
+    }
+    
+    
     final class Draw {
         let context: CGContext
         let rect: CGRect
@@ -67,6 +81,20 @@ final class BoardView: UIView {
             calcParams()
             fillBackground()
             drawCells()
+        }
+        
+        
+        func decipher(_ px: CGFloat, _ py: CGFloat) -> (Int, Int)? {
+            calcParams()
+            
+            let x = Int(floor((px - offsetX)/cellSize))
+            let y = Int(floor((py - offsetY)/cellSize))
+            
+            if x < 0 || y < 0 || x >= X || y >= Y {
+                return nil
+            }
+            
+            return (x, y)
         }
         
         
@@ -97,10 +125,21 @@ final class BoardView: UIView {
         func drawCells() {
             for x in 0..<X {
                 for y in 0..<Y {
-                    //let i = y*X + x
+                    let i = y*X + x
                     if gameState.board.isAllowed(x, y) {
                         let cell = makeCell(x, y)
                         drawBorder(cell)
+                        if gameState.last.isOccupied(x, y) {
+                            if gameState.last.selected == i {
+                                drawPeg(cell: cell, color: myColors.selected)
+                            }
+                            else {
+                                drawPeg(cell: cell, color: myColors.normal)
+                            }
+                        }
+                        else if gameState.last.isValidMoveTarget(x, y) {
+                            drawPeg(cell: cell, color: myColors.allowed)
+                        }
                     }
                 }
             }
@@ -120,6 +159,24 @@ final class BoardView: UIView {
             context.beginPath()
             context.addRect(cell)
             context.strokePath()
+        }
+        
+        
+        func drawPeg(cell: CGRect, color: CGColor) {
+            let smallCell = shrinkCell(cell)
+            
+            context.setFillColor(color)
+            context.fillEllipse(in: smallCell)
+        }
+        
+        
+        func shrinkCell(_ cell: CGRect) -> CGRect {
+            return CGRect(
+                x: cell.minX + CGFloat(2.0),
+                y: cell.minY + CGFloat(2.0),
+                width: cell.width - CGFloat(4.0),
+                height: cell.height - CGFloat(4.0)
+            )
         }
     }
 }

@@ -85,7 +85,7 @@ final class PruningSearch {
         }
         
         if pruningNumber > 0 && children.count > pruningNumber {
-            var children2 = children.sorted(by: { $0.getScore() < $1.getScore() } )
+            let children2 = children.sorted(by: { $0.getScore() < $1.getScore() } )
             var children3 = [Position]()
             for i in 0..<pruningNumber {
                 children3.append(children2[i])

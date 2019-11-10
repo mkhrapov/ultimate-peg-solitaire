@@ -29,7 +29,14 @@ final class GameState {
     var board: Board
     var positions: [Position]
     
-    
+    var last: Position {
+        if let position = positions.last {
+            return position
+        }
+        else {
+            fatalError("Positions array must always be non-emtry")
+        }
+    }
     
     
     init?(_ name: String) {
@@ -40,6 +47,47 @@ final class GameState {
         }
         else {
             return nil
+        }
+    }
+    
+    
+    func undo() {
+        if positions.count > 1 {
+            positions.remove(at: positions.endIndex)
+        }
+    }
+    
+    
+    func touch(_ x: Int, _ y: Int) {
+        if board.isAllowed(x, y) {
+            if last.selected == -1 {
+                if last.isOccupied(x, y) {
+                    last.select(x, y)
+                }
+            }
+            else {
+                if last.isOccupied(x, y) {
+                    last.select(x, y)
+                }
+                else {
+                    if last.isValidMoveTarget(x, y) {
+                        applyMove(x, y)
+                    }
+                    else {
+                        last.deselect()
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func applyMove(_ x: Int, _ y: Int) {
+        let i = y*board.X + x
+        if let move = last.validMoves[i] {
+            let child = last.child(move)
+            last.deselect()
+            positions.append(child)
         }
     }
 }

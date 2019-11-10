@@ -49,5 +49,25 @@ final class GlobalStateManager {
     }
     
     
+    func getCurrentPlayingBoard() -> GameState? {
+        guard let name = currentPlayingBoardName else {
+            return nil
+        }
+        
+        return getGameByName(name)
+    }
+    
+    
+    func replaceCurrentPlayingBoard() -> GameState? {
+        guard let name = currentPlayingBoardName else {
+            return nil
+        }
+        
+        let gameState = GameState(name)
+        games[name] = gameState
+        return gameState
+    }
+    
+    
     
 }

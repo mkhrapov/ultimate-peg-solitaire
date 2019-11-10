@@ -150,6 +150,7 @@ final class Position {
         history.append(move)
     }
     
+    
     func undo() {
         guard let move = history.last else {
             return

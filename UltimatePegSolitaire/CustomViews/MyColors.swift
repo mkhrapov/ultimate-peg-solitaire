@@ -29,7 +29,9 @@ import UIKit
 
 final class MyColors {
     
-    lazy var holeColor = makeColor(0, 255, 0)
+    lazy var normal = makeColor(124, 207, 124)
+    lazy var selected = makeColor(0, 153, 0)
+    lazy var allowed = UIColor.gray.cgColor
     
     var background: CGColor {
         if #available(iOS 13.0, *) {
