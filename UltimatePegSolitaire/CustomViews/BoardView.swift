@@ -46,6 +46,11 @@ final class BoardView: UIView {
         let rect: CGRect
         let gameState: GameState
         let myColors: MyColors
+        var offsetX: CGFloat = 1.0
+        var offsetY: CGFloat = 1.0
+        var cellSize: CGFloat = 0.0
+        let X: Int
+        let Y: Int
         
         
         init(_ c: CGContext, _ r: CGRect, _ gs: GameState) {
@@ -53,13 +58,33 @@ final class BoardView: UIView {
             rect = r
             gameState = gs
             myColors = MyColors()
-            
+            X = gameState.board.X
+            Y = gameState.board.Y
         }
         
         
         func draw() {
+            calcParams()
             fillBackground()
+            drawCells()
+        }
+        
+        
+        func calcParams() {
+            let width = rect.width - CGFloat(2.0)
+            let height = rect.height - CGFloat(2.0)
             
+            if X > Y {
+                cellSize = width / CGFloat(X)
+                offsetY = (height - cellSize*CGFloat(Y))/2.0 + CGFloat(1.0)
+            }
+            else if Y > X {
+                cellSize = height / CGFloat(Y)
+                offsetX = (width - cellSize*CGFloat(X))/2.0 + CGFloat(1.0)
+            }
+            else {
+                cellSize = width / CGFloat(X)
+            }
         }
         
         
@@ -68,5 +93,33 @@ final class BoardView: UIView {
             context.fill(rect)
         }
         
+        
+        func drawCells() {
+            for x in 0..<X {
+                for y in 0..<Y {
+                    //let i = y*X + x
+                    if gameState.board.isAllowed(x, y) {
+                        let cell = makeCell(x, y)
+                        drawBorder(cell)
+                    }
+                }
+            }
+        }
+        
+        
+        func makeCell(_ x: Int, _ y: Int) -> CGRect {
+            let dx = offsetX + cellSize*CGFloat(x)
+            let dy = offsetY + cellSize*CGFloat(y)
+            return CGRect(x: dx, y: dy, width: cellSize, height: cellSize)
+        }
+        
+        
+        func drawBorder(_ cell: CGRect) {
+            context.setStrokeColor(myColors.border)
+            context.setLineWidth(1)
+            context.beginPath()
+            context.addRect(cell)
+            context.strokePath()
+        }
     }
 }

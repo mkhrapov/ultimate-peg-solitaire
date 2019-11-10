@@ -65,7 +65,7 @@
 		5067C811236F81860022DF4D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		5067C813236F8B570022DF4D /* GlobalStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStateManager.swift; sourceTree = "<group>"; };
 		5067C8152370FFFA0022DF4D /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
-		509CADF22287827D0095C07F /* Ultimate Peg Solitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ultimate Peg Solitaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		509CADF22287827D0095C07F /* UltimatePegSolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePegSolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CADF52287827D0095C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509CADFA2287827D0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		509CADFF2287827E0095C07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		509CADF32287827D0095C07F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				509CADF22287827D0095C07F /* Ultimate Peg Solitaire.app */,
+				509CADF22287827D0095C07F /* UltimatePegSolitaire.app */,
 				509CAE092287827E0095C07F /* UltimatePegSolitaireTests.xctest */,
 				509CAE142287827E0095C07F /* UltimatePegSolitaireUITests.xctest */,
 			);
@@ -219,7 +219,7 @@
 			);
 			name = UltimatePegSolitaire;
 			productName = UltimatePegSolitaire;
-			productReference = 509CADF22287827D0095C07F /* Ultimate Peg Solitaire.app */;
+			productReference = 509CADF22287827D0095C07F /* UltimatePegSolitaire.app */;
 			productType = "com.apple.product-type.application";
 		};
 		509CAE082287827E0095C07F /* UltimatePegSolitaireTests */ = {
@@ -540,7 +540,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaire;
-				PRODUCT_NAME = "Ultimate Peg Solitaire";
+				PRODUCT_NAME = UltimatePegSolitaire;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -560,7 +560,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.UltimatePegSolitaire;
-				PRODUCT_NAME = "Ultimate Peg Solitaire";
+				PRODUCT_NAME = UltimatePegSolitaire;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

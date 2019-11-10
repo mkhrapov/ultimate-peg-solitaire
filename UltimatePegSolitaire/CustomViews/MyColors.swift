@@ -40,6 +40,19 @@ final class MyColors {
         }
     }
     
+    var border: CGColor {
+        if #available(iOS 13.0, *) {
+            if UITraitCollection.current.userInterfaceStyle == .dark {
+                return UIColor.gray.cgColor
+            }
+            else {
+                return UIColor.black.cgColor
+            }
+        }
+        else {
+            return UIColor.black.cgColor
+        }
+    }
     
     init() {
         
