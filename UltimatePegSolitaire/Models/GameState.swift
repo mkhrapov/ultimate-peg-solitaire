@@ -53,7 +53,7 @@ final class GameState {
     
     func undo() {
         if positions.count > 1 {
-            positions.remove(at: positions.endIndex)
+            positions.remove(at: positions.endIndex - 1)
         }
     }
     
