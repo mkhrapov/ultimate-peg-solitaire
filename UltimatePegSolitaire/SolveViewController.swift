@@ -26,6 +26,14 @@ import UIKit
 
 final class SolveViewController: UIViewController {
 
+    
+    @IBOutlet weak var pruningNumberTextField: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var gameState: GameState?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +41,40 @@ final class SolveViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Solve"
         navigationItem.backBarButtonItem = backItem
+        
+        gameState = GlobalStateManager.shared.getCurrentPlayingBoard()
+        setResultsLabel()
+        setPruningNumberTextField()
+    }
+    
+    
+    func setResultsLabel() {
+        if let gameState = gameState, let _ = gameState.board.solution {
+            let time = gameState.board.timeToSolveSeconds
+            let prefix = gameState.board.complementary ? "Complementary" : "A"
+            resultLabel.text = "\(prefix) solution has been found in \(time) sec"
+        }
+        else {
+            resultLabel.text = "No solution has been found in 0.0 sec"
+        }
+    }
+    
+    
+    func setPruningNumberTextField() {
+        if let gameState = gameState {
+            let pruningNumber = gameState.board.pruningNumber
+            pruningNumberTextField.text = "\(pruningNumber)"
+        }
+        else {
+            pruningNumberTextField.text = "200"
+        }
+    }
+    
+    
+    
+    
+    
+    @IBAction func solveButton(_ sender: UIButton) {
     }
     
 

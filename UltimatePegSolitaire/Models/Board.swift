@@ -26,12 +26,15 @@ import Foundation
 final class Board {
     let X: Int
     let Y: Int
-    let initX: Int
-    let initY: Int
-    let name: String
     let allowed: [Bool]
-    // pruningNumber (default 200)
-    // image data
+    
+    var initX: Int
+    var initY: Int
+    var name: String
+    var pruningNumber = 200
+    var timeToSolveSeconds = 0.0
+    var solution: [Move]? = nil
+    var complementary = false
     
     
     init(_ x: Int, _ y: Int, _ init_x: Int, _ init_y: Int, _ name: String, _ initAllowed: [Int]) {
