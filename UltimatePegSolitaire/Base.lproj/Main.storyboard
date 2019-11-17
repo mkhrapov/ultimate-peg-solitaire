@@ -3,7 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -270,14 +270,55 @@
                     <view key="view" contentMode="scaleToFill" id="6Hr-e0-cnE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2c-kv-a0d">
+                                <rect key="frame" x="20" y="646" width="130" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="cWW-MQ-ecb" eventType="touchUpInside" id="x7Q-1b-Bro"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VS-QU-yvl">
+                                <rect key="frame" x="264" y="646" width="130" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Next &gt;&gt;"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="cWW-MQ-ecb" eventType="touchUpInside" id="fzU-Zo-6Vg"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzT-IH-dXE" customClass="VisualizeBoardView" customModule="UltimatePegSolitaire" customModuleProvider="target">
+                                <rect key="frame" x="10" y="54" width="394" height="394"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LzT-IH-dXE" secondAttribute="height" multiplier="1:1" id="OmA-yP-6fj"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="bG3-Ed-gI9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LzT-IH-dXE" firstAttribute="leading" secondItem="4Xz-G6-R85" secondAttribute="leading" priority="750" constant="10" id="Fpr-Jn-BEu"/>
+                            <constraint firstItem="LzT-IH-dXE" firstAttribute="top" secondItem="4Xz-G6-R85" secondAttribute="top" constant="10" id="aQ4-oQ-weS"/>
+                            <constraint firstItem="4Xz-G6-R85" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LzT-IH-dXE" secondAttribute="bottom" constant="10" id="h8Y-g4-yHs"/>
+                            <constraint firstItem="LzT-IH-dXE" firstAttribute="centerX" secondItem="4Xz-G6-R85" secondAttribute="centerX" id="tDm-He-9dJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Xz-G6-R85"/>
                     </view>
                     <navigationItem key="navigationItem" id="DlP-Oj-v65"/>
+                    <connections>
+                        <outlet property="nextButton" destination="4VS-QU-yvl" id="c54-Va-aaS"/>
+                        <outlet property="startButton" destination="C2c-kv-a0d" id="5ZT-Wf-kpm"/>
+                        <outlet property="visualizeBoardView" destination="LzT-IH-dXE" id="dC0-SI-5y8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQL-hH-gUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4382" y="121"/>
+            <point key="canvasLocation" x="4379.7101449275369" y="120.65217391304348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yoe-bS-eTh">

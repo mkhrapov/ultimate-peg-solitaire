@@ -26,6 +26,11 @@ import UIKit
 
 final class VisualizeViewController: UIViewController {
 
+    @IBOutlet weak var visualizeBoardView: VisualizeBoardView!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,17 +38,36 @@ final class VisualizeViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Visualize"
         navigationItem.backBarButtonItem = backItem
+        
+        startButton.layer.cornerRadius = 10
+        startButton.clipsToBounds = true
+        nextButton.layer.cornerRadius = 10
+        nextButton.clipsToBounds = true
+        
+        visualizeBoardView.gameState = GlobalStateManager.shared.getCurrentPlayingBoard()
+        
+        if let gameState = visualizeBoardView.gameState {
+            if gameState.solution == nil {
+                gameState.resetVisualization()
+            }
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func startButtonAction(_ sender: UIButton) {
+        if let gameState = visualizeBoardView.gameState {
+            gameState.resetVisualization()
+            visualizeBoardView.setNeedsDisplay()
+        }
     }
-    */
-
+    
+    @IBAction func nextButtonAction(_ sender: UIButton) {
+        if let gameState = visualizeBoardView.gameState {
+            gameState.next()
+            visualizeBoardView.setNeedsDisplay()
+        }
+    }
+    
+    
 }

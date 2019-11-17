@@ -95,9 +95,6 @@ final class SolveViewController: UIViewController {
     }
     
     
-    
-    
-    
     @IBAction func solveButtonAction(_ sender: UIButton) {
         if let gameState = gameState,
            let text = pruningNumberTextField.text,
@@ -106,7 +103,6 @@ final class SolveViewController: UIViewController {
         {
             // TODO persist
             gameState.board.pruningNumber = pruningNumber
-            print("PruningNumber: \(pruningNumber)")
             activityIndicator.startAnimating()
             
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
@@ -157,16 +153,4 @@ final class SolveViewController: UIViewController {
             setError("Pruning number must be an integer between 1 and 10000")
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

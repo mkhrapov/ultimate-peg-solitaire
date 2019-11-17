@@ -28,6 +28,9 @@ import Foundation
 final class GameState {
     var board: Board
     var positions: [Position]
+    var solution: Position?
+    var moveIndex = 0
+    var showArrows = false
     
     var last: Position {
         if let position = positions.last {
@@ -88,6 +91,40 @@ final class GameState {
             let child = last.child(move)
             last.deselect()
             positions.append(child)
+        }
+    }
+    
+    
+    func resetVisualization() {
+        solution = board.initialPosition()
+        moveIndex = 0
+        showArrows = false
+    }
+    
+    
+    func next() {
+        guard let moves = board.solution else {
+            return
+        }
+        
+        guard let solution = solution else {
+            return
+        }
+        
+        if showArrows {
+            showArrows = false
+            if moveIndex < moves.endIndex {
+                let move = moves[moveIndex]
+                
+                if solution.legalMove(move) {
+                    moveIndex += 1
+                    solution.select(move.sourceX, move.sourceY)
+                    solution.move(move.targetX, move.targetY)
+                }
+            }
+        }
+        else {
+            showArrows = true
         }
     }
 }
