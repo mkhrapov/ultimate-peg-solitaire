@@ -246,6 +246,115 @@ class VisualizeBoardView: UIView {
             context.addLine(to: CGPoint(x: x2, y: y2))
             
             context.strokePath()
+            
+            // draw Arrow's Head
+            if move.sourceY == move.targetY {
+                // horizontal arrow
+                if move.sourceX < move.targetX {
+                    arrowPointsRight(move.targetX, move.targetY)
+                }
+                else {
+                    arrowPointsLeft(move.targetX, move.targetY)
+                }
+            }
+            else if move.sourceX == move.targetX {
+                // vertical arrows; larger Y go down
+                if move.sourceY < move.targetY {
+                    arrowPointsDown(move.targetX, move.targetY)
+                }
+                else {
+                    arrowPointsUp(move.targetX, move.targetY)
+                }
+            }
+            
+        }
+        
+        
+        func arrowPointsRight(_ x: Int, _ y: Int) {
+            arrowNorthWest(x, y)
+            arrowSouthWest(x, y)
+        }
+        
+        
+        func arrowPointsLeft(_ x: Int, _ y: Int) {
+            arrowNorthEast(x, y)
+            arrowSouthEast(x, y)
+        }
+        
+        
+        func arrowPointsUp(_ x: Int, _ y: Int) {
+            arrowSouthWest(x, y)
+            arrowSouthEast(x, y)
+        }
+        
+        
+        func arrowPointsDown(_ x: Int, _ y: Int) {
+            arrowNorthWest(x, y)
+            arrowNorthEast(x, y)
+        }
+        
+        
+        func arrowNorthWest(_ x: Int, _ y: Int) {
+            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            
+            let x2 = x1 - 10.0
+            let y2 = y1 - 10.0
+            
+            context.beginPath()
+            
+            context.move(to: CGPoint(x: x1, y: y1))
+            context.addLine(to: CGPoint(x: x2, y: y2))
+            
+            context.strokePath()
+        }
+        
+        
+        func arrowNorthEast(_ x: Int, _ y: Int) {
+            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            
+            let x2 = x1 + 10.0
+            let y2 = y1 - 10.0
+            
+            context.beginPath()
+            
+            context.move(to: CGPoint(x: x1, y: y1))
+            context.addLine(to: CGPoint(x: x2, y: y2))
+            
+            context.strokePath()
+        }
+        
+        
+        func arrowSouthWest(_ x: Int, _ y: Int) {
+            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            
+            let x2 = x1 - 10.0
+            let y2 = y1 + 10.0
+            
+            context.beginPath()
+            
+            context.move(to: CGPoint(x: x1, y: y1))
+            context.addLine(to: CGPoint(x: x2, y: y2))
+            
+            context.strokePath()
+        }
+        
+        
+        func arrowSouthEast(_ x: Int, _ y: Int) {
+            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            
+            let x2 = x1 + 10.0
+            let y2 = y1 + 10.0
+            
+            context.beginPath()
+            
+            context.move(to: CGPoint(x: x1, y: y1))
+            context.addLine(to: CGPoint(x: x2, y: y2))
+            
+            context.strokePath()
         }
     }
 }
