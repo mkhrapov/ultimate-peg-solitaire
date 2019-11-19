@@ -46,6 +46,9 @@ final class SolveViewController: UIViewController {
         solveButton.layer.cornerRadius = 10
         solveButton.clipsToBounds = true
         
+        resultLabel.lineBreakMode = .byWordWrapping
+        resultLabel.numberOfLines = 0
+        
         gameState = GlobalStateManager.shared.getCurrentPlayingBoard()
         setResultsLabel()
         setPruningNumberTextField()
@@ -104,6 +107,9 @@ final class SolveViewController: UIViewController {
             // TODO persist
             gameState.board.pruningNumber = pruningNumber
             activityIndicator.startAnimating()
+            gameState.board.complementary = false
+            gameState.board.timeToSolveSeconds = 0.0
+            gameState.board.solution = nil
             
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
                 
@@ -111,10 +117,10 @@ final class SolveViewController: UIViewController {
                 let pruningSearch = PruningSearch(p)
                 pruningSearch.prune(pruningNumber)
                 
-                // TODO timer
+                let start = DispatchTime.now()
                 let numSolutions = pruningSearch.search()
-                let timer = 0.0
-                // TODO TIMER
+                let end = DispatchTime.now()
+                let timer = Double(end.uptimeNanoseconds - start.uptimeNanoseconds)/1_000_000_000.0
                 
                 if numSolutions > 0 {
                     var complementary = false
@@ -136,6 +142,7 @@ final class SolveViewController: UIViewController {
                     DispatchQueue.main.async {
                         gameState.board.complementary = complementary
                         gameState.board.solution = history
+                        gameState.board.timeToSolveSeconds = timer
                         self.setResultsLabel()
                         self.activityIndicator.stopAnimating()
                     }

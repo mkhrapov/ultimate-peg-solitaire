@@ -295,11 +295,13 @@ class VisualizeBoardView: UIView {
         
         
         func arrowNorthWest(_ x: Int, _ y: Int) {
-            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
-            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            let x0 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y0 = offsetY + cellSize*(CGFloat(y) + 0.5)
             
-            let x2 = x1 - 10.0
-            let y2 = y1 - 10.0
+            let x1 = x0 + 1.0
+            let y1 = y0 + 1.0
+            let x2 = x0 - 10.0
+            let y2 = y0 - 10.0
             
             context.beginPath()
             
@@ -311,11 +313,13 @@ class VisualizeBoardView: UIView {
         
         
         func arrowNorthEast(_ x: Int, _ y: Int) {
-            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
-            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            let x0 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y0 = offsetY + cellSize*(CGFloat(y) + 0.5)
             
-            let x2 = x1 + 10.0
-            let y2 = y1 - 10.0
+            let x1 = x0 - 1.0
+            let y1 = y0 + 1.0
+            let x2 = x0 + 10.0
+            let y2 = y0 - 10.0
             
             context.beginPath()
             
@@ -327,11 +331,13 @@ class VisualizeBoardView: UIView {
         
         
         func arrowSouthWest(_ x: Int, _ y: Int) {
-            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
-            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            let x0 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y0 = offsetY + cellSize*(CGFloat(y) + 0.5)
             
-            let x2 = x1 - 10.0
-            let y2 = y1 + 10.0
+            let x1 = x0 + 1.0
+            let y1 = y0 - 1.0
+            let x2 = x0 - 10.0
+            let y2 = y0 + 10.0
             
             context.beginPath()
             
@@ -343,11 +349,13 @@ class VisualizeBoardView: UIView {
         
         
         func arrowSouthEast(_ x: Int, _ y: Int) {
-            let x1 = offsetX + cellSize*(CGFloat(x) + 0.5)
-            let y1 = offsetY + cellSize*(CGFloat(y) + 0.5)
+            let x0 = offsetX + cellSize*(CGFloat(x) + 0.5)
+            let y0 = offsetY + cellSize*(CGFloat(y) + 0.5)
             
-            let x2 = x1 + 10.0
-            let y2 = y1 + 10.0
+            let x1 = x0 - 1.0
+            let y1 = y0 - 1.0
+            let x2 = x0 + 10.0
+            let y2 = y0 + 10.0
             
             context.beginPath()
             
