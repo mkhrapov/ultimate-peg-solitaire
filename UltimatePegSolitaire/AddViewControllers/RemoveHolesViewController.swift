@@ -24,12 +24,12 @@
 
 import UIKit
 
-final class SetHolesViewController: UIViewController {
+final class RemoveHolesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Set Holes"
+        navigationItem.title = "Remove Holes"
         let backItem = UIBarButtonItem()
         backItem.title = "Holes"
         navigationItem.backBarButtonItem = backItem

@@ -26,6 +26,13 @@ import UIKit
 
 final class SetBoardSizeViewController: UIViewController {
 
+    @IBOutlet weak var boardSizeView: SetBoardSizeView!
+    @IBOutlet weak var rowsStepper: UIStepper!
+    @IBOutlet weak var columnsStepper: UIStepper!
+    @IBOutlet weak var rowsLabel: UILabel!
+    @IBOutlet weak var columnsLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,17 +40,48 @@ final class SetBoardSizeViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Board Size"
         navigationItem.backBarButtonItem = backItem
+        
+        boardSizeView.rows = GlobalStateManager.shared.newBoard.Y
+        boardSizeView.columns = GlobalStateManager.shared.newBoard.X
+        
+        rowsLabel.text = "Rows: \(boardSizeView.rows)"
+        columnsLabel.text = "Columns: \(boardSizeView.columns)"
+        
+        rowsStepper.minimumValue = 4.0
+        rowsStepper.maximumValue = 20.0
+        rowsStepper.stepValue = 1.0
+        rowsStepper.value = Double(boardSizeView.rows)
+        
+        columnsStepper.minimumValue = 4.0
+        columnsStepper.maximumValue = 20.0
+        columnsStepper.stepValue = 1.0
+        columnsStepper.value = Double(boardSizeView.columns)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func rowsStepperAction(_ sender: UIStepper) {
+        let rows = Int(floor(sender.value))
+        boardSizeView.rows = rows
+        boardSizeView.setNeedsDisplay()
+        rowsLabel.text = "Rows: \(boardSizeView.rows)"
+        setNewBoard()
     }
-    */
-
+    
+    
+    @IBAction func columnsStepperAction(_ sender: UIStepper) {
+        let columns = Int(floor(sender.value))
+        boardSizeView.columns = columns
+        boardSizeView.setNeedsDisplay()
+        columnsLabel.text = "Columns: \(boardSizeView.columns)"
+        setNewBoard()
+    }
+    
+    
+    private func setNewBoard() {
+        let x = boardSizeView.columns
+        let y = boardSizeView.rows
+        let allowed = Array(repeating: 1, count: x*y)
+        GlobalStateManager.shared.newBoard = Board(x, y, 0, 0, "New Board", allowed)
+    }
+    
 }

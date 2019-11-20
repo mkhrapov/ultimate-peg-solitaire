@@ -24,7 +24,7 @@
 
 import UIKit
 
-class VisualizeBoardView: UIView {
+final class VisualizeBoardView: UIView {
     var gameState: GameState?
 
     

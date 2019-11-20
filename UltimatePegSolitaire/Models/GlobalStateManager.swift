@@ -30,10 +30,17 @@ final class GlobalStateManager {
     
     var currentPlayingBoardName: String?
     var games: [String:GameState]
+    var newBoard: Board
     
     
     init() {
         games = [String:GameState]()
+        newBoard = Board(4, 4, 0, 0, "New Board", [
+            1, 1, 1, 1,
+            1, 1, 1, 1,
+            1, 1, 1, 1,
+            1, 1, 1, 1
+        ])
     }
     
     
