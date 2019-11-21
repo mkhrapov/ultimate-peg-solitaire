@@ -146,7 +146,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Columns: 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-5S-WWJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Columns: 4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-5S-WWJ">
                                 <rect key="frame" x="289" y="626" width="105" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -164,7 +164,7 @@
                         <viewLayoutGuide key="safeArea" id="hww-cj-gJf"/>
                     </view>
                     <navigationItem key="navigationItem" id="YLi-Dz-ib7">
-                        <barButtonItem key="rightBarButtonItem" title="Set Holes" id="6EF-qw-NVN">
+                        <barButtonItem key="rightBarButtonItem" title="Remove Holes" id="6EF-qw-NVN">
                             <connections>
                                 <segue destination="0Ud-v7-HmW" kind="show" id="wKl-gC-zRQ"/>
                             </connections>

@@ -24,7 +24,7 @@
 
 import UIKit
 
-final class SolveViewController: UIViewController {
+final class SolveViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var pruningNumberTextField: UITextField!
@@ -52,6 +52,17 @@ final class SolveViewController: UIViewController {
         gameState = GlobalStateManager.shared.getCurrentPlayingBoard()
         setResultsLabel()
         setPruningNumberTextField()
+        
+        pruningNumberTextField.keyboardType = UIKeyboardType.numberPad
+        pruningNumberTextField.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.selectAll(nil)
     }
     
     
@@ -70,7 +81,7 @@ final class SolveViewController: UIViewController {
                     resultLabel.text = "No solution has been found in \(time) sec. Try using a larger pruning number."
                 }
                 else {
-                    resultLabel.text = "No solution has been found in \(time) sec."
+                    resultLabel.text = "No solution."
                 }
             }
         }
@@ -110,6 +121,9 @@ final class SolveViewController: UIViewController {
             gameState.board.complementary = false
             gameState.board.timeToSolveSeconds = 0.0
             gameState.board.solution = nil
+            resultLabel.attributedText = nil
+            resultLabel.text = "Searching..."
+            view.endEditing(true)
             
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
                 

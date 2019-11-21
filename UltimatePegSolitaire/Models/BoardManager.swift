@@ -240,7 +240,7 @@ final class BoardManager {
             0, 0, 0, 0, 1, 0, 0, 0, 0
             ]))
         
-        boards.append(Board(9, 9, 2, 2, "Siege 67", [
+        boards.append(Board(9, 9, 4, 0, "Siege 67", [
                     0, 1, 1, 1, 1, 1, 1, 1, 0,
                     0, 0, 1, 1, 1, 1, 1, 0, 0,
                     1, 1, 1, 1, 1, 1, 1, 1, 1,
