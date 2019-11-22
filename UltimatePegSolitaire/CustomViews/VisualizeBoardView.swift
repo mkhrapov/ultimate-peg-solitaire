@@ -213,20 +213,10 @@ final class VisualizeBoardView: UIView {
         
         
         func drawPeg(cell: CGRect, color: CGColor) {
-            let smallCell = shrinkCell(cell)
+            let smallCell = cell.insetBy(dx: 3.0, dy: 3.0)
             
             context.setFillColor(color)
             context.fillEllipse(in: smallCell)
-        }
-        
-        
-        func shrinkCell(_ cell: CGRect) -> CGRect {
-            return CGRect(
-                x: cell.minX + CGFloat(2.0),
-                y: cell.minY + CGFloat(2.0),
-                width: cell.width - CGFloat(4.0),
-                height: cell.height - CGFloat(4.0)
-            )
         }
         
         

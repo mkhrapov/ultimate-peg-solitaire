@@ -64,8 +64,15 @@ final class VisualizeViewController: UIViewController {
     
     @IBAction func nextButtonAction(_ sender: UIButton) {
         if let gameState = visualizeBoardView.gameState {
-            gameState.next()
-            visualizeBoardView.setNeedsDisplay()
+            if gameState.board.solution == nil {
+                let alert = UIAlertController(title: "No Solution", message: "You may want to go to the previous screen and run the solver.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else {
+                gameState.next()
+                visualizeBoardView.setNeedsDisplay()
+            }
         }
     }
     
