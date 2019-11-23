@@ -81,12 +81,12 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                     resultLabel.text = "No solution has been found in \(time) sec. Try using a larger pruning number."
                 }
                 else {
-                    resultLabel.text = "No solution."
+                    resultLabel.text = "Tap the Solve button to run the solver."
                 }
             }
         }
         else {
-            resultLabel.text = ""
+            resultLabel.text = "No data."
         }
     }
     
