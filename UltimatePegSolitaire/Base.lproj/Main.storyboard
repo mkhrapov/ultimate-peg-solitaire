@@ -209,7 +209,7 @@
                         <viewLayoutGuide key="safeArea" id="OYc-9h-VVk"/>
                     </view>
                     <navigationItem key="navigationItem" id="BSE-0X-pIK">
-                        <barButtonItem key="rightBarButtonItem" title="Set Initial Position" id="hpC-Qq-z5k">
+                        <barButtonItem key="rightBarButtonItem" title="Calculate" id="hpC-Qq-z5k">
                             <connections>
                                 <segue destination="WYK-bk-Oma" kind="show" id="GmH-RI-9GF"/>
                             </connections>
@@ -223,43 +223,106 @@
             </objects>
             <point key="canvasLocation" x="2821.739130434783" y="892.66304347826099"/>
         </scene>
-        <!--Set Initial Position View Controller-->
+        <!--Calculate Solvable Position View Controller-->
         <scene sceneID="Sas-MB-Tfm">
             <objects>
-                <viewController id="WYK-bk-Oma" customClass="SetInitialPositionViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WYK-bk-Oma" customClass="CalculateSolvablePositionViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KlH-pn-0ZA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculate Solvable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6Q-dl-gfO">
+                                <rect key="frame" x="137" y="75" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Initial Positions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-fA-pEG">
+                                <rect key="frame" x="149" y="104" width="117" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-Vj-HuG">
+                                <rect key="frame" x="149" y="140" width="117" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateButtonAction:" destination="WYK-bk-Oma" eventType="touchUpInside" id="hS0-X5-cTN"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hqh-Hq-AHz">
+                                <rect key="frame" x="190" y="192" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No data." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBQ-rw-0Xb">
+                                <rect key="frame" x="52" y="235" width="311" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="67I-mT-o8f"/>
                     </view>
                     <navigationItem key="navigationItem" id="b8v-2q-KbF">
-                        <barButtonItem key="rightBarButtonItem" title="Set Name" id="vOo-lC-KpU">
+                        <barButtonItem key="rightBarButtonItem" title="Set Initial Position" id="vOo-lC-KpU">
                             <connections>
                                 <segue destination="Yte-ej-FBt" kind="show" id="Z40-o9-pxa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hqh-Hq-AHz" id="56a-OL-pAJ"/>
+                        <outlet property="calculateButton" destination="JHR-Vj-HuG" id="Gdm-dZ-kij"/>
+                        <outlet property="messageLabel" destination="RBQ-rw-0Xb" id="gWk-t5-sRp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMk-gZ-Vli" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3571" y="893"/>
+            <point key="canvasLocation" x="3569.5652173913045" y="892.66304347826099"/>
         </scene>
-        <!--Set Name View Controller-->
+        <!--Set Initial Position View Controller-->
         <scene sceneID="1eY-8W-rDm">
             <objects>
-                <viewController id="Yte-ej-FBt" customClass="SetNameViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yte-ej-FBt" customClass="SetInitialPositionViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZGZ-qd-3dc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Hl-fm-ree"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Am3-Bj-WwB"/>
+                    <navigationItem key="navigationItem" id="Am3-Bj-WwB">
+                        <barButtonItem key="rightBarButtonItem" title="Set Name" id="bpz-gz-Wao">
+                            <connections>
+                                <segue destination="mYh-aa-HuY" kind="show" id="DOc-Q4-rdy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq2-0b-FUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4417" y="893"/>
+        </scene>
+        <!--Set Name View Controller-->
+        <scene sceneID="cUH-6g-VCP">
+            <objects>
+                <viewController id="mYh-aa-HuY" customClass="SetNameViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c3d-Sd-TDC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ifE-hF-bzz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OcE-F1-cQs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0i-0j-kHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5247" y="892"/>
         </scene>
         <!--Solve View Controller-->
         <scene sceneID="hIF-Yu-Rnp">

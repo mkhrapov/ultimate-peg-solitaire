@@ -26,6 +26,11 @@ import UIKit
 
 final class CalculateSolvablePositionViewController: UIViewController {
 
+    @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +38,26 @@ final class CalculateSolvablePositionViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Calculate"
         navigationItem.backBarButtonItem = backItem
+        
+        calculateButton.layer.cornerRadius = 10
+        calculateButton.clipsToBounds = true
+        
+        messageLabel.lineBreakMode = .byWordWrapping
+        messageLabel.numberOfLines = 0
+        messageLabel.attributedText = nil
+        messageLabel.text = "Tap the Calculate button to calculate solvable initial positions."
     }
+    
+    
+    
+    @IBAction func calculateButtonAction(_ sender: UIButton) {
+        if activityIndicator.isAnimating {
+            activityIndicator.stopAnimating()
+        }
+        else {
+            activityIndicator.startAnimating()
+        }
+    }
+    
     
 }
