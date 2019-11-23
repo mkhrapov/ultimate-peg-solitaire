@@ -42,67 +42,6 @@ final class VisualizeBoardView: UIView {
     }
     
     
-    func decipher(_ px: CGFloat, _ py: CGFloat) -> (Int, Int)? {
-        guard let gameState = gameState else {
-            return nil
-        }
-        
-        let calc = Calc(bounds, gameState)
-        return calc.decipher(px, py)
-    }
-    
-    
-    final class Calc {
-        let rect: CGRect
-        let gameState: GameState
-        var offsetX: CGFloat = 1.0
-        var offsetY: CGFloat = 1.0
-        var cellSize: CGFloat = 0.0
-        let X: Int
-        let Y: Int
-        
-        
-        init(_ r: CGRect, _ gs: GameState) {
-            rect = r
-            gameState = gs
-            X = gameState.board.X
-            Y = gameState.board.Y
-        }
-        
-        
-        func calcParams() {
-            let width = rect.width - CGFloat(2.0)
-            let height = rect.height - CGFloat(2.0)
-            
-            if X > Y {
-                cellSize = width / CGFloat(X)
-                offsetY = (height - cellSize*CGFloat(Y))/2.0 + CGFloat(1.0)
-            }
-            else if Y > X {
-                cellSize = height / CGFloat(Y)
-                offsetX = (width - cellSize*CGFloat(X))/2.0 + CGFloat(1.0)
-            }
-            else {
-                cellSize = width / CGFloat(X)
-            }
-        }
-        
-        
-        func decipher(_ px: CGFloat, _ py: CGFloat) -> (Int, Int)? {
-            calcParams()
-            
-            let x = Int(floor((px - offsetX)/cellSize))
-            let y = Int(floor((py - offsetY)/cellSize))
-            
-            if x < 0 || y < 0 || x >= X || y >= Y {
-                return nil
-            }
-            
-            return (x, y)
-        }
-    }
-    
-    
     final class Draw {
         let context: CGContext
         let rect: CGRect

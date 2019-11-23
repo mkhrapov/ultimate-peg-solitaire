@@ -189,7 +189,23 @@
                     <view key="view" contentMode="scaleToFill" id="fDz-vb-1Yi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0T3-gt-exy" customClass="RemoveHolesView" customModule="UltimatePegSolitaire" customModuleProvider="target">
+                                <rect key="frame" x="10" y="54" width="394" height="394"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="9S1-lP-BtI"/>
+                                    <constraint firstAttribute="width" secondItem="0T3-gt-exy" secondAttribute="height" multiplier="1:1" id="cGu-zv-LwH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OYc-9h-VVk" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0T3-gt-exy" secondAttribute="bottom" constant="10" id="MJd-gN-WV9"/>
+                            <constraint firstItem="0T3-gt-exy" firstAttribute="centerX" secondItem="OYc-9h-VVk" secondAttribute="centerX" id="PNw-Zj-6hn"/>
+                            <constraint firstItem="0T3-gt-exy" firstAttribute="top" secondItem="OYc-9h-VVk" secondAttribute="top" constant="10" id="VUm-4s-0wE"/>
+                            <constraint firstItem="0T3-gt-exy" firstAttribute="leading" secondItem="OYc-9h-VVk" secondAttribute="leading" priority="750" constant="10" id="lcC-sG-FKJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OYc-9h-VVk"/>
                     </view>
                     <navigationItem key="navigationItem" id="BSE-0X-pIK">
@@ -199,10 +215,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="removeHolesView" destination="0T3-gt-exy" id="mWh-kK-6li"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMF-6e-rDI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2822" y="893"/>
+            <point key="canvasLocation" x="2821.739130434783" y="892.66304347826099"/>
         </scene>
         <!--Set Initial Position View Controller-->
         <scene sceneID="Sas-MB-Tfm">
