@@ -51,12 +51,32 @@ final class CalculateSolvablePositionViewController: UIViewController {
     
     
     @IBAction func calculateButtonAction(_ sender: UIButton) {
-        if activityIndicator.isAnimating {
-            activityIndicator.stopAnimating()
+        activityIndicator.startAnimating()
+        messageLabel.attributedText = nil
+        messageLabel.text = "Calculating..."
+        
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
+            let solver = SolvablePositions(GlobalStateManager.shared.newBoard)
+            if solver.isConnected() {
+                GlobalStateManager.shared.solvable = solver.calculateSolvablePositions()
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.messageLabel.attributedText = nil
+                    self.messageLabel.text = "Solvable positions have been calculated. Please proceed to the next screen to select the initial position."
+                }
+            }
+            else {
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.messageLabel.text = nil
+                    let text = "The board is not connected."
+                    let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red]
+                    self.messageLabel.attributedText = NSAttributedString(string: text, attributes: attrs)
+                }
+            }
         }
-        else {
-            activityIndicator.startAnimating()
-        }
+        
+        
     }
     
     

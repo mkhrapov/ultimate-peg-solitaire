@@ -31,6 +31,7 @@ final class GlobalStateManager {
     var currentPlayingBoardName: String?
     var games: [String:GameState]
     var newBoard: Board
+    var solvable: [Bool]?
     
     
     init() {
@@ -74,7 +75,4 @@ final class GlobalStateManager {
         games[name] = gameState
         return gameState
     }
-    
-    
-    
 }

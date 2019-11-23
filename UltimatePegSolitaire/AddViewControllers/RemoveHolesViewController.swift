@@ -76,6 +76,7 @@ final class RemoveHolesViewController: UIViewController {
             }
             
             let newBoard = Board(X, Y, initX, initY, name, allowed)
+            GlobalStateManager.shared.solvable = nil
             GlobalStateManager.shared.newBoard = newBoard
             removeHolesView.board = newBoard
             removeHolesView.setNeedsDisplay()

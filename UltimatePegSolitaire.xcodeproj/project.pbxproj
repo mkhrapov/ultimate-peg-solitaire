@@ -39,6 +39,7 @@
 		50CD7BDA2313126000654CA0 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD82313126000654CA0 /* Move.swift */; };
 		50CD7BDC2313158500654CA0 /* PruningSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BDB2313158500654CA0 /* PruningSearch.swift */; };
 		50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BDB2313158500654CA0 /* PruningSearch.swift */; };
+		50F8FA3D2389DEFF00877158 /* SolvablePositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		50CD7BD5231311FD00654CA0 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		50CD7BD82313126000654CA0 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		50CD7BDB2313158500654CA0 /* PruningSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruningSearch.swift; sourceTree = "<group>"; };
+		50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvablePositions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				50CD7BDB2313158500654CA0 /* PruningSearch.swift */,
 				5067C813236F8B570022DF4D /* GlobalStateManager.swift */,
 				50B67AF52374E25200999FB7 /* GameState.swift */,
+				50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				5067C8162370FFFA0022DF4D /* MyColors.swift in Sources */,
 				5067C80A236F353A0022DF4D /* SetBoardSizeViewController.swift in Sources */,
 				50CD7BD6231311FD00654CA0 /* Position.swift in Sources */,
+				50F8FA3D2389DEFF00877158 /* SolvablePositions.swift in Sources */,
 				5067C810236F358F0022DF4D /* SetNameViewController.swift in Sources */,
 				50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */,
 				5067C805236F345F0022DF4D /* SolveViewController.swift in Sources */,

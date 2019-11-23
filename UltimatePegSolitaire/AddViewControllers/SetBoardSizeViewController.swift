@@ -81,6 +81,7 @@ final class SetBoardSizeViewController: UIViewController {
         let x = boardSizeView.columns
         let y = boardSizeView.rows
         let allowed = Array(repeating: 1, count: x*y)
+        GlobalStateManager.shared.solvable = nil
         GlobalStateManager.shared.newBoard = Board(x, y, 0, 0, "New Board", allowed)
     }
     
