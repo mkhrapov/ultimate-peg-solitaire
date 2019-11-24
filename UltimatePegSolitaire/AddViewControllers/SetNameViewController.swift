@@ -24,8 +24,11 @@
 
 import UIKit
 
-final class SetNameViewController: UIViewController {
-
+final class SetNameViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,17 +36,25 @@ final class SetNameViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Name"
         navigationItem.backBarButtonItem = backItem
+        
+        saveButton.layer.cornerRadius = 10
+        saveButton.clipsToBounds = true
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        
+        nameTextField.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
-    */
-
+    
+    
+    @IBAction func saveButtonAction(_ sender: UIButton) {
+        view.endEditing(true)
+    }
+    
 }
