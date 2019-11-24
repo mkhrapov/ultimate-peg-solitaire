@@ -293,7 +293,23 @@
                     <view key="view" contentMode="scaleToFill" id="ZGZ-qd-3dc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miB-rg-7Ms" customClass="SetInitialPositionView" customModule="UltimatePegSolitaire" customModuleProvider="target">
+                                <rect key="frame" x="10" y="54" width="394" height="394"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="9MG-Fm-LZR"/>
+                                    <constraint firstAttribute="width" secondItem="miB-rg-7Ms" secondAttribute="height" multiplier="1:1" id="V8E-Sj-B7Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Hl-fm-ree" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="miB-rg-7Ms" secondAttribute="bottom" constant="10" id="NgC-sM-zQ2"/>
+                            <constraint firstItem="miB-rg-7Ms" firstAttribute="leading" secondItem="6Hl-fm-ree" secondAttribute="leading" priority="750" constant="10" id="bvd-cq-SDM"/>
+                            <constraint firstItem="miB-rg-7Ms" firstAttribute="top" secondItem="6Hl-fm-ree" secondAttribute="top" constant="10" id="cwc-Ib-vvx"/>
+                            <constraint firstItem="miB-rg-7Ms" firstAttribute="centerX" secondItem="6Hl-fm-ree" secondAttribute="centerX" id="yiD-Xd-ZvU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Hl-fm-ree"/>
                     </view>
                     <navigationItem key="navigationItem" id="Am3-Bj-WwB">
@@ -303,10 +319,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="setInitialPositionView" destination="miB-rg-7Ms" id="8Sd-zp-f8t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq2-0b-FUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4417" y="893"/>
+            <point key="canvasLocation" x="4415.9420289855079" y="892.66304347826099"/>
         </scene>
         <!--Set Name View Controller-->
         <scene sceneID="cUH-6g-VCP">

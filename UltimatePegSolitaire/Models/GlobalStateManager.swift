@@ -32,6 +32,10 @@ final class GlobalStateManager {
     var games: [String:GameState]
     var newBoard: Board
     var solvable: [Bool]?
+    var initX: Int?
+    var initY: Int?
+    var name: String?
+    
     
     
     init() {

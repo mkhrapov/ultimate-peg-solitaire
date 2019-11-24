@@ -26,6 +26,9 @@ import UIKit
 
 final class SetInitialPositionViewController: UIViewController {
 
+    
+    @IBOutlet weak var setInitialPositionView: SetInitialPositionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,17 +36,52 @@ final class SetInitialPositionViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Initial Position"
         navigationItem.backBarButtonItem = backItem
+        
+        setInitialPositionView.board = GlobalStateManager.shared.newBoard
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let loc = touch.location(in: setInitialPositionView)
+        
+        if loc.x < 0 || loc.y < 0 || loc.x > setInitialPositionView.bounds.width || loc.y > setInitialPositionView.bounds.height {
+            return
+        }
+        
+        if let (x, y) = setInitialPositionView.decipher(loc.x, loc.y),
+            let solvable = GlobalStateManager.shared.solvable
+        {
+            let X = GlobalStateManager.shared.newBoard.X
+            let i = y*X + x
+            
+            if solvable[i] {
+                var allowed = [Int]()
+                for i in GlobalStateManager.shared.newBoard.allowed {
+                    if i {
+                        allowed.append(1)
+                    }
+                    else {
+                        allowed.append(0)
+                    }
+                }
+                
+                GlobalStateManager.shared.initX = x
+                GlobalStateManager.shared.initY = y
+                GlobalStateManager.shared.newBoard = Board(
+                    GlobalStateManager.shared.newBoard.X,
+                    GlobalStateManager.shared.newBoard.Y,
+                    x,
+                    y,
+                    GlobalStateManager.shared.newBoard.name,
+                    allowed
+                )
+                setInitialPositionView.board = GlobalStateManager.shared.newBoard
+                setInitialPositionView.setNeedsDisplay() 
+            }
+        }
     }
-    */
-
 }
