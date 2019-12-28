@@ -112,7 +112,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
     @IBAction func solveButtonAction(_ sender: UIButton) {
         if let gameState = gameState,
            let text = pruningNumberTextField.text,
-           let pruningNumber = Int(text),
+           let pruningNumber = Int(text.trimmingCharacters(in: .whitespacesAndNewlines)),
            pruningNumber > 0 && pruningNumber <= 10_000
         {
             // TODO persist
