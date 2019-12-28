@@ -60,6 +60,11 @@ final class BoardManager {
     }
     
     
+    func addBoard(_ b: Board) {
+        boards.insert(b, at: 0)
+    }
+    
+    
     func addInitialBoards() {
         boards.append(Board(7, 7, 3, 3, "English", [
             0, 0, 1, 1, 1, 0, 0,
