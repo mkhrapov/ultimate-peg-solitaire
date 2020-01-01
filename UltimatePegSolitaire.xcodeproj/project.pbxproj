@@ -23,6 +23,7 @@
 		509CAE032287827E0095C07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CAE012287827E0095C07F /* LaunchScreen.storyboard */; };
 		509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */; };
 		509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */; };
+		50ACC74123BC017A0018AC00 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74023BC017A0018AC00 /* PersistenceManager.swift */; };
 		50B67AF62374E25200999FB7 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
 		50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
@@ -83,6 +84,7 @@
 		509CAE142287827E0095C07F /* UltimatePegSolitaireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePegSolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePegSolitaireUITests.swift; sourceTree = "<group>"; };
 		509CAE1A2287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50ACC74023BC017A0018AC00 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		50B67AF52374E25200999FB7 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBoardView.swift; sourceTree = "<group>"; };
 		50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBoardSizeView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				5067C813236F8B570022DF4D /* GlobalStateManager.swift */,
 				50B67AF52374E25200999FB7 /* GameState.swift */,
 				50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */,
+				50ACC74023BC017A0018AC00 /* PersistenceManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C8CA40238792870099D327 /* RemoveHolesView.swift in Sources */,
+				50ACC74123BC017A0018AC00 /* PersistenceManager.swift in Sources */,
 				5067C814236F8B570022DF4D /* GlobalStateManager.swift in Sources */,
 				5067C803236BCAB90022DF4D /* PlayViewController.swift in Sources */,
 				50CD7BD92313126000654CA0 /* Move.swift in Sources */,

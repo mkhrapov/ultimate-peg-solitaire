@@ -110,23 +110,21 @@ final class SetNameViewController: UIViewController, UITextFieldDelegate {
         )
         
         BoardManager.shared.addBoard(GlobalStateManager.shared.newBoard)
+        BoardManager.shared.persist()
         
-        /* TODO
-         GlobalStateManager.shared.newBoard = Board(4, 4, 0, 0, "New Board", [
-             1, 1, 1, 1,
-             1, 1, 1, 1,
-             1, 1, 1, 1,
-             1, 1, 1, 1
-         ])
+        
+        GlobalStateManager.shared.newBoard = Board(4, 4, 0, 0, "New Board", [
+            1, 1, 1, 1,
+            1, 1, 1, 1,
+            1, 1, 1, 1,
+            1, 1, 1, 1
+        ])
          
-         GlobalStateManager.shared.solvable = nil
-         GlobalStateManager.shared.initX = nil
-         GlobalStateManager.shared.initY = nil
-         GlobalStateManager.shared.name = nil
-         
-         Do long jump
-         
-         
-         */
+        GlobalStateManager.shared.solvable = nil
+        GlobalStateManager.shared.initX = nil
+        GlobalStateManager.shared.initY = nil
+        GlobalStateManager.shared.name = nil
+        
+        self.performSegue(withIdentifier: "segueAfterSavingNewBoard", sender: nil)
     }
 }

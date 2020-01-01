@@ -29,7 +29,25 @@ final class BoardManager {
     private var boards = [Board]()
     
     init() {
+        /*
+         if first run {
+             boards = [Board]()
+             addInitialBoards()
+             persist()
+             set flag that first run was done
+         }
+         else {
+             load boards from the file
+         }
+         
+         
+         */
            addInitialBoards()
+    }
+    
+    
+    func persist() {
+        
     }
     
     

@@ -37,6 +37,12 @@ final class MainTableViewController: UITableViewController {
         backItem.title = "Boards"
         navigationItem.backBarButtonItem = backItem
     }
+    
+    
+    @IBAction func afterSavingNewBoard(_ unwindSegue: UIStoryboardSegue) {
+        self.tableView.reloadData()
+    }
+    
 
     // MARK: - Table view data source
 
