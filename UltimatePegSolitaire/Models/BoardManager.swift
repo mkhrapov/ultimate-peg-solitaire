@@ -25,29 +25,23 @@ import Foundation
 
 final class BoardManager {
     static let shared = BoardManager()
+    private let firstRun = "firstRun"
 
-    private var boards = [Board]()
+    private var boards: [Board]
     
     init() {
-        /*
-         if first run {
-             boards = [Board]()
-             addInitialBoards()
-             persist()
-             set flag that first run was done
-         }
-         else {
-             load boards from the file
-         }
-         
-         
-         */
-           addInitialBoards()
+        if UserDefaults.standard.bool(forKey: firstRun) {
+            let b = BoardManager.initialBoards()
+            PersistenceManager.shared.save(b)
+            UserDefaults.standard.set(true, forKey: firstRun)
+        }
+        
+        boards = PersistenceManager.shared.load()
     }
     
     
     func persist() {
-        
+        PersistenceManager.shared.save(boards)
     }
     
     
@@ -83,7 +77,9 @@ final class BoardManager {
     }
     
     
-    func addInitialBoards() {
+    private static func initialBoards() -> [Board] {
+        var boards = [Board]()
+        
         boards.append(Board(7, 7, 3, 3, "English", [
             0, 0, 1, 1, 1, 0, 0,
             0, 0, 1, 1, 1, 0, 0,
@@ -288,6 +284,7 @@ final class BoardManager {
                 0, 0, 0, 1, 1, 1, 0, 0, 0
                 ]))
         
+        return boards
     }
     
    

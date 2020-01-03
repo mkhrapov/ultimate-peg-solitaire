@@ -23,7 +23,7 @@
 
 import Foundation
 
-final class Board {
+final class Board : Codable {
     let X: Int
     let Y: Int
     let allowed: [Bool]

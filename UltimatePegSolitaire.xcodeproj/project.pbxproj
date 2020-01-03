@@ -24,6 +24,7 @@
 		509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */; };
 		509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */; };
 		50ACC74123BC017A0018AC00 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74023BC017A0018AC00 /* PersistenceManager.swift */; };
+		50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74023BC017A0018AC00 /* PersistenceManager.swift */; };
 		50B67AF62374E25200999FB7 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
 		50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
@@ -387,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CD7BDA2313126000654CA0 /* Move.swift in Sources */,
+				50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */,
 				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
 				50CD7BD023130B6A00654CA0 /* BoardManager.swift in Sources */,
 				50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */,

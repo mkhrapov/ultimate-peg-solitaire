@@ -23,7 +23,7 @@
 
 import Foundation
 
-struct Move {
+struct Move : Codable {
     let sourceX: Int
     let sourceY: Int
     let midX: Int
