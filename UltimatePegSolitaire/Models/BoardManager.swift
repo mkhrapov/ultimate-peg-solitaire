@@ -25,15 +25,15 @@ import Foundation
 
 final class BoardManager {
     static let shared = BoardManager()
-    private let firstRun = "firstRun"
+    private let initialDataHaveBeenLoaded = "initialDataHaveBeenLoaded"
 
     private var boards: [Board]
     
     init() {
-        if UserDefaults.standard.bool(forKey: firstRun) {
+        if !UserDefaults.standard.bool(forKey: initialDataHaveBeenLoaded) {
             let b = BoardManager.initialBoards()
             PersistenceManager.shared.save(b)
-            UserDefaults.standard.set(true, forKey: firstRun)
+            UserDefaults.standard.set(true, forKey: initialDataHaveBeenLoaded)
         }
         
         boards = PersistenceManager.shared.load()
