@@ -50,7 +50,7 @@ class UltimatePegSolitaireTests: XCTestCase {
         let pruningSearch = PruningSearch(p)
         pruningSearch.prune(121)
         let numSolutions = pruningSearch.search()
-        XCTAssert(numSolutions == 2)
+        XCTAssert(numSolutions > 0)
         
         var foundComplement = false
         
@@ -285,7 +285,7 @@ class UltimatePegSolitaireTests: XCTestCase {
         
         let p = b.initialPosition()
         let pruningSearch = PruningSearch(p)
-        pruningSearch.prune(100)
+        pruningSearch.prune(300)
         let numSolutions = pruningSearch.search()
         XCTAssert(numSolutions > 0)
     }
@@ -308,7 +308,7 @@ class UltimatePegSolitaireTests: XCTestCase {
         
         let p = b.initialPosition()
         let pruningSearch = PruningSearch(p)
-        pruningSearch.prune(200)
+        pruningSearch.prune(350)
         let numSolutions = pruningSearch.search()
         XCTAssert(numSolutions > 0)
     }
@@ -395,7 +395,7 @@ class UltimatePegSolitaireTests: XCTestCase {
         
         let p = b.initialPosition()
         let pruningSearch = PruningSearch(p)
-        pruningSearch.prune(200)
+        pruningSearch.prune(300)
         let numSolutions = pruningSearch.search()
         XCTAssert(numSolutions > 0)
     }

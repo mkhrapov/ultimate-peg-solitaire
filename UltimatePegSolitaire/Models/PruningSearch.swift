@@ -29,10 +29,22 @@ final class PruningSearch {
     let initialPosition: Position
     var pruningNumber = 200
     var solutions = [Position]()
+    var probability = 0.0
+    
     
     
     init(_ initialPosition: Position) {
         self.initialPosition = initialPosition
+        let steps = initialPosition.board.allowed.count - 2
+        probability = 1.0 / Double(steps)
+    }
+    
+    func shouldReplaceChild() -> Bool {
+        let x = Double.random(in: 0.0 ..< 1.0)
+        if x < probability {
+            return true
+        }
+        return false
     }
     
     
@@ -58,16 +70,26 @@ final class PruningSearch {
             return
         }
         
-        var dedup = Set<String>()
+        var dedup = [String:Position]()
         var children = [Position]()
         
         for p in currentGen {
             for child in p.children() {
-                if !dedup.contains(child.getID()) {
-                    dedup.insert(child.getID())
-                    children.append(child)
+                let id = child.getID()
+                
+                if dedup[id] == nil {
+                    dedup[id] = child
+                }
+                else {
+                    if shouldReplaceChild() {
+                        dedup[id] = child
+                    }
                 }
             }
+        }
+        
+        for child in dedup.values {
+            children.append(child)
         }
         
         if children.count == 0 {
