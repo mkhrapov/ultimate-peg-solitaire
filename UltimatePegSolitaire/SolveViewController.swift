@@ -159,6 +159,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         gameState.board.timeToSolveSeconds = timer
                         self.setResultsLabel()
                         self.activityIndicator.stopAnimating()
+                        BoardManager.shared.persist()
                     }
                 }
                 else {
@@ -166,6 +167,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         gameState.board.timeToSolveSeconds = timer
                         self.setResultsLabel()
                         self.activityIndicator.stopAnimating()
+                        BoardManager.shared.persist()
                     }
                 }
             }
