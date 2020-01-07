@@ -34,8 +34,8 @@ final class SolvablePositions {
     
     
     func isConnected() -> Bool {
-        Thread.sleep(forTimeInterval: 3.0)
-        return true
+        let graph = GraphRepresentation(board)
+        return graph.isConnected()
     }
     
     

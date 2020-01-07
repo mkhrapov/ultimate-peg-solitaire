@@ -25,6 +25,8 @@
 		509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */; };
 		50ACC74123BC017A0018AC00 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74023BC017A0018AC00 /* PersistenceManager.swift */; };
 		50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74023BC017A0018AC00 /* PersistenceManager.swift */; };
+		50ACC74423C41DDF0018AC00 /* GraphRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */; };
+		50ACC74523C41DDF0018AC00 /* GraphRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */; };
 		50B67AF62374E25200999FB7 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
 		50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
@@ -86,6 +88,7 @@
 		509CAE182287827E0095C07F /* UltimatePegSolitaireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePegSolitaireUITests.swift; sourceTree = "<group>"; };
 		509CAE1A2287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50ACC74023BC017A0018AC00 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRepresentation.swift; sourceTree = "<group>"; };
 		50B67AF52374E25200999FB7 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBoardView.swift; sourceTree = "<group>"; };
 		50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBoardSizeView.swift; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 				50B67AF52374E25200999FB7 /* GameState.swift */,
 				50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */,
 				50ACC74023BC017A0018AC00 /* PersistenceManager.swift */,
+				50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C8CA40238792870099D327 /* RemoveHolesView.swift in Sources */,
+				50ACC74423C41DDF0018AC00 /* GraphRepresentation.swift in Sources */,
 				50ACC74123BC017A0018AC00 /* PersistenceManager.swift in Sources */,
 				5067C814236F8B570022DF4D /* GlobalStateManager.swift in Sources */,
 				5067C803236BCAB90022DF4D /* PlayViewController.swift in Sources */,
@@ -388,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CD7BDA2313126000654CA0 /* Move.swift in Sources */,
+				50ACC74523C41DDF0018AC00 /* GraphRepresentation.swift in Sources */,
 				50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */,
 				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
 				50CD7BD023130B6A00654CA0 /* BoardManager.swift in Sources */,
@@ -561,6 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -581,6 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

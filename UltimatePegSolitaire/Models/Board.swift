@@ -93,4 +93,38 @@ final class Board : Codable {
         return position
     }
     
+    
+    func neighbors(_ id: Int) -> [Int] {
+        var neighbors = [Int]()
+        
+        if !isAllowed(id) {
+            return neighbors
+        }
+        
+        let x = id % X
+        let y = id / X
+        
+        let north = (y-1)*X + x
+        if isAllowed(x, y-1) {
+            neighbors.append(north)
+        }
+        
+        let south = (y+1)*X + x
+        if isAllowed(x, y+1) {
+            neighbors.append(south)
+        }
+        
+        let west = y*X + x - 1
+        if isAllowed(x-1, y) {
+            neighbors.append(west)
+        }
+        
+        let east = y*X + x + 1
+        if isAllowed(x+1, y) {
+            neighbors.append(east)
+        }
+        
+        return neighbors
+    }
+    
 }
