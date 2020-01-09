@@ -27,6 +27,7 @@
 		50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74023BC017A0018AC00 /* PersistenceManager.swift */; };
 		50ACC74423C41DDF0018AC00 /* GraphRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */; };
 		50ACC74523C41DDF0018AC00 /* GraphRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */; };
+		50ACC74723C6CCFD0018AC00 /* DepthFirstSearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74623C6CCFD0018AC00 /* DepthFirstSearchTest.swift */; };
 		50B67AF62374E25200999FB7 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
 		50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
@@ -89,6 +90,7 @@
 		509CAE1A2287827E0095C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50ACC74023BC017A0018AC00 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRepresentation.swift; sourceTree = "<group>"; };
+		50ACC74623C6CCFD0018AC00 /* DepthFirstSearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthFirstSearchTest.swift; sourceTree = "<group>"; };
 		50B67AF52374E25200999FB7 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBoardView.swift; sourceTree = "<group>"; };
 		50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBoardSizeView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				509CAE0D2287827E0095C07F /* UltimatePegSolitaireTests.swift */,
 				509CAE0F2287827E0095C07F /* Info.plist */,
+				50ACC74623C6CCFD0018AC00 /* DepthFirstSearchTest.swift */,
 			);
 			path = UltimatePegSolitaireTests;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
 				50CD7BD023130B6A00654CA0 /* BoardManager.swift in Sources */,
 				50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */,
+				50ACC74723C6CCFD0018AC00 /* DepthFirstSearchTest.swift in Sources */,
 				50CD7BD7231311FD00654CA0 /* Position.swift in Sources */,
 				50CD7BD423130CA000654CA0 /* Board.swift in Sources */,
 			);
