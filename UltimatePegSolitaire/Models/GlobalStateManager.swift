@@ -79,4 +79,9 @@ final class GlobalStateManager {
         games[name] = gameState
         return gameState
     }
+    
+    
+    func delete(_ name: String) {
+        games[name] = nil
+    }
 }

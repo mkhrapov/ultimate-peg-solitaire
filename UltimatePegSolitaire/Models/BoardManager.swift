@@ -72,6 +72,13 @@ final class BoardManager {
     }
     
     
+    func delete(at i: Int) {
+        let name = boards[i].name
+        GlobalStateManager.shared.delete(name)
+        boards.remove(at: i)
+    }
+    
+    
     func addBoard(_ b: Board) {
         boards.insert(b, at: 0)
     }
@@ -286,6 +293,4 @@ final class BoardManager {
         
         return boards
     }
-    
-   
 }
