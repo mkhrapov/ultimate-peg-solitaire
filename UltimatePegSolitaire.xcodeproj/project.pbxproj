@@ -28,6 +28,8 @@
 		50ACC74423C41DDF0018AC00 /* GraphRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */; };
 		50ACC74523C41DDF0018AC00 /* GraphRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */; };
 		50ACC74723C6CCFD0018AC00 /* DepthFirstSearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74623C6CCFD0018AC00 /* DepthFirstSearchTest.swift */; };
+		50ACC74923CA31310018AC00 /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74823CA31310018AC00 /* Parity.swift */; };
+		50ACC74A23CA31310018AC00 /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74823CA31310018AC00 /* Parity.swift */; };
 		50B67AF62374E25200999FB7 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
 		50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
@@ -91,6 +93,7 @@
 		50ACC74023BC017A0018AC00 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRepresentation.swift; sourceTree = "<group>"; };
 		50ACC74623C6CCFD0018AC00 /* DepthFirstSearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthFirstSearchTest.swift; sourceTree = "<group>"; };
+		50ACC74823CA31310018AC00 /* Parity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
 		50B67AF52374E25200999FB7 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBoardView.swift; sourceTree = "<group>"; };
 		50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBoardSizeView.swift; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 				50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */,
 				50ACC74023BC017A0018AC00 /* PersistenceManager.swift */,
 				50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */,
+				50ACC74823CA31310018AC00 /* Parity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +377,7 @@
 				5067C80C236F35500022DF4D /* RemoveHolesViewController.swift in Sources */,
 				50C8CA3E238792450099D327 /* CalculateSolvablePositionViewController.swift in Sources */,
 				50CD7BCF23130B6A00654CA0 /* BoardManager.swift in Sources */,
+				50ACC74923CA31310018AC00 /* Parity.swift in Sources */,
 				5067C8162370FFFA0022DF4D /* MyColors.swift in Sources */,
 				5067C80A236F353A0022DF4D /* SetBoardSizeViewController.swift in Sources */,
 				50CD7BD6231311FD00654CA0 /* Position.swift in Sources */,
@@ -403,6 +408,7 @@
 				50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */,
 				50ACC74723C6CCFD0018AC00 /* DepthFirstSearchTest.swift in Sources */,
 				50CD7BD7231311FD00654CA0 /* Position.swift in Sources */,
+				50ACC74A23CA31310018AC00 /* Parity.swift in Sources */,
 				50CD7BD423130CA000654CA0 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

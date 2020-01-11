@@ -61,6 +61,13 @@ final class Position {
     }
     
     
+    func setAllEmpty() {
+        for i in 0..<occupied.count {
+            occupied[i] = false
+        }
+    }
+    
+    
     func isOccupied(_ x: Int, _ y: Int) -> Bool {
         let i = y*board.X + x
         return occupied[i]
@@ -312,5 +319,22 @@ final class Position {
         }
         
         return children
+    }
+    
+    
+    func parity() -> Parity {
+        var counts: [Int] = Array(repeating: 0, count: 7)
+        
+        for (i, value) in occupied.enumerated() {
+            if value {
+                counts[0] += 1
+                let index123 = board.labels123[i]
+                let index456 = board.labels456[i]
+                counts[index123] += 1
+                counts[index456] += 1
+            }
+        }
+        
+        return Parity(counts)
     }
 }

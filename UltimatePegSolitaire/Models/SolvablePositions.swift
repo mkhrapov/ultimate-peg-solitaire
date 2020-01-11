@@ -40,14 +40,27 @@ final class SolvablePositions {
     
     
     func calculateSolvablePositions() -> [Bool] {
-        var result = board.allowed
+        var solvable = Array(repeating: false, count: board.allowed.count)
+        var finalParities = [Parity]()
         
-        for i in 0..<result.count {
-            if result[i] {
-                result[i] = Bool.random()
+        for (i, value) in board.allowed.enumerated() {
+            if value {
+                let position = board.singleSurvivor(i)
+                let parity = position.parity()
+                finalParities.append(parity)
             }
         }
         
-        return result
+        for (i, value) in board.allowed.enumerated() {
+            if value {
+                let position = board.singleVacancy(i)
+                let parity = position.parity()
+                if finalParities.contains(parity) {
+                    solvable[i] = true
+                }
+            }
+        }
+        
+        return solvable
     }
 }

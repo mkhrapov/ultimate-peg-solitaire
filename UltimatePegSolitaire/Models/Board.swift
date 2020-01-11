@@ -27,6 +27,8 @@ final class Board : Codable {
     let X: Int
     let Y: Int
     let allowed: [Bool]
+    let labels123: [Int]
+    let labels456: [Int]
     
     var initX: Int
     var initY: Int
@@ -67,7 +69,57 @@ final class Board : Codable {
         if X*Y != allowed.count {
             fatalError("Mismatch between size and array size")
         }
+        
+        var tmp123 = Array(repeating: 0, count: X*Y)
+        var tmp456 = Array(repeating: 0, count: X*Y)
+        
+        var startY = 1
+        var startX = 1
+        
+        for y1 in 0..<Y {
+            startX = startY
+            
+            for x1 in 0..<X {
+                let i = y1*X + x1
+                tmp123[i] = startX
+                startX += 1
+                if startX == 4 {
+                    startX = 1
+                }
+            }
+            
+            startY += 1
+            if startY == 4 {
+                startY = 1
+            }
+        }
+        
+        startX = 4
+        startY = 4
+        
+        for y1 in 0..<Y {
+            startX = startY
+            
+            for x1 in (0..<X).reversed() {
+                let i = y1*X + x1
+                tmp456[i] = startX
+                startX += 1
+                if startX == 7 {
+                    startX = 4
+                }
+            }
+            
+            startY += 1
+            if startY == 7 {
+                startY = 4
+            }
+        }
+        
+        
+        labels123 = tmp123
+        labels456 = tmp456
     }
+    
     
     func isAllowed(_ i: Int) -> Bool {
         if i < 0 || i >= allowed.count {
@@ -90,6 +142,21 @@ final class Board : Codable {
     func initialPosition() -> Position {
         let position = Position(self)
         position.set(initX, initY, false)
+        return position
+    }
+    
+    
+    func singleVacancy(_ i: Int) -> Position {
+        let position = Position(self)
+        position.set(i, false)
+        return position
+    }
+    
+    
+    func singleSurvivor(_ i: Int) -> Position {
+        let position = Position(self)
+        position.setAllEmpty()
+        position.set(i, true)
         return position
     }
     
