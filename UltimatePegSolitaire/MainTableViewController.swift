@@ -58,7 +58,11 @@ final class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "boardTableViewCell", for: indexPath)
 
-        cell.textLabel?.text = boardManager[indexPath.row].name
+        let boardName = boardManager[indexPath.row].name
+        cell.textLabel?.text = boardName
+        cell.imageView?.image = GlobalStateManager.shared.getImageByName(boardName)
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        
         
         return cell
     }

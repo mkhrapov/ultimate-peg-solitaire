@@ -23,6 +23,7 @@
 
 
 import Foundation
+import UIKit
 
 
 final class GlobalStateManager {
@@ -30,6 +31,7 @@ final class GlobalStateManager {
     
     var currentPlayingBoardName: String?
     var games: [String:GameState]
+    var boardImages: [String:UIImage]
     var newBoard: Board
     var solvable: [Bool]?
     var initX: Int?
@@ -40,6 +42,7 @@ final class GlobalStateManager {
     
     init() {
         games = [String:GameState]()
+        boardImages = [String:UIImage]()
         newBoard = Board(4, 4, 0, 0, "New Board", [
             1, 1, 1, 1,
             1, 1, 1, 1,
@@ -83,5 +86,28 @@ final class GlobalStateManager {
     
     func delete(_ name: String) {
         games[name] = nil
+        boardImages[name] = nil
+    }
+    
+    
+    func getImageByName(_ name: String) -> UIImage {
+        if let img = boardImages[name] {
+            return img
+        }
+        else {
+            if let board = BoardManager.shared.getBoardByName(name) {
+                let size = CGSize(width: 200, height: 200)
+                let renderer = UIGraphicsImageRenderer(size: size)
+
+                let image = renderer.image { ctx in
+                    let bi = BoardIcon(board: board, size: size, context: ctx)
+                    bi.draw()
+                }
+                
+                boardImages[name] = image
+                return image
+            }
+        }
+        return UIImage()
     }
 }
