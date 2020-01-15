@@ -395,7 +395,7 @@ class UltimatePegSolitaireTests: XCTestCase {
         
         let p = b.initialPosition()
         let pruningSearch = PruningSearch(p)
-        pruningSearch.prune(300)
+        pruningSearch.prune(350)
         let numSolutions = pruningSearch.search()
         XCTAssert(numSolutions > 0)
     }

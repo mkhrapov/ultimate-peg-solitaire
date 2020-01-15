@@ -30,6 +30,7 @@ final class PruningSearch {
     var pruningNumber = 200
     var solutions = [Position]()
     var probability = 0.0
+    var generation: [Position]
     
     
     
@@ -37,6 +38,7 @@ final class PruningSearch {
         self.initialPosition = initialPosition
         let steps = initialPosition.board.allowed.count - 2
         probability = 1.0 / Double(steps)
+        generation = [Position]()
     }
     
     func shouldReplaceChild() -> Bool {
@@ -59,21 +61,31 @@ final class PruningSearch {
     
     
     func search() -> Int {
-        var gen0 = [Position]()
-        gen0.append(initialPosition)
-        searchByGeneration(gen0)
+        generation = [Position]()
+        generation.append(initialPosition)
+        
+        while true {
+            if searchByGeneration() {
+                break
+            }
+            
+            if solutions.count > 0 {
+                break
+            }
+        }
+        
         return solutions.count
     }
     
-    func searchByGeneration(_ currentGen: [Position]) {
-        if currentGen.count == 0 {
-            return
+    func searchByGeneration() -> Bool {
+        if generation.count == 0 {
+            return true
         }
         
         var dedup = [String:Position]()
         var children = [Position]()
         
-        for p in currentGen {
+        for p in generation {
             for child in p.children() {
                 let id = child.getID()
                 
@@ -93,7 +105,7 @@ final class PruningSearch {
         }
         
         if children.count == 0 {
-            return
+            return true
         }
         
         for p in children {
@@ -103,7 +115,7 @@ final class PruningSearch {
         }
         
         if solutions.count > 0 {
-            return
+            return true
         }
         
         if pruningNumber > 0 && children.count > pruningNumber {
@@ -112,10 +124,12 @@ final class PruningSearch {
             for i in 0..<pruningNumber {
                 children3.append(children2[i])
             }
-            searchByGeneration(children3)
+            generation = children3
         }
         else {
-            searchByGeneration(children)
+            generation = children
         }
+        
+        return false
     }
 }

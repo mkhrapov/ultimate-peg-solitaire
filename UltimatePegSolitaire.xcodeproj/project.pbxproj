@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50548C2323CEB29F009E031E /* GlobalStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C813236F8B570022DF4D /* GlobalStateManager.swift */; };
+		50548C2423CEB2A5009E031E /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C8152370FFFA0022DF4D /* MyColors.swift */; };
+		50548C2523CEB2B5009E031E /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		5067C803236BCAB90022DF4D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C802236BCAB90022DF4D /* PlayViewController.swift */; };
 		5067C805236F345F0022DF4D /* SolveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C804236F345F0022DF4D /* SolveViewController.swift */; };
 		5067C807236F34760022DF4D /* VisualizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C806236F34760022DF4D /* VisualizeViewController.swift */; };
@@ -405,11 +408,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50548C2323CEB29F009E031E /* GlobalStateManager.swift in Sources */,
 				50CD7BDA2313126000654CA0 /* Move.swift in Sources */,
 				50ACC74523C41DDF0018AC00 /* GraphRepresentation.swift in Sources */,
 				50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */,
+				50548C2423CEB2A5009E031E /* MyColors.swift in Sources */,
 				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
 				50CD7BD023130B6A00654CA0 /* BoardManager.swift in Sources */,
+				50548C2523CEB2B5009E031E /* GameState.swift in Sources */,
 				50ACC74D23CBA4990018AC00 /* BoardIcon.swift in Sources */,
 				50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */,
 				50ACC74723C6CCFD0018AC00 /* DepthFirstSearchTest.swift in Sources */,
@@ -583,7 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -604,7 +610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
