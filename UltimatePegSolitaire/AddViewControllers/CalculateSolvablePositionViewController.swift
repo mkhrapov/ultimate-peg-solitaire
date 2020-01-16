@@ -60,9 +60,18 @@ final class CalculateSolvablePositionViewController: UIViewController {
             if solver.isConnected() {
                 GlobalStateManager.shared.solvable = solver.calculateSolvablePositions()
                 DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.messageLabel.attributedText = nil
-                    self.messageLabel.text = "Solvable positions have been calculated. Please proceed to the next screen to select the initial position."
+                    if GlobalStateManager.shared.solvable!.contains(true) {
+                        self.activityIndicator.stopAnimating()
+                        self.messageLabel.attributedText = nil
+                        self.messageLabel.text = "Solvable positions have been calculated. Please proceed to the next screen to select the initial position."
+                    }
+                    else {
+                        self.activityIndicator.stopAnimating()
+                        self.messageLabel.text = nil
+                        let text = "There are no solvable positions."
+                        let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red]
+                        self.messageLabel.attributedText = NSAttributedString(string: text, attributes: attrs)
+                    }
                 }
             }
             else {
