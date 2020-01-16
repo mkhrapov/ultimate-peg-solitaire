@@ -113,9 +113,8 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
         if let gameState = gameState,
            let text = pruningNumberTextField.text,
            let pruningNumber = Int(text.trimmingCharacters(in: .whitespacesAndNewlines)),
-           pruningNumber > 0 && pruningNumber <= 10_000
+           pruningNumber > 0 && pruningNumber <= 1000
         {
-            // TODO persist
             gameState.board.pruningNumber = pruningNumber
             activityIndicator.startAnimating()
             gameState.board.complementary = false
@@ -173,7 +172,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
             }
         }
         else {
-            setError("Pruning number must be an integer between 1 and 10000")
+            setError("Pruning number must be an integer between 1 and 1000")
         }
     }
 }
