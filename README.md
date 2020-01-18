@@ -17,3 +17,4 @@ QR code
 * Design your own boards
 * Advanced solver that can solve the English board in milliseconds
 
+![Screenshot](img/UPS400.png)
