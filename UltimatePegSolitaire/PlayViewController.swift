@@ -33,10 +33,12 @@ final class PlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let title = GlobalStateManager.shared.currentPlayingBoardName ?? "Play"
 
-        navigationItem.title = "Play"
+        navigationItem.title = title
         let backItem = UIBarButtonItem()
-        backItem.title = "Play"
+        backItem.title = title
         navigationItem.backBarButtonItem = backItem
         
         newGameButton.layer.cornerRadius = 10
