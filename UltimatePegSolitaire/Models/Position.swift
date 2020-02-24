@@ -337,4 +337,32 @@ final class Position {
         
         return Parity(counts)
     }
+    
+    
+    func isGameOver() -> Bool {
+        if isFinal() {
+            return false
+        }
+        else {
+            for i in 0..<occupied.count {
+                if board.isAllowed(i) && occupied[i] {
+                    let x = i % board.X
+                    let y = i / board.X
+                    
+                    var moves: [Move] = []
+                    moves.append(Move(x, y, x+1,   y, x+2,   y))
+                    moves.append(Move(x, y, x-1,   y, x-2,   y))
+                    moves.append(Move(x, y,   x, y-1,   x, y-2))
+                    moves.append(Move(x, y,   x, y+1,   x, y+2))
+                    
+                    for move in moves {
+                        if legalMove(move) {
+                            return false
+                        }
+                    }
+                }
+            }
+            return true
+        }
+    }
 }

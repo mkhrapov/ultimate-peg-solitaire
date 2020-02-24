@@ -156,14 +156,20 @@ final class BoardView: UIView {
         
         
         func drawCells() {
+            let gameOver = gameState.last.isGameOver()
+            
             for x in 0..<X {
                 for y in 0..<Y {
                     let i = y*X + x
                     if gameState.board.isAllowed(x, y) {
                         let cell = makeCell(x, y)
                         drawBorder(cell)
+                        
                         if gameState.last.isOccupied(x, y) {
-                            if gameState.last.selected == i {
+                            if gameOver {
+                                drawX(cell: cell, color: myColors.gameOver)
+                            }
+                            else if gameState.last.selected == i {
                                 drawPeg(cell: cell, color: myColors.selected)
                             }
                             else {
@@ -188,7 +194,7 @@ final class BoardView: UIView {
         
         func drawBorder(_ cell: CGRect) {
             context.setStrokeColor(myColors.border)
-            context.setLineWidth(1)
+            context.setLineWidth(1.0)
             context.beginPath()
             context.addRect(cell)
             context.strokePath()
@@ -200,6 +206,25 @@ final class BoardView: UIView {
             
             context.setFillColor(color)
             context.fillEllipse(in: smallCell)
+        }
+        
+        
+        func drawX(cell: CGRect, color: CGColor) {
+            let smallCell = cell.insetBy(dx: 5.0, dy: 5.0)
+            let topLeft = CGPoint(x: smallCell.minX, y: smallCell.minY)
+            let bottomRight = CGPoint(x: smallCell.maxX, y: smallCell.maxY)
+            let topRight = CGPoint(x: smallCell.maxX, y: smallCell.minY)
+            let bottomLeft = CGPoint(x: smallCell.minX, y: smallCell.maxY)
+            
+            context.setStrokeColor(color)
+            context.setLineWidth(5.0)
+            context.beginPath()
+            context.move(to: topLeft)
+            context.addLine(to: bottomRight)
+            context.move(to: topRight)
+            context.addLine(to: bottomLeft)
+            
+            context.strokePath()
         }
     }
 }
