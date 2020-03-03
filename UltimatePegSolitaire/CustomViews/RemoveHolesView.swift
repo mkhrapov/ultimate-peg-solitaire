@@ -27,6 +27,8 @@ import UIKit
 final class RemoveHolesView: UIView {
 
     var board: Board?
+    var errors = false
+    var solvable: [Bool]?
     
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else {
@@ -37,7 +39,7 @@ final class RemoveHolesView: UIView {
             return
         }
         
-        let draw = Draw(context, bounds, board)
+        let draw = Draw(context, bounds, board, errors, solvable)
         draw.draw()
     }
     
@@ -52,15 +54,19 @@ final class RemoveHolesView: UIView {
         var cellSize: CGFloat = 0.0
         let X: Int
         let Y: Int
+        let errors: Bool
+        let solvable: [Bool]?
         
         
-        init(_ c: CGContext, _ r: CGRect, _ board: Board) {
+        init(_ c: CGContext, _ r: CGRect, _ board: Board, _ errors: Bool, _ solvable: [Bool]?) {
             context = c
             rect = r
             self.board = board
             myColors = MyColors()
             X = board.X
             Y = board.Y
+            self.errors = errors
+            self.solvable = solvable
         }
         
         
@@ -101,7 +107,23 @@ final class RemoveHolesView: UIView {
                     if board.isAllowed(x, y) {
                         let cell = makeCell(x, y)
                         drawBorder(cell)
-                        drawPeg(cell: cell, color: myColors.normal)
+                        
+                        if errors {
+                            drawX(cell: cell, color: myColors.gameOver)
+                        }
+                        else {
+                            if let solvable = solvable {
+                                if solvable[y*X + x] {
+                                    drawPeg(cell: cell, color: myColors.selected)
+                                }
+                                else {
+                                    drawPeg(cell: cell, color: myColors.normal)
+                                }
+                            }
+                            else {
+                                drawPeg(cell: cell, color: myColors.normal)
+                            }
+                        }
                     }
                 }
             }
@@ -129,6 +151,25 @@ final class RemoveHolesView: UIView {
             
             context.setFillColor(color)
             context.fillEllipse(in: smallCell)
+        }
+        
+        
+        func drawX(cell: CGRect, color: CGColor) {
+            let smallCell = cell.insetBy(dx: 5.0, dy: 5.0)
+            let topLeft = CGPoint(x: smallCell.minX, y: smallCell.minY)
+            let bottomRight = CGPoint(x: smallCell.maxX, y: smallCell.maxY)
+            let topRight = CGPoint(x: smallCell.maxX, y: smallCell.minY)
+            let bottomLeft = CGPoint(x: smallCell.minX, y: smallCell.maxY)
+            
+            context.setStrokeColor(color)
+            context.setLineWidth(5.0)
+            context.beginPath()
+            context.move(to: topLeft)
+            context.addLine(to: bottomRight)
+            context.move(to: topRight)
+            context.addLine(to: bottomLeft)
+            
+            context.strokePath()
         }
     }
     

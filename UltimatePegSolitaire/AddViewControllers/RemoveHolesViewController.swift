@@ -79,6 +79,18 @@ final class RemoveHolesViewController: UIViewController {
             GlobalStateManager.shared.solvable = nil
             GlobalStateManager.shared.newBoard = newBoard
             removeHolesView.board = newBoard
+            
+            let solver = SolvablePositions(GlobalStateManager.shared.newBoard)
+            if solver.noErrors() {
+                GlobalStateManager.shared.solvable = solver.calculateSolvablePositions()
+                removeHolesView.solvable = GlobalStateManager.shared.solvable
+                removeHolesView.errors = false
+            }
+            else {
+                removeHolesView.errors = true
+                removeHolesView.solvable = nil
+            }
+            
             removeHolesView.setNeedsDisplay()
         }
     }

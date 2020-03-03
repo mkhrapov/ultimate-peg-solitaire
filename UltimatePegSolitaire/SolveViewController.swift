@@ -27,11 +27,14 @@ import UIKit
 final class SolveViewController: UIViewController, UITextFieldDelegate {
 
     
+    /*
     @IBOutlet weak var pruningNumberTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var solveButton: UIButton!
+ */
     
+    /*
     var gameState: GameState?
     
     
@@ -175,4 +178,5 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
             setError("Pruning number must be an integer between 1 and 1000")
         }
     }
+ */
 }

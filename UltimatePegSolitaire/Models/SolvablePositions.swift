@@ -33,6 +33,15 @@ final class SolvablePositions {
     }
     
     
+    func noErrors() -> Bool {
+        if !isConnected() {
+            return false
+        }
+        
+        return true
+    }
+    
+    
     func isConnected() -> Bool {
         let graph = GraphRepresentation(board)
         return graph.isConnected()

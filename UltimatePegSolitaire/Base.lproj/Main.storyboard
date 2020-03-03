@@ -209,9 +209,9 @@
                         <viewLayoutGuide key="safeArea" id="OYc-9h-VVk"/>
                     </view>
                     <navigationItem key="navigationItem" id="BSE-0X-pIK">
-                        <barButtonItem key="rightBarButtonItem" title="Calculate" id="hpC-Qq-z5k">
+                        <barButtonItem key="rightBarButtonItem" title="Set Initial Position" id="hpC-Qq-z5k">
                             <connections>
-                                <segue destination="WYK-bk-Oma" kind="show" id="GmH-RI-9GF"/>
+                                <segue destination="Yte-ej-FBt" kind="show" id="0h5-xa-Tg6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -222,78 +222,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMF-6e-rDI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2821.739130434783" y="892.66304347826099"/>
-        </scene>
-        <!--Calculate Solvable Position View Controller-->
-        <scene sceneID="Sas-MB-Tfm">
-            <objects>
-                <viewController id="WYK-bk-Oma" customClass="CalculateSolvablePositionViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KlH-pn-0ZA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Initial Positions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-fA-pEG">
-                                <rect key="frame" x="149" y="147" width="117" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-Vj-HuG">
-                                <rect key="frame" x="149" y="192" width="117" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Calculate"/>
-                                <connections>
-                                    <action selector="calculateButtonAction:" destination="WYK-bk-Oma" eventType="touchUpInside" id="hS0-X5-cTN"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hqh-Hq-AHz">
-                                <rect key="frame" x="190" y="244" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No data." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBQ-rw-0Xb">
-                                <rect key="frame" x="52" y="287" width="311" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="h7f-ih-YID">
-                                <rect key="frame" x="87" y="396" width="240" height="222"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">It is only possible to calculate the solvable positions for a valid board. If the board is invalid, solvable positions will be calculated, but they will be incorrect. This app makes best effort to detect invalid boards, but it is not clear if it is possible to detect any invalid board in general.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculate Solvable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6Q-dl-gfO">
-                                <rect key="frame" x="137" y="118" width="141" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="67I-mT-o8f"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="b8v-2q-KbF">
-                        <barButtonItem key="rightBarButtonItem" title="Set Initial Position" id="vOo-lC-KpU">
-                            <connections>
-                                <segue destination="Yte-ej-FBt" kind="show" id="Z40-o9-pxa"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="activityIndicator" destination="hqh-Hq-AHz" id="56a-OL-pAJ"/>
-                        <outlet property="calculateButton" destination="JHR-Vj-HuG" id="Gdm-dZ-kij"/>
-                        <outlet property="messageLabel" destination="RBQ-rw-0Xb" id="gWk-t5-sRp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mMk-gZ-Vli" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3569.5652173913045" y="892.66304347826099"/>
         </scene>
         <!--Set Initial Position View Controller-->
         <scene sceneID="1eY-8W-rDm">
@@ -334,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq2-0b-FUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4415.9420289855079" y="892.66304347826099"/>
+            <point key="canvasLocation" x="3712" y="893"/>
         </scene>
         <!--Set Name View Controller-->
         <scene sceneID="cUH-6g-VCP">
@@ -387,7 +315,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0i-0j-kHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="oFD-H1-3oD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5246.376811594203" y="891.84782608695662"/>
+            <point key="canvasLocation" x="4622" y="893"/>
         </scene>
         <!--Solve View Controller-->
         <scene sceneID="hIF-Yu-Rnp">
@@ -397,51 +325,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pruning Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6l-3N-r9u">
-                                <rect key="frame" x="145" y="99" width="125" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="200" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dH6-1Y-yvY">
-                                <rect key="frame" x="159" y="128" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="top" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gfX-Hb-UHe">
+                                <rect key="frame" x="107" y="66" width="127" height="20.333333333333332"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fD-wz-Zkd">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="20.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pruning number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Z7-MB-vOV">
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="200" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VXG-gk-wy9">
+                                <rect key="frame" x="242" y="66" width="85" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOt-UM-BTf">
-                                <rect key="frame" x="159" y="170" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Solve"/>
-                                <connections>
-                                    <action selector="solveButtonAction:" destination="DwS-6A-BBb" eventType="touchUpInside" id="hOk-cf-Ir5"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uFf-aW-WeF">
-                                <rect key="frame" x="197" y="208" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hN-aR-Md8">
-                                <rect key="frame" x="44" y="294" width="325" height="422"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <mutableString key="text">Ultimate Peg Solitaire solving algorithm is a non-deterministic heuristic-based algorithm that requires a pruning number. Allowed values of the pruning number are between 1 and 1,000. Smaller numbers result in shorter search time, but are less likely to find a solution. Larger numbers will result in much longer search time, but are more likely to find a solution. 200 is a good first guess for a pruning number that solves most easy problems. Enter a pruning number and press Solve Button to find a solution. If solution is not found, enter a larger pruning number and press Solve Button to try again. Running the solver multiple times even with the same pruning number may possibly result in finding different solutions.</mutableString>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdM-Ov-4pV">
-                                <rect key="frame" x="44" y="236" width="325" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GR2-zd-ijy"/>
@@ -453,12 +358,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="activityIndicator" destination="uFf-aW-WeF" id="gck-Ee-kg9"/>
-                        <outlet property="pruningNumberTextField" destination="dH6-1Y-yvY" id="a2G-l2-BL5"/>
-                        <outlet property="resultLabel" destination="WdM-Ov-4pV" id="Iin-FA-xRg"/>
-                        <outlet property="solveButton" destination="bOt-UM-BTf" id="ryk-9P-srg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXx-6f-Gik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
