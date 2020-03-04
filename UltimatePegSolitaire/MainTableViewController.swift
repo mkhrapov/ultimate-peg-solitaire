@@ -74,12 +74,36 @@ final class MainTableViewController: UITableViewController {
     
 
     // Override to support editing the table view.
+    /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             boardManager.delete(at: indexPath.row)
             boardManager.persist()
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    */
+    
+    
+    override func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            print("Selected Edit")
+            success(true)
+        })
+        editAction.backgroundColor = .systemGreen
+        
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            self.boardManager.delete(at: indexPath.row)
+            self.boardManager.persist()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            success(true)
+        })
+        deleteAction.backgroundColor = .red
+    
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+    
     }
     
     
