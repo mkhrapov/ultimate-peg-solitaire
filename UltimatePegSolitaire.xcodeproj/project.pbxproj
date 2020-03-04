@@ -39,7 +39,6 @@
 		50B67AF62374E25200999FB7 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
 		50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
-		50C8CA3E238792450099D327 /* CalculateSolvablePositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3D238792450099D327 /* CalculateSolvablePositionViewController.swift */; };
 		50C8CA40238792870099D327 /* RemoveHolesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3F238792870099D327 /* RemoveHolesView.swift */; };
 		50CD7BCB2311F80700654CA0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BC92311F80700654CA0 /* MainTableViewController.swift */; };
 		50CD7BCF23130B6A00654CA0 /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardManager.swift */; };
@@ -105,7 +104,6 @@
 		50B67AF52374E25200999FB7 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBoardView.swift; sourceTree = "<group>"; };
 		50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBoardSizeView.swift; sourceTree = "<group>"; };
-		50C8CA3D238792450099D327 /* CalculateSolvablePositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateSolvablePositionViewController.swift; sourceTree = "<group>"; };
 		50C8CA3F238792870099D327 /* RemoveHolesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveHolesView.swift; sourceTree = "<group>"; };
 		50CD7BC92311F80700654CA0 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		50CD7BCE23130B6A00654CA0 /* BoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardManager.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			children = (
 				5067C809236F353A0022DF4D /* SetBoardSizeViewController.swift */,
 				5067C80B236F35500022DF4D /* RemoveHolesViewController.swift */,
-				50C8CA3D238792450099D327 /* CalculateSolvablePositionViewController.swift */,
 				5067C80D236F35770022DF4D /* SetInitialPositionViewController.swift */,
 				5067C80F236F358F0022DF4D /* SetNameViewController.swift */,
 			);
@@ -395,7 +392,6 @@
 				50ACC74C23CBA4990018AC00 /* BoardIcon.swift in Sources */,
 				5067C807236F34760022DF4D /* VisualizeViewController.swift in Sources */,
 				5067C80C236F35500022DF4D /* RemoveHolesViewController.swift in Sources */,
-				50C8CA3E238792450099D327 /* CalculateSolvablePositionViewController.swift in Sources */,
 				50CD7BCF23130B6A00654CA0 /* BoardManager.swift in Sources */,
 				50ACC74923CA31310018AC00 /* Parity.swift in Sources */,
 				5067C8162370FFFA0022DF4D /* MyColors.swift in Sources */,

@@ -37,6 +37,19 @@ final class RemoveHolesViewController: UIViewController {
         navigationItem.backBarButtonItem = backItem
         
         removeHolesView.board = GlobalStateManager.shared.newBoard
+        
+        let solver = SolvablePositions(GlobalStateManager.shared.newBoard)
+        if solver.noErrors() {
+            GlobalStateManager.shared.solvable = solver.calculateSolvablePositions()
+            removeHolesView.solvable = GlobalStateManager.shared.solvable
+            removeHolesView.errors = false
+        }
+        else {
+            removeHolesView.errors = true
+            removeHolesView.solvable = nil
+        }
+        
+        removeHolesView.setNeedsDisplay()
     }
     
 
