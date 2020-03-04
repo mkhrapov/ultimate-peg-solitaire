@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50130DCD240F333D00296319 /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DCC240F333D00296319 /* EditNameViewController.swift */; };
 		50548C2323CEB29F009E031E /* GlobalStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C813236F8B570022DF4D /* GlobalStateManager.swift */; };
 		50548C2423CEB2A5009E031E /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C8152370FFFA0022DF4D /* MyColors.swift */; };
 		50548C2523CEB2B5009E031E /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50130DCC240F333D00296319 /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
 		50548C2723CEBC27009E031E /* launch_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_screen.png; sourceTree = "<group>"; };
 		5067C802236BCAB90022DF4D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		5067C804236F345F0022DF4D /* SolveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				5067C802236BCAB90022DF4D /* PlayViewController.swift */,
 				5067C804236F345F0022DF4D /* SolveViewController.swift */,
 				5067C806236F34760022DF4D /* VisualizeViewController.swift */,
+				50130DCC240F333D00296319 /* EditNameViewController.swift */,
 			);
 			path = UltimatePegSolitaire;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				50CD7BD6231311FD00654CA0 /* Position.swift in Sources */,
 				50F8FA3D2389DEFF00877158 /* SolvablePositions.swift in Sources */,
 				5067C810236F358F0022DF4D /* SetNameViewController.swift in Sources */,
+				50130DCD240F333D00296319 /* EditNameViewController.swift in Sources */,
 				50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */,
 				5067C805236F345F0022DF4D /* SolveViewController.swift in Sources */,
 				50CD7BD323130CA000654CA0 /* Board.swift in Sources */,

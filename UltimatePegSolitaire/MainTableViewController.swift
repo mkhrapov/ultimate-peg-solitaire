@@ -89,8 +89,9 @@ final class MainTableViewController: UITableViewController {
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
         let editAction = UIContextualAction(style: .normal, title: "Edit", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            print("Selected Edit")
             success(true)
+            self.selectedIndexPath = indexPath.row
+            self.performSegue(withIdentifier: "SegueToEditNameViewController", sender: self)
         })
         editAction.backgroundColor = .systemGreen
         
@@ -130,6 +131,11 @@ final class MainTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueToPlayViewController" {
             if segue.destination is PlayViewController {
+                GlobalStateManager.shared.currentPlayingBoardName = boardManager[selectedIndexPath].name
+            }
+        }
+        else if segue.identifier == "SegueToEditNameViewController" {
+            if segue.destination is EditNameViewController {
                 GlobalStateManager.shared.currentPlayingBoardName = boardManager[selectedIndexPath].name
             }
         }
