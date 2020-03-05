@@ -55,6 +55,15 @@ final class BoardManager {
     }
     
     
+    func rename(_ old: String, _ new: String) {
+        for board in boards {
+            if board.name == old {
+                board.name = new
+            }
+        }
+    }
+    
+    
     var count: Int {
         get {
             return boards.count

@@ -54,14 +54,54 @@
                     <view key="view" contentMode="scaleToFill" id="yie-SW-bfN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLY-0j-fPR">
+                                <rect key="frame" x="167" y="85" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iYL-KA-aKg">
+                                <rect key="frame" x="84" y="123" width="247" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIG-dP-aOe">
+                                <rect key="frame" x="156" y="183" width="102" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="LxE-Oq-0Mn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-lE-a1U">
+                                <rect key="frame" x="114" y="247" width="186" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Edit Initial Position"/>
+                                <connections>
+                                    <action selector="editInitialPositionButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="83E-K2-eQH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8XY-bg-nZP"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rke-8j-djP"/>
+                    <connections>
+                        <outlet property="editInitialPositionButton" destination="1sv-lE-a1U" id="D3q-Et-ZBb"/>
+                        <outlet property="newNameTextField" destination="iYL-KA-aKg" id="C3v-gP-Lct"/>
+                        <outlet property="saveButton" destination="NIG-dP-aOe" id="hqe-Ok-LKe"/>
+                        <segue destination="CQs-EM-Z5a" kind="unwind" identifier="segueAfterRenamingBoard" unwindAction="afterSavingNewBoard:" id="EHL-T9-ebN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69d-lH-NCc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="CQs-EM-Z5a" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2822" y="-631"/>
+            <point key="canvasLocation" x="2821.739130434783" y="-631.79347826086962"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6ym-CD-9Fg">
