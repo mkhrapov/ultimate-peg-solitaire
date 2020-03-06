@@ -85,9 +85,21 @@ final class EditNameViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        // prevent creation of duplicate names
+        let possibleDup = BoardManager.shared.getBoardByName(boardName)
+        if possibleDup != nil {
+            let alert = UIAlertController(title: "Duplicate Name", message: "Board with this name already exists .", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         let oldName = GlobalStateManager.shared.currentPlayingBoardName ?? "Unknown"
         GlobalStateManager.shared.games[boardName] = GlobalStateManager.shared.games[oldName]
         GlobalStateManager.shared.games[oldName] = nil
+        
+        GlobalStateManager.shared.boardImages[boardName] = GlobalStateManager.shared.boardImages[oldName]
+        GlobalStateManager.shared.boardImages[oldName] = nil
         
         BoardManager.shared.rename(oldName, boardName)
         BoardManager.shared.persist()
@@ -98,7 +110,4 @@ final class EditNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func editInitialPositionButtonAction(_ sender: UIButton) {
     }
-    
-    
-    
 }

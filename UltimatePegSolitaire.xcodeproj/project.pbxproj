@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		50130DCD240F333D00296319 /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DCC240F333D00296319 /* EditNameViewController.swift */; };
+		50130DCF2412A1F900296319 /* EditInitialPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DCE2412A1F900296319 /* EditInitialPositionViewController.swift */; };
+		50130DD12412AA1900296319 /* EditInitialPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DD02412AA1900296319 /* EditInitialPositionView.swift */; };
 		50548C2323CEB29F009E031E /* GlobalStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C813236F8B570022DF4D /* GlobalStateManager.swift */; };
 		50548C2423CEB2A5009E031E /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C8152370FFFA0022DF4D /* MyColors.swift */; };
 		50548C2523CEB2B5009E031E /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
@@ -75,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		50130DCC240F333D00296319 /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
+		50130DCE2412A1F900296319 /* EditInitialPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInitialPositionViewController.swift; sourceTree = "<group>"; };
+		50130DD02412AA1900296319 /* EditInitialPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInitialPositionView.swift; sourceTree = "<group>"; };
 		50548C2723CEBC27009E031E /* launch_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_screen.png; sourceTree = "<group>"; };
 		5067C802236BCAB90022DF4D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		5067C804236F345F0022DF4D /* SolveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				5067C804236F345F0022DF4D /* SolveViewController.swift */,
 				5067C806236F34760022DF4D /* VisualizeViewController.swift */,
 				50130DCC240F333D00296319 /* EditNameViewController.swift */,
+				50130DCE2412A1F900296319 /* EditInitialPositionViewController.swift */,
 			);
 			path = UltimatePegSolitaire;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				50C8CA3F238792870099D327 /* RemoveHolesView.swift */,
 				50D95673238B148D00A1DB10 /* SetInitialPositionView.swift */,
 				50ACC74B23CBA4990018AC00 /* BoardIcon.swift */,
+				50130DD02412AA1900296319 /* EditInitialPositionView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -389,12 +395,14 @@
 				50ACC74423C41DDF0018AC00 /* GraphRepresentation.swift in Sources */,
 				50ACC74123BC017A0018AC00 /* PersistenceManager.swift in Sources */,
 				5067C814236F8B570022DF4D /* GlobalStateManager.swift in Sources */,
+				50130DD12412AA1900296319 /* EditInitialPositionView.swift in Sources */,
 				5067C803236BCAB90022DF4D /* PlayViewController.swift in Sources */,
 				50CD7BD92313126000654CA0 /* Move.swift in Sources */,
 				50CD7BCB2311F80700654CA0 /* MainTableViewController.swift in Sources */,
 				50ACC74C23CBA4990018AC00 /* BoardIcon.swift in Sources */,
 				5067C807236F34760022DF4D /* VisualizeViewController.swift in Sources */,
 				5067C80C236F35500022DF4D /* RemoveHolesViewController.swift in Sources */,
+				50130DCF2412A1F900296319 /* EditInitialPositionViewController.swift in Sources */,
 				50CD7BCF23130B6A00654CA0 /* BoardManager.swift in Sources */,
 				50ACC74923CA31310018AC00 /* Parity.swift in Sources */,
 				5067C8162370FFFA0022DF4D /* MyColors.swift in Sources */,

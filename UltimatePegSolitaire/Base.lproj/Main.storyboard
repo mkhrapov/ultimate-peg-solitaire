@@ -68,22 +68,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIG-dP-aOe">
-                                <rect key="frame" x="156" y="183" width="102" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="LxE-Oq-0Mn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-lE-a1U">
-                                <rect key="frame" x="114" y="247" width="186" height="42"/>
+                                <rect key="frame" x="84" y="269" width="247" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Edit Initial Position"/>
                                 <connections>
                                     <action selector="editInitialPositionButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="83E-K2-eQH"/>
+                                    <segue destination="BQk-A0-8WQ" kind="show" id="wCE-XC-SU9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIG-dP-aOe">
+                                <rect key="frame" x="156" y="193" width="102" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="LxE-Oq-0Mn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,20 +106,53 @@
             </objects>
             <point key="canvasLocation" x="2821.739130434783" y="-631.79347826086962"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Initial Position View Controller-->
         <scene sceneID="6ym-CD-9Fg">
             <objects>
-                <viewController id="BQk-A0-8WQ" sceneMemberID="viewController">
+                <viewController id="BQk-A0-8WQ" customClass="EditInitialPositionViewController" customModule="UltimatePegSolitaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ysH-dM-sO7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeX-5p-6DM">
+                                <rect key="frame" x="244" y="641" width="150" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="BQk-A0-8WQ" eventType="touchUpInside" id="vlN-t2-ZcD"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tP-Zg-9Ix" customClass="EditInitialPositionView" customModule="UltimatePegSolitaire" customModuleProvider="target">
+                                <rect key="frame" x="-10" y="54" width="434" height="434"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4tP-Zg-9Ix" secondAttribute="height" multiplier="1:1" id="YeQ-7r-8VV"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="ap8-8h-Jyg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4tP-Zg-9Ix" firstAttribute="top" secondItem="mav-zL-mkQ" secondAttribute="top" constant="10" id="6un-r6-j6g"/>
+                            <constraint firstItem="mav-zL-mkQ" firstAttribute="leading" secondItem="4tP-Zg-9Ix" secondAttribute="leading" priority="750" constant="10" id="Vdc-r9-eLU"/>
+                            <constraint firstItem="4tP-Zg-9Ix" firstAttribute="centerX" secondItem="mav-zL-mkQ" secondAttribute="centerX" id="XBn-jy-Cxp"/>
+                            <constraint firstItem="mav-zL-mkQ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4tP-Zg-9Ix" secondAttribute="bottom" constant="10" id="fLw-Yi-igc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mav-zL-mkQ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3xQ-oW-AJN"/>
+                    <connections>
+                        <outlet property="editView" destination="4tP-Zg-9Ix" id="R3N-vd-fZi"/>
+                        <outlet property="saveButton" destination="FeX-5p-6DM" id="lMI-dO-bhj"/>
+                        <segue destination="OIw-JY-C85" kind="unwind" identifier="segueAfterEditingInitialPosition" unwindAction="afterSavingNewBoard:" id="rLX-vz-Syg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVU-V2-V9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="OIw-JY-C85" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3567" y="-632"/>
+            <point key="canvasLocation" x="3566.666666666667" y="-632.60869565217399"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="J57-cT-cfO">
@@ -361,6 +397,7 @@
                                 <rect key="frame" x="126" y="248" width="161" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonAction:" destination="mYh-aa-HuY" eventType="touchUpInside" id="Ssv-vo-UaG"/>
