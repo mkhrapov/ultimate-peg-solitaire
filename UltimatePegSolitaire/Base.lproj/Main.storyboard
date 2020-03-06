@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tP-Zg-9Ix" customClass="EditInitialPositionView" customModule="UltimatePegSolitaire" customModuleProvider="target">
-                                <rect key="frame" x="-10" y="54" width="434" height="434"/>
+                                <rect key="frame" x="10" y="54" width="394" height="394"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4tP-Zg-9Ix" secondAttribute="height" multiplier="1:1" id="YeQ-7r-8VV"/>
@@ -136,7 +136,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4tP-Zg-9Ix" firstAttribute="top" secondItem="mav-zL-mkQ" secondAttribute="top" constant="10" id="6un-r6-j6g"/>
-                            <constraint firstItem="mav-zL-mkQ" firstAttribute="leading" secondItem="4tP-Zg-9Ix" secondAttribute="leading" priority="750" constant="10" id="Vdc-r9-eLU"/>
+                            <constraint firstItem="4tP-Zg-9Ix" firstAttribute="leading" secondItem="mav-zL-mkQ" secondAttribute="leading" priority="750" constant="10" id="FuJ-Fw-qze"/>
                             <constraint firstItem="4tP-Zg-9Ix" firstAttribute="centerX" secondItem="mav-zL-mkQ" secondAttribute="centerX" id="XBn-jy-Cxp"/>
                             <constraint firstItem="mav-zL-mkQ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4tP-Zg-9Ix" secondAttribute="bottom" constant="10" id="fLw-Yi-igc"/>
                         </constraints>
