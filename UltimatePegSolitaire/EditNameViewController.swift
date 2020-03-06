@@ -67,22 +67,43 @@ final class EditNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
         view.endEditing(true)
+        if saveName() {
+            self.performSegue(withIdentifier: "segueAfterRenamingBoard", sender: nil)
+        }
+    }
+    
+    
+    @IBAction func editInitialPositionButtonAction(_ sender: UIButton) {
+        view.endEditing(true)
+        if saveName() {
+            self.performSegue(withIdentifier: "segueToEditInitialPosition", sender: nil)
+        }
+    }
+    
+    
+    func saveName() -> Bool { // true means should perform segue
+        let oldName = GlobalStateManager.shared.currentPlayingBoardName ?? "Unknown"
         
         // check if name is not empty
         guard let boardNameRaw = newNameTextField.text else {
             let alert = UIAlertController(title: "No Name", message: "Please set the board's name.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
             self.present(alert, animated: true, completion: nil)
-            return
+            return false
         }
         
+        // check if name is not an empty string
         let boardName = boardNameRaw.trimmingCharacters(in: .whitespacesAndNewlines)
-        
         if boardName.count == 0 {
             let alert = UIAlertController(title: "No Name", message: "Please set the board's name.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
             self.present(alert, animated: true, completion: nil)
-            return
+            return false
+        }
+        
+        // Perform segue without saving if name has not changed
+        if boardName == oldName {
+            return true
         }
         
         // prevent creation of duplicate names
@@ -91,10 +112,12 @@ final class EditNameViewController: UIViewController, UITextFieldDelegate {
             let alert = UIAlertController(title: "Duplicate Name", message: "Board with this name already exists .", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
             self.present(alert, animated: true, completion: nil)
-            return
+            return false
         }
         
-        let oldName = GlobalStateManager.shared.currentPlayingBoardName ?? "Unknown"
+        navigationItem.title = "Edit " + boardName
+        GlobalStateManager.shared.needToReloadData = true
+        
         GlobalStateManager.shared.games[boardName] = GlobalStateManager.shared.games[oldName]
         GlobalStateManager.shared.games[oldName] = nil
         
@@ -103,11 +126,8 @@ final class EditNameViewController: UIViewController, UITextFieldDelegate {
         
         BoardManager.shared.rename(oldName, boardName)
         BoardManager.shared.persist()
+        GlobalStateManager.shared.currentPlayingBoardName = boardName
         
-        self.performSegue(withIdentifier: "segueAfterRenamingBoard", sender: nil)
-    }
-    
-    
-    @IBAction func editInitialPositionButtonAction(_ sender: UIButton) {
+        return true
     }
 }

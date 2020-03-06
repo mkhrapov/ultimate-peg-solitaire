@@ -37,6 +37,7 @@ final class GlobalStateManager {
     var initX: Int?
     var initY: Int?
     var name: String?
+    var needToReloadData = false
     
     
     

@@ -43,6 +43,16 @@ final class MainTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if GlobalStateManager.shared.needToReloadData {
+            GlobalStateManager.shared.needToReloadData = false
+            self.tableView.reloadData()
+        }
+    }
+    
 
     // MARK: - Table view data source
 

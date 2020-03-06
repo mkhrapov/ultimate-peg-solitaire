@@ -68,25 +68,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-lE-a1U">
-                                <rect key="frame" x="84" y="269" width="247" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Edit Initial Position"/>
-                                <connections>
-                                    <action selector="editInitialPositionButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="83E-K2-eQH"/>
-                                    <segue destination="BQk-A0-8WQ" kind="show" id="wCE-XC-SU9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIG-dP-aOe">
-                                <rect key="frame" x="156" y="193" width="102" height="40"/>
+                                <rect key="frame" x="84" y="200" width="247" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save and Exit"/>
                                 <connections>
                                     <action selector="saveButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="LxE-Oq-0Mn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-lE-a1U">
+                                <rect key="frame" x="84" y="299" width="247" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal">
+                                    <string key="title">Save and Edit
+Initial Position</string>
+                                </state>
+                                <connections>
+                                    <action selector="editInitialPositionButtonAction:" destination="g7z-uE-SmB" eventType="touchUpInside" id="83E-K2-eQH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,6 +101,7 @@
                         <outlet property="newNameTextField" destination="iYL-KA-aKg" id="C3v-gP-Lct"/>
                         <outlet property="saveButton" destination="NIG-dP-aOe" id="hqe-Ok-LKe"/>
                         <segue destination="CQs-EM-Z5a" kind="unwind" identifier="segueAfterRenamingBoard" unwindAction="afterSavingNewBoard:" id="EHL-T9-ebN"/>
+                        <segue destination="BQk-A0-8WQ" kind="show" identifier="segueToEditInitialPosition" id="0xh-KI-i2o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69d-lH-NCc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
