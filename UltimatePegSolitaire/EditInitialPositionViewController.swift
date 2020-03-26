@@ -73,7 +73,7 @@ class EditInitialPositionViewController: UIViewController {
             BoardManager.shared.persist()
             
             GlobalStateManager.shared.games[board.name] = nil
-            GlobalStateManager.shared.boardImages[board.name] = nil
+            IconManager.shared.delete(board.name)
         }
         
         self.performSegue(withIdentifier: "segueAfterEditingInitialPosition", sender: nil)

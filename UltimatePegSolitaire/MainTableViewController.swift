@@ -53,6 +53,20 @@ final class MainTableViewController: UITableViewController {
         }
     }
     
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        guard UIApplication.shared.applicationState == .inactive else {
+            return
+        }
+
+        // does not work on simulator
+        // probably will not work if mode changes automatically due to programmed timed change.ng
+        self.tableView.reloadData()
+        self.tableView.setNeedsDisplay()
+    }
+    
 
     // MARK: - Table view data source
 
@@ -70,7 +84,7 @@ final class MainTableViewController: UITableViewController {
 
         let boardName = boardManager[indexPath.row].name
         cell.textLabel?.text = boardName
-        cell.imageView?.image = GlobalStateManager.shared.getImageByName(boardName)
+        cell.imageView?.image = IconManager.shared.getImageByName(boardName)
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         

@@ -121,8 +121,7 @@ final class EditNameViewController: UIViewController, UITextFieldDelegate {
         GlobalStateManager.shared.games[boardName] = GlobalStateManager.shared.games[oldName]
         GlobalStateManager.shared.games[oldName] = nil
         
-        GlobalStateManager.shared.boardImages[boardName] = GlobalStateManager.shared.boardImages[oldName]
-        GlobalStateManager.shared.boardImages[oldName] = nil
+        IconManager.shared.rename(oldName, boardName)
         
         BoardManager.shared.rename(oldName, boardName)
         BoardManager.shared.persist()

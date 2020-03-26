@@ -24,6 +24,7 @@
 		5067C812236F81860022DF4D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C811236F81860022DF4D /* BoardView.swift */; };
 		5067C814236F8B570022DF4D /* GlobalStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C813236F8B570022DF4D /* GlobalStateManager.swift */; };
 		5067C8162370FFFA0022DF4D /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C8152370FFFA0022DF4D /* MyColors.swift */; };
+		50771534242C14E600E2DF42 /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50771533242C14E600E2DF42 /* IconManager.swift */; };
 		509CADF62287827D0095C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CADF52287827D0095C07F /* AppDelegate.swift */; };
 		509CADFB2287827D0095C07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509CADF92287827D0095C07F /* Main.storyboard */; };
 		509CAE002287827E0095C07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509CADFF2287827E0095C07F /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		5067C811236F81860022DF4D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		5067C813236F8B570022DF4D /* GlobalStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStateManager.swift; sourceTree = "<group>"; };
 		5067C8152370FFFA0022DF4D /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
+		50771533242C14E600E2DF42 /* IconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
 		509CADF22287827D0095C07F /* UltimatePegSolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePegSolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CADF52287827D0095C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509CADFA2287827D0095C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				50ACC74023BC017A0018AC00 /* PersistenceManager.swift */,
 				50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */,
 				50ACC74823CA31310018AC00 /* Parity.swift */,
+				50771533242C14E600E2DF42 /* IconManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				50130DCD240F333D00296319 /* EditNameViewController.swift in Sources */,
 				50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */,
 				5067C805236F345F0022DF4D /* SolveViewController.swift in Sources */,
+				50771534242C14E600E2DF42 /* IconManager.swift in Sources */,
 				50CD7BD323130CA000654CA0 /* Board.swift in Sources */,
 				509CADF62287827D0095C07F /* AppDelegate.swift in Sources */,
 				5067C812236F81860022DF4D /* BoardView.swift in Sources */,
