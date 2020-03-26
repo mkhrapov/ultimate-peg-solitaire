@@ -28,6 +28,7 @@ final class MainTableViewController: UITableViewController {
     
     let boardManager = BoardManager.shared
     var selectedIndexPath = 0
+    var previousMode = "light"
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +47,28 @@ final class MainTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        var currentMode = "light"
         
         if GlobalStateManager.shared.needToReloadData {
             GlobalStateManager.shared.needToReloadData = false
             self.tableView.reloadData()
+            self.tableView.setNeedsDisplay()
+        }
+        else {
+            if #available(iOS 13.0, *) {
+                if UITraitCollection.current.userInterfaceStyle == .dark {
+                    currentMode = "dark"
+                }
+                else {
+                    currentMode = "light"
+                }
+            }
+            
+            if previousMode != currentMode {
+                previousMode = currentMode
+                self.tableView.reloadData()
+                self.tableView.setNeedsDisplay()
+            }
         }
     }
     
@@ -62,7 +81,7 @@ final class MainTableViewController: UITableViewController {
         }
 
         // does not work on simulator
-        // probably will not work if mode changes automatically due to programmed timed change.ng
+        // probably will not work if mode changes automatically due to programmed timed change
         self.tableView.reloadData()
         self.tableView.setNeedsDisplay()
     }
