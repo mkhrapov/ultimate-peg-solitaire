@@ -23,8 +23,9 @@
 
 
 import UIKit
+import MobileCoreServices
 
-final class MainTableViewController: UITableViewController {
+final class MainTableViewController: UITableViewController, UITableViewDropDelegate, UITableViewDragDelegate {
     
     let boardManager = BoardManager.shared
     var selectedIndexPath = 0
@@ -37,6 +38,12 @@ final class MainTableViewController: UITableViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Boards"
         navigationItem.backBarButtonItem = backItem
+        
+        
+        tableView.dragInteractionEnabled = true
+        tableView.dragDelegate = self
+        tableView.dropDelegate = self
+        
     }
     
     
@@ -153,7 +160,8 @@ final class MainTableViewController: UITableViewController {
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        boardManager.move(fromIndexPath.row, to.row)
+        boardManager.persist()
     }
     
     
@@ -185,4 +193,28 @@ final class MainTableViewController: UITableViewController {
     }
     
     
+    // MARK: - Drag
+    
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let placeholder = "hello drag and drop" as NSString
+        let itemProvider = NSItemProvider(object: placeholder)
+        return [UIDragItem(itemProvider: itemProvider)]
+    }
+    
+    
+    // MARK: - Drop
+    
+    func tableView(_ tableView: UITableView, canHandle session: UIDropSession) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+        return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        
+    }
 }

@@ -93,6 +93,13 @@ final class BoardManager {
     }
     
     
+    func move(_ from: Int, _ to: Int) {
+        let board = boards[from]
+        boards.remove(at: from)
+        boards.insert(board, at: to)
+    }
+    
+    
     private static func initialBoards() -> [Board] {
         var boards = [Board]()
         
