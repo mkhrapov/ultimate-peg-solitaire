@@ -165,20 +165,20 @@ Initial Position</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-Nz-hfP">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-Nz-hfP">
                                 <rect key="frame" x="10" y="54" width="394" height="672"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Pruning Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5c-er-wcj">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="20.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ToN-v8-RMQ">
-                                        <rect key="frame" x="0.0" y="21" width="394" height="220"/>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToN-v8-RMQ">
+                                        <rect key="frame" x="0.0" y="20.333333333333314" width="394" height="216"/>
                                     </pickerView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-nQ-QaL">
-                                        <rect key="frame" x="0.0" y="241.33333333333329" width="394" height="430.66666666666674"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-nQ-QaL">
+                                        <rect key="frame" x="0.0" y="236.33333333333329" width="394" height="435.66666666666674"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <mutableString key="text">Ultimate Peg Solitaire solving algorithm is a non-deterministic heuristic-based algorithm that requires a pruning number. Allowed values of the pruning number are between 100 and 1,000. Smaller numbers result in shorter search time, but are less likely to find a solution. Larger numbers will result in much longer search time, but are more likely to find a solution. 200 is a good first guess for a pruning number that solves most easy problems. If solution is not found, pick a larger pruning number. Running the solver multiple times even with the same pruning number may possibly result in finding different solutions.</mutableString>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -214,7 +214,7 @@ Initial Position</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="0vV-IQ-fUF">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0vV-IQ-fUF">
                                 <rect key="frame" x="10" y="54" width="394" height="672"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Time Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB1-wQ-MhO">
@@ -224,9 +224,9 @@ Initial Position</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="DVV-Dk-JEV">
-                                        <rect key="frame" x="0.0" y="20" width="394" height="216"/>
+                                        <rect key="frame" x="0.0" y="20.333333333333314" width="394" height="216"/>
                                     </pickerView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Time Out is the maximum amout of time you are willing to wait for the solver to finish looking for a solution." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3fe-eD-Qpj">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Time Out is the maximum amout of time you are willing to wait for the solver to finish looking for a solution." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fe-eD-Qpj">
                                         <rect key="frame" x="0.0" y="236.33333333333329" width="394" height="435.66666666666674"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
