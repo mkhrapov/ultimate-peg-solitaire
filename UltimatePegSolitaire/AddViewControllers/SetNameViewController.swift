@@ -40,6 +40,7 @@ final class SetNameViewController: UIViewController, UITextFieldDelegate {
         saveButton.layer.cornerRadius = 10
         saveButton.clipsToBounds = true
         
+        // nameTextField.keyboardType = UIKeyboardType.numberPad
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
         
