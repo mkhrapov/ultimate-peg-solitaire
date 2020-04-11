@@ -31,6 +31,9 @@ final class PruningSearch {
     var solutions = [Position]()
     var probability = 0.0
     var generation: [Position]
+    var progressCallback: ((Double) -> ())?
+    var currentGen = 0.0
+    var numGenerations = 0.0
     
     
     
@@ -39,6 +42,7 @@ final class PruningSearch {
         let steps = initialPosition.board.allowed.count - 2
         probability = 1.0 / Double(steps)
         generation = [Position]()
+        numGenerations = Double(steps)
     }
     
     func shouldReplaceChild() -> Bool {
@@ -78,6 +82,11 @@ final class PruningSearch {
     }
     
     func searchByGeneration() -> Bool {
+        if let progressCallback = progressCallback {
+            progressCallback(currentGen/numGenerations)
+        }
+        currentGen += 1.0
+        
         if generation.count == 0 {
             return true
         }

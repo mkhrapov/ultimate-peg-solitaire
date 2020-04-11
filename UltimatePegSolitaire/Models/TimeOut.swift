@@ -27,8 +27,8 @@ import Foundation
 final class TimeOut {
     static let shared = TimeOut()
     
-    let allowedTimeOuts =      [ 60,       2*60,    3*60,    5*60,    10*60,    15*60,    30*60,    60*60]
-    let allowedTimeOutTitles = ["60 sec", "2 min", "3 min", "5 min", "10 min", "15 min", "30 min", "1 hour"]
+    let allowedTimeOuts =      [ 10,       60,       2*60,    3*60,    5*60,    10*60,    15*60,    30*60,    60*60]
+    let allowedTimeOutTitles = ["10 sec", "60 sec", "2 min", "3 min", "5 min", "10 min", "15 min", "30 min", "1 hour"]
     
     
     func row(_ n: Int) -> Int {

@@ -63,6 +63,8 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
         resultsTextLabel.numberOfLines = 0
         setResultsTextLabel()
         
+        progressBar.setProgress(0.0, animated: false)
+        
     }
     
     
@@ -98,6 +100,13 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                 let p = gameState.board.initialPosition()
                 let pruningSearch = PruningSearch(p)
                 pruningSearch.prune(gameState.board.pruningNumber)
+                pruningSearch.progressCallback = { (progress: Double) -> () in
+                    let progressPercent = Int(progress*100)
+                    DispatchQueue.main.async {
+                        self.progressLabel.text = String(progressPercent) + " %"
+                        self.progressBar.setProgress(Float(progress), animated: true)
+                    }
+                }
                 
                 self.startElapsedTimer()
                 let start = DispatchTime.now()
@@ -128,6 +137,8 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         gameState.board.solution = history
                         gameState.board.timeToSolveSeconds = timer
                         self.setResultsTextLabel()
+                        self.progressLabel.text = "100 %"
+                        self.progressBar.setProgress(1.0, animated: true)
                         BoardManager.shared.persist()
                     }
                 }
@@ -135,6 +146,8 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                     DispatchQueue.main.async {
                         gameState.board.timeToSolveSeconds = timer
                         self.setResultsTextLabel()
+                        self.progressLabel.text = "100 %"
+                        self.progressBar.setProgress(1.0, animated: true)
                         BoardManager.shared.persist()
                     }
                 }
