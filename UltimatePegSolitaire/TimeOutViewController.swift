@@ -30,8 +30,6 @@ class TimeOutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var timeOutPickerView: UIPickerView!
     
     var gameState: GameState?
-    static let allowedTimeOuts = [60, 2*60, 3*60, 5*60, 10*60, 15*60, 30*60, 60*60]
-    static let allowedTimeOutTitles = ["60 sec", "2 min", "3 min", "5 min", "10 min", "15 min", "30 min", "1 hour"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,20 +49,8 @@ class TimeOutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             return
         }
         
-        let currentTimeOut = gameState.timeOut
-        let rowID = convertTimeOutToRow(currentTimeOut)
-        
-        timeOutPickerView.selectRow(rowID, inComponent: 0, animated: true)
-    }
-    
-
-    func convertTimeOutToRow(_ to: Int) -> Int {
-        for i in 0..<TimeOutViewController.allowedTimeOuts.count {
-            if to == TimeOutViewController.allowedTimeOuts[i] {
-                return i
-            }
-        }
-        return 0
+        let row = TimeOut.shared.row(gameState.timeOut)
+        timeOutPickerView.selectRow(row, inComponent: 0, animated: true)
     }
 
     
@@ -74,12 +60,12 @@ class TimeOutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return TimeOutViewController.allowedTimeOuts.count
+        return TimeOut.shared.allowedTimeOuts.count
     }
 
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(TimeOutViewController.allowedTimeOutTitles[row])
+        return String(TimeOut.shared.allowedTimeOutTitles[row])
     }
 
     
@@ -88,6 +74,6 @@ class TimeOutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             return
         }
         
-        gameState.timeOut = TimeOutViewController.allowedTimeOuts[row]
+        gameState.timeOut = TimeOut.shared.allowedTimeOuts[row]
     }
 }

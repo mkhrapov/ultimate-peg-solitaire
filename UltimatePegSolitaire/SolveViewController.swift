@@ -25,22 +25,29 @@
 import UIKit
 
 final class SolveViewController: UIViewController, UITextFieldDelegate {
-
     
-    /*
-    @IBOutlet weak var pruningNumberTextField: UITextField!
-    @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var pruningNumberLabelButton: UIButton!
+    @IBOutlet weak var timeOutLabelButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var solveButton: UIButton!
- */
+    @IBOutlet weak var elapsedTimeLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var resultsTextLabel: UILabel!
     
-    /*
+    
+    
+    
+    
+    
+    
     var gameState: GameState?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        gameState = GlobalStateManager.shared.getCurrentPlayingBoard()
+        
         navigationItem.title = "Solve"
         let backItem = UIBarButtonItem()
         backItem.title = "Solve"
@@ -48,90 +55,48 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
         
         solveButton.layer.cornerRadius = 10
         solveButton.clipsToBounds = true
+        cancelButton.layer.cornerRadius = 10
+        cancelButton.clipsToBounds = true
         
-        resultLabel.lineBreakMode = .byWordWrapping
-        resultLabel.numberOfLines = 0
+        resultsTextLabel.lineBreakMode = .byWordWrapping
+        resultsTextLabel.numberOfLines = 0
+        setResultsTextLabel()
         
-        gameState = GlobalStateManager.shared.getCurrentPlayingBoard()
-        setResultsLabel()
-        setPruningNumberTextField()
-        
-        pruningNumberTextField.keyboardType = UIKeyboardType.numberPad
-        pruningNumberTextField.delegate = self
-        
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
     }
     
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.selectAll(nil)
-    }
-    
-    
-    func setResultsLabel() {
-        resultLabel.attributedText = nil
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if let gameState = gameState {
-            let time = String(format: "%.2f", gameState.board.timeToSolveSeconds)
+            let pruningNumber = String(gameState.board.pruningNumber) + " ➤"
+            let timeOut = TimeOut.shared.title(gameState.timeOut) + " ➤"
             
-            if let _ = gameState.board.solution {
-                let prefix = gameState.board.complementary ? "Complementary" : "A"
-                resultLabel.text = "\(prefix) solution has been found in \(time) sec."
-            }
-            else {
-                if gameState.board.timeToSolveSeconds > 0.0 {
-                    resultLabel.text = "No solution has been found in \(time) sec. Try using a larger pruning number."
-                }
-                else {
-                    resultLabel.text = "Tap the Solve button to run the solver."
-                }
-            }
-        }
-        else {
-            resultLabel.text = "No data."
+            pruningNumberLabelButton.setTitle(pruningNumber, for: .normal)
+            timeOutLabelButton.setTitle(timeOut, for: .normal)
         }
     }
     
+ 
     
-    func setPruningNumberTextField() {
-        if let gameState = gameState {
-            let pruningNumber = gameState.board.pruningNumber
-            pruningNumberTextField.text = "\(pruningNumber)"
-        }
-        else {
-            pruningNumberTextField.text = "200"
-        }
+    
+    @IBAction func cancelButtonAction(_ sender: UIButton) {
     }
     
-    
-    func setError(_ text: String) {
-        resultLabel.text = nil
-        let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red]
-        resultLabel.attributedText = NSAttributedString(string: text, attributes: attrs)
-    }
     
     
     @IBAction func solveButtonAction(_ sender: UIButton) {
-        if let gameState = gameState,
-           let text = pruningNumberTextField.text,
-           let pruningNumber = Int(text.trimmingCharacters(in: .whitespacesAndNewlines)),
-           pruningNumber > 0 && pruningNumber <= 1000
-        {
-            gameState.board.pruningNumber = pruningNumber
-            activityIndicator.startAnimating()
+        if let gameState = gameState {
             gameState.board.complementary = false
             gameState.board.timeToSolveSeconds = 0.0
             gameState.board.solution = nil
-            resultLabel.attributedText = nil
-            resultLabel.text = "Searching..."
-            view.endEditing(true)
+            resultsTextLabel.attributedText = nil
+            resultsTextLabel.text = "Searching..."
             
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
-                
                 let p = gameState.board.initialPosition()
                 let pruningSearch = PruningSearch(p)
-                pruningSearch.prune(pruningNumber)
+                pruningSearch.prune(gameState.board.pruningNumber)
                 
                 let start = DispatchTime.now()
                 let numSolutions = pruningSearch.search()
@@ -159,24 +124,50 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         gameState.board.complementary = complementary
                         gameState.board.solution = history
                         gameState.board.timeToSolveSeconds = timer
-                        self.setResultsLabel()
-                        self.activityIndicator.stopAnimating()
+                        self.setResultsTextLabel()
                         BoardManager.shared.persist()
                     }
                 }
                 else {
                     DispatchQueue.main.async {
                         gameState.board.timeToSolveSeconds = timer
-                        self.setResultsLabel()
-                        self.activityIndicator.stopAnimating()
+                        self.setResultsTextLabel()
                         BoardManager.shared.persist()
                     }
                 }
             }
         }
+    }
+    
+    
+    func setResultsTextLabel() {
+        resultsTextLabel.attributedText = nil
+        
+        if let gameState = gameState {
+            let time = String(format: "%.2f", gameState.board.timeToSolveSeconds)
+            
+            if let _ = gameState.board.solution {
+                let prefix = gameState.board.complementary ? "Complementary" : "A"
+                resultsTextLabel.text = "\(prefix) solution has been found in \(time) sec."
+            }
+            else {
+                if gameState.board.timeToSolveSeconds > 0.0 {
+                    resultsTextLabel.text = "No solution has been found in \(time) sec."
+                }
+                else {
+                    resultsTextLabel.text = "Click Solve Button to start solving."
+                }
+            }
+        }
         else {
-            setError("Pruning number must be an integer between 1 and 1000")
+            resultsTextLabel.text = "Click Solve Button to start solving."
         }
     }
- */
+    
+    
+    func setError(_ text: String) {
+        resultsTextLabel.text = nil
+        let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red]
+        resultsTextLabel.attributedText = NSAttributedString(string: text, attributes: attrs)
+    }
 }

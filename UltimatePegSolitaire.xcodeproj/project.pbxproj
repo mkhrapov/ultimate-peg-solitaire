@@ -43,6 +43,10 @@
 		50B67AF62374E25200999FB7 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
 		50B7CAA8243E543200C8689B /* PruningNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAA7243E543200C8689B /* PruningNumberViewController.swift */; };
 		50B7CAAA243E545400C8689B /* TimeOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAA9243E545400C8689B /* TimeOutViewController.swift */; };
+		50B7CAAC24425F8100C8689B /* PruningNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAAB24425F8100C8689B /* PruningNumber.swift */; };
+		50B7CAAD24425F8100C8689B /* PruningNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAAB24425F8100C8689B /* PruningNumber.swift */; };
+		50B7CAAF244261AA00C8689B /* TimeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAAE244261AA00C8689B /* TimeOut.swift */; };
+		50B7CAB0244261AA00C8689B /* TimeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAAE244261AA00C8689B /* TimeOut.swift */; };
 		50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
 		50C8CA3C2384B6520099D327 /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
 		50C8CA40238792870099D327 /* RemoveHolesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3F238792870099D327 /* RemoveHolesView.swift */; };
@@ -114,6 +118,8 @@
 		50B67AF52374E25200999FB7 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		50B7CAA7243E543200C8689B /* PruningNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruningNumberViewController.swift; sourceTree = "<group>"; };
 		50B7CAA9243E545400C8689B /* TimeOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutViewController.swift; sourceTree = "<group>"; };
+		50B7CAAB24425F8100C8689B /* PruningNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruningNumber.swift; sourceTree = "<group>"; };
+		50B7CAAE244261AA00C8689B /* TimeOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOut.swift; sourceTree = "<group>"; };
 		50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeBoardView.swift; sourceTree = "<group>"; };
 		50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBoardSizeView.swift; sourceTree = "<group>"; };
 		50C8CA3F238792870099D327 /* RemoveHolesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveHolesView.swift; sourceTree = "<group>"; };
@@ -249,6 +255,8 @@
 				50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */,
 				50ACC74823CA31310018AC00 /* Parity.swift */,
 				50771533242C14E600E2DF42 /* IconManager.swift */,
+				50B7CAAB24425F8100C8689B /* PruningNumber.swift */,
+				50B7CAAE244261AA00C8689B /* TimeOut.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,6 +424,7 @@
 				50ACC74923CA31310018AC00 /* Parity.swift in Sources */,
 				5067C8162370FFFA0022DF4D /* MyColors.swift in Sources */,
 				5067C80A236F353A0022DF4D /* SetBoardSizeViewController.swift in Sources */,
+				50B7CAAC24425F8100C8689B /* PruningNumber.swift in Sources */,
 				50CD7BD6231311FD00654CA0 /* Position.swift in Sources */,
 				50F8FA3D2389DEFF00877158 /* SolvablePositions.swift in Sources */,
 				5067C810236F358F0022DF4D /* SetNameViewController.swift in Sources */,
@@ -427,6 +436,7 @@
 				50771534242C14E600E2DF42 /* IconManager.swift in Sources */,
 				50CD7BD323130CA000654CA0 /* Board.swift in Sources */,
 				509CADF62287827D0095C07F /* AppDelegate.swift in Sources */,
+				50B7CAAF244261AA00C8689B /* TimeOut.swift in Sources */,
 				5067C812236F81860022DF4D /* BoardView.swift in Sources */,
 				50B67AF62374E25200999FB7 /* GameState.swift in Sources */,
 				50C8CA3A2380AEB40099D327 /* VisualizeBoardView.swift in Sources */,
@@ -441,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50548C2323CEB29F009E031E /* GlobalStateManager.swift in Sources */,
+				50B7CAAD24425F8100C8689B /* PruningNumber.swift in Sources */,
 				50CD7BDA2313126000654CA0 /* Move.swift in Sources */,
 				50ACC74523C41DDF0018AC00 /* GraphRepresentation.swift in Sources */,
 				50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */,
@@ -454,6 +465,7 @@
 				50CD7BD7231311FD00654CA0 /* Position.swift in Sources */,
 				50ACC74A23CA31310018AC00 /* Parity.swift in Sources */,
 				50CD7BD423130CA000654CA0 /* Board.swift in Sources */,
+				50B7CAB0244261AA00C8689B /* TimeOut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

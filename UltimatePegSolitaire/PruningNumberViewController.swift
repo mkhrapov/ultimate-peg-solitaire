@@ -30,7 +30,6 @@ final class PruningNumberViewController: UIViewController, UIPickerViewDelegate,
     @IBOutlet weak var pruningNumberPickerView: UIPickerView!
     
     var gameState: GameState?
-    static let allowedPruningNumbers = [100, 200, 300, 400, 500, 750, 1000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,20 +49,8 @@ final class PruningNumberViewController: UIViewController, UIPickerViewDelegate,
             return
         }
         
-        let currentPruningNumber = gameState.board.pruningNumber
-        let rowID = convertPruningNumberToRow(currentPruningNumber)
-        
-        pruningNumberPickerView.selectRow(rowID, inComponent: 0, animated: true)
-    }
-    
-
-    func convertPruningNumberToRow(_ pn: Int) -> Int {
-        for i in 0..<PruningNumberViewController.allowedPruningNumbers.count {
-            if pn == PruningNumberViewController.allowedPruningNumbers[i] {
-                return i
-            }
-        }
-        return 0
+        let row = PruningNumber.shared.row(gameState.board.pruningNumber)
+        pruningNumberPickerView.selectRow(row, inComponent: 0, animated: true)
     }
     
     
@@ -73,12 +60,12 @@ final class PruningNumberViewController: UIViewController, UIPickerViewDelegate,
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return PruningNumberViewController.allowedPruningNumbers.count
+        return PruningNumber.shared.allowedPruningNumbers.count
     }
 
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(PruningNumberViewController.allowedPruningNumbers[row])
+        return String(PruningNumber.shared.allowedPruningNumbers[row])
     }
 
     
@@ -87,6 +74,6 @@ final class PruningNumberViewController: UIViewController, UIPickerViewDelegate,
             return
         }
         
-        gameState.board.pruningNumber = PruningNumberViewController.allowedPruningNumbers[row]
+        gameState.board.pruningNumber = PruningNumber.shared.allowedPruningNumbers[row]
     }
 }
