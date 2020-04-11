@@ -42,6 +42,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
     
     
     var gameState: GameState?
+    var elapsedTimerRunning = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,9 +99,11 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                 let pruningSearch = PruningSearch(p)
                 pruningSearch.prune(gameState.board.pruningNumber)
                 
+                self.startElapsedTimer()
                 let start = DispatchTime.now()
                 let numSolutions = pruningSearch.search()
                 let end = DispatchTime.now()
+                self.elapsedTimerRunning = false
                 let timer = Double(end.uptimeNanoseconds - start.uptimeNanoseconds)/1_000_000_000.0
                 
                 if numSolutions > 0 {
@@ -169,5 +172,32 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
         resultsTextLabel.text = nil
         let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red]
         resultsTextLabel.attributedText = NSAttributedString(string: text, attributes: attrs)
+    }
+    
+    
+    func startElapsedTimer() {
+        self.elapsedTimerRunning = true
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
+            let start = DispatchTime.now()
+            var text = ""
+            while self.elapsedTimerRunning {
+                let current = DispatchTime.now()
+                let elapsedTime = Int(Double(current.uptimeNanoseconds - start.uptimeNanoseconds)/1_000_000_000.0)
+                let sec = elapsedTime % 60
+                let min = elapsedTime / 60
+                if min == 0 {
+                    text = String(sec) + " sec"
+                }
+                else {
+                    text = String(min) + " m " + String(sec) + " s"
+                }
+                
+                DispatchQueue.main.async {
+                    self.elapsedTimeLabel.text = text
+                }
+                
+                Thread.sleep(forTimeInterval: 1.0)
+            }
+        }
     }
 }
