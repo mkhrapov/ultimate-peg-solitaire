@@ -34,6 +34,8 @@ final class PruningSearch {
     var progressCallback: ((Double) -> ())?
     var currentGen = 0.0
     var numGenerations = 0.0
+    var cancelCallback: (() -> Bool)?
+    var hasBeenCanceled = false
     
     
     
@@ -78,10 +80,22 @@ final class PruningSearch {
             }
         }
         
-        return solutions.count
+        if hasBeenCanceled {
+            return -1
+        }
+        else {
+            return solutions.count
+        }
     }
     
     func searchByGeneration() -> Bool {
+        if let cancelCallback = cancelCallback {
+            let cancel = cancelCallback()
+            if cancel {
+                hasBeenCanceled = true
+                return true
+            }
+        }
         if let progressCallback = progressCallback {
             progressCallback(currentGen/numGenerations)
         }

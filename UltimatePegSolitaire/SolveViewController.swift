@@ -43,6 +43,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
     
     var gameState: GameState?
     var elapsedTimerRunning = false
+    var cancelButtonHasBeenPressed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,11 +85,13 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func cancelButtonAction(_ sender: UIButton) {
+        cancelButtonHasBeenPressed = true
     }
     
     
     
     @IBAction func solveButtonAction(_ sender: UIButton) {
+        progressBar.setProgress(0.0, animated: false)
         if let gameState = gameState {
             gameState.board.complementary = false
             gameState.board.timeToSolveSeconds = 0.0
@@ -108,6 +111,11 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 
+                self.cancelButtonHasBeenPressed = false
+                pruningSearch.cancelCallback = { () -> Bool in
+                    return self.cancelButtonHasBeenPressed
+                }
+                
                 self.startElapsedTimer()
                 let start = DispatchTime.now()
                 let numSolutions = pruningSearch.search()
@@ -115,6 +123,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                 self.elapsedTimerRunning = false
                 let timer = Double(end.uptimeNanoseconds - start.uptimeNanoseconds)/1_000_000_000.0
                 
+                // solution(s) have been found
                 if numSolutions > 0 {
                     var complementary = false
                     var history: [Move]?
@@ -142,7 +151,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         BoardManager.shared.persist()
                     }
                 }
-                else {
+                else if numSolutions == 0 {  // solver finished, but did not find any solutions
                     DispatchQueue.main.async {
                         gameState.board.timeToSolveSeconds = timer
                         self.setResultsTextLabel()
@@ -150,6 +159,16 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         self.progressBar.setProgress(1.0, animated: true)
                         BoardManager.shared.persist()
                     }
+                }
+                else if numSolutions == -1 { // canceled out
+                    DispatchQueue.main.async {
+                        self.resultsTextLabel.attributedText = nil
+                        let time = String(format: "%.2f", timer)
+                        self.resultsTextLabel.text = "Canceled after \(time) sec."
+                    }
+                }
+                else {
+                    fatalError("Unexpected value of numSolutions")
                 }
             }
         }
