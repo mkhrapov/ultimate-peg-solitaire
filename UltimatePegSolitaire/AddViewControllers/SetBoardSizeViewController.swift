@@ -48,12 +48,12 @@ final class SetBoardSizeViewController: UIViewController {
         columnsLabel.text = "Columns: \(boardSizeView.columns)"
         
         rowsStepper.minimumValue = 4.0
-        rowsStepper.maximumValue = 12.0
+        rowsStepper.maximumValue = 16.0
         rowsStepper.stepValue = 1.0
         rowsStepper.value = Double(boardSizeView.rows)
         
         columnsStepper.minimumValue = 4.0
-        columnsStepper.maximumValue = 12.0
+        columnsStepper.maximumValue = 16.0
         columnsStepper.stepValue = 1.0
         columnsStepper.value = Double(boardSizeView.columns)
     }
