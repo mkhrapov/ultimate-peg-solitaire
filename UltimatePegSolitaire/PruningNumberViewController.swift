@@ -75,5 +75,6 @@ final class PruningNumberViewController: UIViewController, UIPickerViewDelegate,
         }
         
         gameState.board.pruningNumber = PruningNumber.shared.allowedPruningNumbers[row]
+        BoardManager.shared.persist()
     }
 }

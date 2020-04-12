@@ -95,7 +95,6 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
         if let gameState = gameState {
             gameState.board.complementary = false
             gameState.board.timeToSolveSeconds = 0.0
-            gameState.board.solution = nil
             resultsTextLabel.attributedText = nil
             resultsTextLabel.text = "Searching..."
             
@@ -165,6 +164,13 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         self.resultsTextLabel.attributedText = nil
                         let time = String(format: "%.2f", timer)
                         self.resultsTextLabel.text = "Canceled after \(time) sec."
+                    }
+                }
+                else if numSolutions == -2 { // timed out
+                    DispatchQueue.main.async {
+                        self.resultsTextLabel.attributedText = nil
+                        let time = String(format: "%.2f", timer)
+                        self.resultsTextLabel.text = "Timed out after \(time) sec."
                     }
                 }
                 else {
