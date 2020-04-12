@@ -102,6 +102,8 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                 let p = gameState.board.initialPosition()
                 let pruningSearch = PruningSearch(p)
                 pruningSearch.prune(gameState.board.pruningNumber)
+                pruningSearch.timeOutInSeconds = gameState.timeOut
+                
                 pruningSearch.progressCallback = { (progress: Double) -> () in
                     let progressPercent = Int(progress*100)
                     DispatchQueue.main.async {

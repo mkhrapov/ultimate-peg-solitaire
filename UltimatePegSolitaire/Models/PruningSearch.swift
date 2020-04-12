@@ -36,6 +36,8 @@ final class PruningSearch {
     var numGenerations = 0.0
     var cancelCallback: (() -> Bool)?
     var hasBeenCanceled = false
+    var timeOutInSeconds: Int?
+    var startTime: DispatchTime
     
     
     
@@ -45,6 +47,7 @@ final class PruningSearch {
         probability = 1.0 / Double(steps)
         generation = [Position]()
         numGenerations = Double(steps)
+        startTime = DispatchTime.now()
     }
     
     func shouldReplaceChild() -> Bool {
@@ -70,6 +73,7 @@ final class PruningSearch {
         generation = [Position]()
         generation.append(initialPosition)
         
+        startTime = DispatchTime.now()
         while true {
             if searchByGeneration() {
                 break
@@ -77,6 +81,14 @@ final class PruningSearch {
             
             if solutions.count > 0 {
                 break
+            }
+            
+            if let timeOut = timeOutInSeconds {
+                let now = DispatchTime.now()
+                let timer = Double(now.uptimeNanoseconds - startTime.uptimeNanoseconds)/1_000_000_000.0
+                if timer > Double(timeOut) {
+                    return -2
+                }
             }
         }
         
