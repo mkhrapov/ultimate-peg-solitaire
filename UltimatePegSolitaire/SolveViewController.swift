@@ -146,6 +146,8 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                         gameState.board.complementary = complementary
                         gameState.board.solution = history
                         gameState.board.timeToSolveSeconds = timer
+                        gameState.resetVisualization()
+                        gameState.currentSolution = true
                         self.setResultsTextLabel()
                         self.progressLabel.text = "100 %"
                         self.progressBar.setProgress(1.0, animated: true)
@@ -155,6 +157,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
                 else if numSolutions == 0 {  // solver finished, but did not find any solutions
                     DispatchQueue.main.async {
                         gameState.board.timeToSolveSeconds = timer
+                        gameState.currentSolution = false
                         self.setResultsTextLabel()
                         self.progressLabel.text = "100 %"
                         self.progressBar.setProgress(1.0, animated: true)
@@ -189,7 +192,7 @@ final class SolveViewController: UIViewController, UITextFieldDelegate {
         if let gameState = gameState {
             let time = String(format: "%.2f", gameState.board.timeToSolveSeconds)
             
-            if let _ = gameState.board.solution {
+            if gameState.board.solution != nil && gameState.currentSolution {
                 let prefix = gameState.board.complementary ? "Complementary" : "A"
                 resultsTextLabel.text = "\(prefix) solution has been found in \(time) sec."
             }

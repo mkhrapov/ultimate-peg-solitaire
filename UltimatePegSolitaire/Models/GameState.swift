@@ -32,6 +32,7 @@ final class GameState {
     var moveIndex = 0
     var showArrows = false
     var timeOut = 60
+    var currentSolution = false
     
     var last: Position {
         if let position = positions.last {
