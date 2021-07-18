@@ -61,6 +61,42 @@
 		50CD7BDA2313126000654CA0 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD82313126000654CA0 /* Move.swift */; };
 		50CD7BDC2313158500654CA0 /* PruningSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BDB2313158500654CA0 /* PruningSearch.swift */; };
 		50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BDB2313158500654CA0 /* PruningSearch.swift */; };
+		50D2BF3726A4AA8500A7CF4F /* GlobalStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C813236F8B570022DF4D /* GlobalStateManager.swift */; };
+		50D2BF3A26A4AACE00A7CF4F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BC92311F80700654CA0 /* MainTableViewController.swift */; };
+		50D2BF3B26A4AACF00A7CF4F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BC92311F80700654CA0 /* MainTableViewController.swift */; };
+		50D2BF3D26A4AB3300A7CF4F /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BCE23130B6A00654CA0 /* BoardManager.swift */; };
+		50D2BF3E26A4AB3600A7CF4F /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD223130CA000654CA0 /* Board.swift */; };
+		50D2BF3F26A4AB3900A7CF4F /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD5231311FD00654CA0 /* Position.swift */; };
+		50D2BF4026A4AB3D00A7CF4F /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BD82313126000654CA0 /* Move.swift */; };
+		50D2BF4126A4AB4000A7CF4F /* PruningSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD7BDB2313158500654CA0 /* PruningSearch.swift */; };
+		50D2BF4226A4AB4600A7CF4F /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B67AF52374E25200999FB7 /* GameState.swift */; };
+		50D2BF4326A4AB4900A7CF4F /* SolvablePositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */; };
+		50D2BF4426A4AB4A00A7CF4F /* SolvablePositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */; };
+		50D2BF4526A4AB4D00A7CF4F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74023BC017A0018AC00 /* PersistenceManager.swift */; };
+		50D2BF4626A4AB5000A7CF4F /* GraphRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74323C41DDF0018AC00 /* GraphRepresentation.swift */; };
+		50D2BF4726A4AB5300A7CF4F /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74823CA31310018AC00 /* Parity.swift */; };
+		50D2BF4826A4AB5B00A7CF4F /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50771533242C14E600E2DF42 /* IconManager.swift */; };
+		50D2BF4926A4AB5C00A7CF4F /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50771533242C14E600E2DF42 /* IconManager.swift */; };
+		50D2BF4A26A4AB5F00A7CF4F /* PruningNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAAB24425F8100C8689B /* PruningNumber.swift */; };
+		50D2BF4B26A4AB6200A7CF4F /* TimeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7CAAE244261AA00C8689B /* TimeOut.swift */; };
+		50D2BF4C26A4ABAC00A7CF4F /* BoardIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC74B23CBA4990018AC00 /* BoardIcon.swift */; };
+		50D2BF4D26A4ABCD00A7CF4F /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C802236BCAB90022DF4D /* PlayViewController.swift */; };
+		50D2BF4E26A4ABCF00A7CF4F /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C802236BCAB90022DF4D /* PlayViewController.swift */; };
+		50D2BF4F26A4ABD300A7CF4F /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DCC240F333D00296319 /* EditNameViewController.swift */; };
+		50D2BF5026A4ABD400A7CF4F /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DCC240F333D00296319 /* EditNameViewController.swift */; };
+		50D2BF5126A4ABEF00A7CF4F /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C811236F81860022DF4D /* BoardView.swift */; };
+		50D2BF5226A4ABF000A7CF4F /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C811236F81860022DF4D /* BoardView.swift */; };
+		50D2BF5326A4ABF500A7CF4F /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067C8152370FFFA0022DF4D /* MyColors.swift */; };
+		50D2BF5426A4ABF800A7CF4F /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
+		50D2BF5526A4ABF900A7CF4F /* VisualizeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA392380AEB40099D327 /* VisualizeBoardView.swift */; };
+		50D2BF5626A4ABFC00A7CF4F /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
+		50D2BF5726A4ABFD00A7CF4F /* SetBoardSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3B2384B6520099D327 /* SetBoardSizeView.swift */; };
+		50D2BF5826A4AC0000A7CF4F /* RemoveHolesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3F238792870099D327 /* RemoveHolesView.swift */; };
+		50D2BF5926A4AC0000A7CF4F /* RemoveHolesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8CA3F238792870099D327 /* RemoveHolesView.swift */; };
+		50D2BF5A26A4AC0300A7CF4F /* SetInitialPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D95673238B148D00A1DB10 /* SetInitialPositionView.swift */; };
+		50D2BF5B26A4AC0400A7CF4F /* SetInitialPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D95673238B148D00A1DB10 /* SetInitialPositionView.swift */; };
+		50D2BF5C26A4AC0900A7CF4F /* EditInitialPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DD02412AA1900296319 /* EditInitialPositionView.swift */; };
+		50D2BF5D26A4AC0A00A7CF4F /* EditInitialPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DD02412AA1900296319 /* EditInitialPositionView.swift */; };
 		50D95674238B148D00A1DB10 /* SetInitialPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D95673238B148D00A1DB10 /* SetInitialPositionView.swift */; };
 		50F8FA3D2389DEFF00877158 /* SolvablePositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8FA3C2389DEFF00877158 /* SolvablePositions.swift */; };
 /* End PBXBuildFile section */
@@ -339,7 +375,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Maksim Khrapov";
 				TargetAttributes = {
 					509CADF12287827D0095C07F = {
@@ -452,20 +488,31 @@
 			files = (
 				50548C2323CEB29F009E031E /* GlobalStateManager.swift in Sources */,
 				50B7CAAD24425F8100C8689B /* PruningNumber.swift in Sources */,
+				50D2BF5826A4AC0000A7CF4F /* RemoveHolesView.swift in Sources */,
 				50CD7BDA2313126000654CA0 /* Move.swift in Sources */,
+				50D2BF4F26A4ABD300A7CF4F /* EditNameViewController.swift in Sources */,
 				50ACC74523C41DDF0018AC00 /* GraphRepresentation.swift in Sources */,
+				50D2BF3A26A4AACE00A7CF4F /* MainTableViewController.swift in Sources */,
 				50ACC74223BEF0600018AC00 /* PersistenceManager.swift in Sources */,
 				50548C2423CEB2A5009E031E /* MyColors.swift in Sources */,
 				509CAE0E2287827E0095C07F /* UltimatePegSolitaireTests.swift in Sources */,
+				50D2BF4826A4AB5B00A7CF4F /* IconManager.swift in Sources */,
 				50CD7BD023130B6A00654CA0 /* BoardManager.swift in Sources */,
+				50D2BF5626A4ABFC00A7CF4F /* SetBoardSizeView.swift in Sources */,
+				50D2BF5126A4ABEF00A7CF4F /* BoardView.swift in Sources */,
 				50548C2523CEB2B5009E031E /* GameState.swift in Sources */,
+				50D2BF4326A4AB4900A7CF4F /* SolvablePositions.swift in Sources */,
 				50ACC74D23CBA4990018AC00 /* BoardIcon.swift in Sources */,
 				50CD7BDD2313158500654CA0 /* PruningSearch.swift in Sources */,
 				50ACC74723C6CCFD0018AC00 /* DepthFirstSearchTest.swift in Sources */,
 				50CD7BD7231311FD00654CA0 /* Position.swift in Sources */,
+				50D2BF4E26A4ABCF00A7CF4F /* PlayViewController.swift in Sources */,
 				50ACC74A23CA31310018AC00 /* Parity.swift in Sources */,
+				50D2BF5C26A4AC0900A7CF4F /* EditInitialPositionView.swift in Sources */,
+				50D2BF5426A4ABF800A7CF4F /* VisualizeBoardView.swift in Sources */,
 				50CD7BD423130CA000654CA0 /* Board.swift in Sources */,
 				50B7CAB0244261AA00C8689B /* TimeOut.swift in Sources */,
+				50D2BF5A26A4AC0300A7CF4F /* SetInitialPositionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +520,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D2BF4726A4AB5300A7CF4F /* Parity.swift in Sources */,
+				50D2BF4A26A4AB5F00A7CF4F /* PruningNumber.swift in Sources */,
+				50D2BF4026A4AB3D00A7CF4F /* Move.swift in Sources */,
+				50D2BF3D26A4AB3300A7CF4F /* BoardManager.swift in Sources */,
+				50D2BF5726A4ABFD00A7CF4F /* SetBoardSizeView.swift in Sources */,
+				50D2BF3B26A4AACF00A7CF4F /* MainTableViewController.swift in Sources */,
+				50D2BF3F26A4AB3900A7CF4F /* Position.swift in Sources */,
+				50D2BF4426A4AB4A00A7CF4F /* SolvablePositions.swift in Sources */,
+				50D2BF5B26A4AC0400A7CF4F /* SetInitialPositionView.swift in Sources */,
+				50D2BF4626A4AB5000A7CF4F /* GraphRepresentation.swift in Sources */,
+				50D2BF3E26A4AB3600A7CF4F /* Board.swift in Sources */,
+				50D2BF4926A4AB5C00A7CF4F /* IconManager.swift in Sources */,
+				50D2BF4D26A4ABCD00A7CF4F /* PlayViewController.swift in Sources */,
+				50D2BF5926A4AC0000A7CF4F /* RemoveHolesView.swift in Sources */,
+				50D2BF5D26A4AC0A00A7CF4F /* EditInitialPositionView.swift in Sources */,
+				50D2BF3726A4AA8500A7CF4F /* GlobalStateManager.swift in Sources */,
+				50D2BF4226A4AB4600A7CF4F /* GameState.swift in Sources */,
 				509CAE192287827E0095C07F /* UltimatePegSolitaireUITests.swift in Sources */,
+				50D2BF5526A4ABF900A7CF4F /* VisualizeBoardView.swift in Sources */,
+				50D2BF4526A4AB4D00A7CF4F /* PersistenceManager.swift in Sources */,
+				50D2BF4126A4AB4000A7CF4F /* PruningSearch.swift in Sources */,
+				50D2BF4B26A4AB6200A7CF4F /* TimeOut.swift in Sources */,
+				50D2BF5226A4ABF000A7CF4F /* BoardView.swift in Sources */,
+				50D2BF5026A4ABD400A7CF4F /* EditNameViewController.swift in Sources */,
+				50D2BF5326A4ABF500A7CF4F /* MyColors.swift in Sources */,
+				50D2BF4C26A4ABAC00A7CF4F /* BoardIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +610,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -563,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -600,6 +673,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -619,7 +693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -638,7 +712,7 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,7 +733,7 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = UltimatePegSolitaire/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
